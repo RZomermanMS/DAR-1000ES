@@ -4,7 +4,9 @@
 > menu, not controls you can use on the installed 0.3.48 front panel.
 > PROGRAM, DIRECT and FINE +/− still need verified physical mappings.
 > Directory browsing, country selection, Top 10 and holding MEMORY to save
-> are not implemented. See the [program guide](16-internet-radio-menu-program-guide.md)
+> are not implemented. Restoring station, brightness and display mode from a
+> status file is also a target requirement, not an installed feature.
+> See the [program guide](16-internet-radio-menu-program-guide.md)
 > for recommendations and unresolved decisions.
 
 For controls that work now, use the
@@ -24,6 +26,25 @@ Browsing does not interrupt the current station. Only DIRECT on a station
 candidate or an explicit numbered preset recall requests a new station.
 Menu screens temporarily cover, then return to, your chosen display mode
 without changing DIM brightness or safety authorization.
+
+## What startup must remember (planned)
+
+The proposed system must keep a **persistent status file** with your last-used
+station, chosen brightness and display mode, then restore those three at startup.
+It must resume that station, **not hardcode NPO Radio 2**. If the saved station
+fails, show the error without silently choosing NPO Radio 2 or another station.
+You can explicitly select a different station.
+
+Only intentional successful changes are saved: a station you explicitly select
+and successfully play, a display-mode choice (including OFF), or a brightness
+change. Browsing, saving a candidate as a preset, loading animations, menu
+screens and announcements must not replace those saved settings.
+Restoring settings does not start stopped physical display output or restore
+hardware authorization. OFF retains your brightness for later use.
+
+The policy for a missing/corrupt file or first boot is still undecided; no
+fallback station is specified. Country-filter persistence is separately
+**undecided**, unlike the three required saved settings above.
 
 ## Choose Netherlands, then a genre
 
