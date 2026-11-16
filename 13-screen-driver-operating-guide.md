@@ -1,5 +1,10 @@
 # Sony DAR-1000ES screen driver: wiring, operation and radio integration
 
+For the **unimplemented** country/genre directory menu proposal, see the
+[program guide](16-internet-radio-menu-program-guide.md) and
+[planned user manual](17-internet-radio-menu-user-manual.md).
+Those documents do not change the operating controls or safety boundaries below.
+
 This is the current operating guide for the ESP32-S3/SN74AHCT125 display
 driver. It supersedes the older experimental operating advice, not the
 historical measurements, in chapters 6, 11 and 12.

@@ -28,6 +28,11 @@ validation remain pending.
 
 ## Target division of responsibility
 
+The proposed controller-side directory/menu is specified separately in the
+[program guide](16-internet-radio-menu-program-guide.md), with a
+[planned user manual](17-internet-radio-menu-user-manual.md). It is not
+implemented in 0.3.48 and does not add station commands to the diagnostic UART.
+
 | Controller ESP | Audio ESP |
 | --- | --- |
 | Sony display scanning, brightness and display modes | Wi-Fi radio stream connection and MP3/AAC decoding |

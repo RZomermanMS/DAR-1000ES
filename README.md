@@ -53,6 +53,12 @@ digits, punctuation, a music note and seven level bars.
 13. [Screen Driver Operating Guide](13-screen-driver-operating-guide.md)
 14. [Keypad Mapping](14-keypad-mapping.md)
 15. [Split-setup Architecture and Travel Demo](15-split-setup-architecture.md)
+16. [Internet-radio Menu Program Guide (proposed)](16-internet-radio-menu-program-guide.md)
+17. [Internet-radio Menu User Instruction Manual (planned)](17-internet-radio-menu-user-manual.md)
+
+Chapters 16–17 describe a proposed directory/menu design, **not installed
+firmware behavior**. For implemented controls and safety requirements, continue
+to use chapters 13–15.
 
 Images used by the chapters are stored in [`media/`](media/).
 
