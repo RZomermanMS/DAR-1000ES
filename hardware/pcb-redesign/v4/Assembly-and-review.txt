@@ -1,0 +1,103 @@
+DAR-1000ES v4 — draft layout, not approved for fabrication or power-on
+===================================================================
+
+Open DAR-1000ES-v4.kicad_pro in KiCad 10. The PCB, three schematic sheets,
+custom carrier libraries and library tables belong together. KiCad's
+standard 10.x symbol and footprint libraries are also required.
+
+Routing status
+--------------
+This is a partially routed draft. KiCad 10.0.2 reports zero rule violations
+and 67 unconnected items with all depicted wires installed. Do not order,
+assemble or power this design as delivered. Single-layer routing without
+bridges and several constrained bridge-routing orders did not close the
+design; remaining airwires need placement/channel and route iteration.
+
+The saved draft has 1,399 B.Cu segments, no F.Cu tracks, no routing vias
+and 36 board-only JW links at 2.75–14.50 mm pitch. Each link has two
+plated 0.80 mm holes and one straight Y-axis insulated wire on top.
+Normal through-hole annuli are present on both faces. Wire-schedule.txt
+gives top-view coordinates; pitch is centre-to-centre, not cut length.
+Opening all JW links without removing the holes or copper increases the
+native unconnected count to 103. These links are not JP1/JP2 shunts.
+
+The PDFs are review drawings fitted to the page, not 1:1 artwork.
+The assembly sheet is top-view and the bottom copper sheet is mirrored.
+No Gerbers or drills are packaged. Native DRC, ERC and omitted-wire DRC
+are in reports/. The strict verifier reruns the checks and returns nonzero
+while any open items remain. From this directory, with KiCad 10's Python,
+CLI and standard libraries configured:
+
+    /usr/bin/python3 verify.py --reports /tmp/dar-v4-check
+
+Mechanical layout (top view)
+----------------------------
+The outline is X=0..100 mm, Y=0..300 mm. The six 3.4 mm unplated original
+holes remain at X=5 and 95 mm, for each of Y=20, 110 and 200 mm. No extension
+support is specified: check deflection under connector insertion and agree
+chassis standoff positions before release. This is not a Sony chassis drawing.
+
+The controller socket's antenna faces left and its USB end faces right.
+The audio socket's antenna faces right and its USB end faces left. Check
+the installed modules, USB plugs and enclosure around both ends; a socket
+courtyard is not a validated antenna keepout or a plug insertion envelope.
+U3/U4, U2 and the TCA8418 keypad carrier serve the left-hand cable bank.
+U6/U7 serve the right-hand audio cable bank. Local power and Sony sense are
+at the lower right. J8 exits at the lower edge beside the left-hand bank.
+All cable connectors are horizontal JST-XH with the original pin numbering.
+
+Use two ESP32-S3-DevKitC-1-N16R8 modules, each with two 1x22 P2.54 mm
+sockets on 22.86 mm centres. Use SN74AHCT125N and SN74AHCT00N PDIP-14
+parts on 7.62 mm row spacing. U5 is Adafruit TCA8418 product 4918, with
+two 13-pin rows at 2.54 mm pitch, 12.70 mm row spacing and a
+35.56 x 17.78 mm module envelope. Verify seated height and orientation.
+
+Wiring and supply review
+------------------------
+GPIO and SN74 gate delta from v2/v3: none. Use the direct map in
+../baseline-v3/GPIO-and-interlock-v3.txt; do not assume firmware already
+implements it. GPIO19/20 (native USB), GPIO35/36/37 (octal PSRAM),
+GPIO48 (DevKitC-1 v1.0 RGB LED), GPIO38 (v1.1 RGB LED) and GPIO43/44
+(USB-UART) are not assigned new functions. See the Espressif DevKitC-1
+v1.0 and v1.1 user guides (including the board schematics):
+https://documentation.espressif.com/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.0.html
+https://documentation.espressif.com/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
+
+The 100k pulldowns default the five active-high ENABLE inputs LOW. The
+AHCT00 gates assert /OE LOW only when ENABLE and SONY_POWER_GOOD are both
+HIGH; the /OE pullups connect to LOCAL_5V, not to ESP outputs. Use the
+specified MCP100-475DI/TO package/pinout and verify its flat-side orientation.
+J12 is Sony 5 V sense only, not a power input; the two supplies share GND.
+
+C9: 470 uF, 16 V Panasonic EEU-FR1C471 (D8 x 11.5 mm, pitch 3.5 mm),
+    LOCAL_5V input reservoir.
+C10/C12: 100 uF, 16 V Panasonic EEU-FR1C101 (D5 x 11 mm, pitch 2 mm).
+C11/C13: 100 nF ceramic (D5 x W2.5 mm, pitch 5 mm).
+C10/C11 are on ESP_CTRL_5V after JP1; C12/C13 are on ESP_AUDIO_5V after
+JP2. Electrolytic pin 1 is positive; pin 2 is GND. JP1/JP2 are removable
+supply shunts, not permanent wire links. Check USB/external power
+isolation, inrush, leakage/back-powering, Sony brownout and both supply
+orders on the bench. The interlock is not supply ORing.
+
+Outstanding electrical review
+-----------------------------
+The schematic still has 63 inherited ERC review items: 47 pin_not_connected,
+10 power_pin_not_driven, 2 pin_not_driven, 3 label_dangling, and
+1 same_local_global_label. None is waived. FLSTB/FLSDATA/FLSCLK-to-J4
+mapping remains unresolved; no mapping was inferred. Verify actual
+Sony harness wiring, passive values, return paths, timing, RF and audio
+performance before applying power. No real-hardware testing has been done.
+
+Connector pins (KiCad pad number order)
+--------------------------------------
+J2  GND, LOCAL_5V
+J3  GND, /FLGDATA, /FLGCLK, /FLCLEAR
+J4  Net-(J4-Pin_1), Net-(J4-Pin_2), Net-(J4-Pin_3)
+J5  GND, /OUT0, /OUT1, /OUT2
+J6  /IN0, /IN1, /IN2, /IN3
+J7  /IN4, /IN5, /IN6, /IN7
+J8  /OUT3, /OUT4, /OUT5
+J9  GND, /A.MUTE, /D.MUTE, /RELAY
+J10 GND, /ATT, /SHIFT, /LATCH, /INIT
+J11 GND, /BCKI, /DATA, /LRCK
+J12 GND, SONY_5V_SENSE

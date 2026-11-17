@@ -421,8 +421,9 @@ def verify_drc(pcbnew, board, links, project, reports):
     board_path = project / f"{STEM}.kicad_pcb"
     positive = drc(board_path, reports / f"{STEM}-DRC.json")
     same_checks(positive, json_file(BASELINE / "DAR-1000ES-v3-DRC.json"), "DRC")
-    for key in ("violations", "unconnected_items", "schematic_parity"):
+    for key in ("violations", "schematic_parity"):
         require(not positive[key], f"Native DRC: {len(positive[key])} {key}; see {reports}")
+    installed = len(positive["unconnected_items"])
 
     variant = reports / "without-installed-bridges"
     variant.mkdir()
@@ -441,8 +442,8 @@ def verify_drc(pcbnew, board, links, project, reports):
     require(pcbnew.SaveBoard(str(negative_path), board), "Could not save negative-test board")
     negative = drc(negative_path, reports / f"{STEM}-DRC-no-installed-bridges.json")
     missing = [item for item in negative["unconnected_items"] if item["severity"] == "error"]
-    require(missing, "No native DRC missing connections after opening all JW wires")
-    return len(missing)
+    require(len(missing) > installed, "Opening all JW wires did not increase native DRC missing connections")
+    return installed, len(missing)
 
 
 def main():
@@ -475,12 +476,15 @@ def main():
             links, board_summary = verify_board(pcbnew, board, parts, pins)
             summary.update(board_summary)
             summary["native_drc_violations"] = 0
-            summary["native_drc_unconnected"] = 0
-            summary["negative_test_unconnected"] = verify_drc(pcbnew, board, links, project, reports)
+            installed, omitted = verify_drc(pcbnew, board, links, project, reports)
+            summary["native_drc_unconnected"] = installed
+            summary["negative_test_unconnected"] = omitted
         summary["review"] = "Inherited ERC issues remain; not electrical or fabrication sign-off."
         output = json.dumps(summary, indent=2) + "\n"
         (reports / "summary.json").write_text(output, encoding="utf-8")
         print(output, end="")
+        require(not summary.get("native_drc_unconnected"),
+                f"Native DRC: {summary.get('native_drc_unconnected')} unconnected items; see {reports}")
         return 0
     except (ValidationError, ImportError, OSError, ValueError, KeyError,
             RuntimeError, ET.ParseError, subprocess.TimeoutExpired) as exc:

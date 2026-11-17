@@ -1,0 +1,148 @@
+{
+  "kicad_version": "10.0.2",
+  "schematic_pins_checked": 310,
+  "inherited_erc_review_items": {
+    "label_dangling": 3,
+    "pin_not_connected": 47,
+    "pin_not_driven": 2,
+    "power_pin_not_driven": 10,
+    "same_local_global_label": 1
+  },
+  "mode": "full",
+  "outline_mm": [
+    100.0,
+    300.0
+  ],
+  "connector_envelopes_mm": {
+    "J2": [
+      87.495,
+      277.555,
+      99.995,
+      285.945
+    ],
+    "J3": [
+      0.005,
+      211.055,
+      12.505,
+      224.445
+    ],
+    "J4": [
+      0.005,
+      228.055,
+      12.505,
+      238.945
+    ],
+    "J5": [
+      0.005,
+      257.055,
+      12.505,
+      270.445
+    ],
+    "J6": [
+      0.005,
+      272.055,
+      12.505,
+      285.445
+    ],
+    "J7": [
+      0.005,
+      286.055,
+      12.505,
+      299.445
+    ],
+    "J8": [
+      17.055,
+      287.495,
+      27.945,
+      299.995
+    ],
+    "J9": [
+      0.005,
+      242.055,
+      12.505,
+      255.445
+    ],
+    "J10": [
+      87.495,
+      235.055,
+      99.995,
+      250.945
+    ],
+    "J11": [
+      87.495,
+      218.555,
+      99.995,
+      231.945
+    ],
+    "J12": [
+      87.495,
+      263.555,
+      99.995,
+      271.945
+    ]
+  },
+  "connector_group_separation_along_axis_mm": 59.55,
+  "esp_module_envelopes_mm": {
+    "U1-CONTROLLER1": [
+      8.235,
+      68.375,
+      65.105,
+      94.765
+    ],
+    "U6-AUDIO1": [
+      34.895,
+      161.235,
+      91.765,
+      187.625
+    ]
+  },
+  "esp_envelope_separation_along_axis_mm": 66.47,
+  "bottom_tracks": 1399,
+  "front_tracks": 0,
+  "vias": 0,
+  "mounting_holes": 6,
+  "bridge_count": 36,
+  "max_bridge_mm": 14.5,
+  "bridge_lengths_mm": {
+    "JW1": 4.0,
+    "JW2": 3.5,
+    "JW3": 7.5,
+    "JW4": 3.0,
+    "JW5": 6.5,
+    "JW6": 2.75,
+    "JW7": 9.25,
+    "JW8": 4.0,
+    "JW9": 4.0,
+    "JW10": 4.0,
+    "JW11": 4.5,
+    "JW12": 4.0,
+    "JW13": 4.0,
+    "JW14": 13.5,
+    "JW15": 4.0,
+    "JW16": 8.0,
+    "JW17": 4.0,
+    "JW18": 4.0,
+    "JW19": 4.0,
+    "JW20": 4.0,
+    "JW21": 4.0,
+    "JW22": 4.0,
+    "JW23": 4.0,
+    "JW24": 4.0,
+    "JW25": 3.5,
+    "JW26": 3.5,
+    "JW27": 4.0,
+    "JW28": 4.0,
+    "JW29": 7.25,
+    "JW30": 3.0,
+    "JW31": 14.5,
+    "JW32": 3.25,
+    "JW33": 8.5,
+    "JW34": 10.5,
+    "JW35": 3.5,
+    "JW36": 9.75
+  },
+  "native_drc_violations": 0,
+  "native_drc_unconnected": 67,
+  "negative_test_unconnected": 103,
+  "review": "Inherited ERC issues remain; not electrical or fabrication sign-off."
+}
