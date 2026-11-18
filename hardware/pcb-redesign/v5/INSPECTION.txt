@@ -40,7 +40,9 @@ source-access limitations and the inboard antenna/substrate concern.
 
 This is not a finished electrical or physical design. C7 is about 70 mm
 from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
-35 mm from U11. Actual decoupling loops, return paths, RF antenna clearance,
+35 mm from U11. The nearest grounded pad need not be the IC ground supply
+pin; these distances do not establish bypass loop lengths. Actual decoupling
+loops, return paths, RF antenna clearance,
 complete module/USB and connector plug/cable envelopes, screwhead/chassis
 fit and solder-mask/iron access remain unverified. The measured minimum
 unrelated track-to-plated-THT-pad gap is 0.201657 mm; see the clearance

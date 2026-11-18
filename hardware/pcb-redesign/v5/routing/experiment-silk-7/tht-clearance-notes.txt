@@ -70,7 +70,9 @@ docker run --rm --network none -v "$PWD:/work:ro" \
 Floorplan and decoupling feasibility, not a completed redesign
 ------------------------------------------------------------
 The existing pad-center report shows C7 to U9 at 70.19 mm supply and
-74.01 mm ground, and C14 to U11 at 34.87 mm supply and 35.88 mm ground.
+74.01 mm to its nearest grounded pad, and C14 to U11 at 34.87 mm supply and
+35.88 mm ground. The report selects the nearest same-net pad, which is not
+necessarily the IC's actual ground supply pin.
 On this trial C7 is centered at (45, 191), U9 at (20, 259), C14 at
 (55, 226), U11 at (46, 260) mm. C5 is already near U9 and R15/JP2 are
 near U11: those occupancies and the existing traces make a simple move

@@ -30,10 +30,12 @@ Evidence
   width. router-b.log records the 30-pass maximum; it finished at pass 14.
   There is no global clearance increase or new custom rule.
 * Pad-center distances (decoupling-b.txt) are C7/U9 4.38 mm supply and
-  4.38 mm ground, versus 70.19/74.01 mm in silk-7; C14/U11 5.73/6.70 mm,
-  versus 34.87/35.88 mm. These are geometric lower bounds: routed loop
-  geometry, inductance, supply/return paths and decoupling effectiveness
-  for C7/C14 are NOT verified.
+  4.38 mm to the nearest grounded U9 pad, versus 70.19/74.01 mm in silk-7;
+  C14/U11 is 5.73/6.70 mm versus 34.87/35.88 mm. The nearest grounded pad
+  is not necessarily the IC ground supply pin: on trial B the 4.38 mm U9
+  pad is a grounded logic input, not GND pin 7. These geometric lower bounds
+  do not establish routed loop geometry, inductance, supply/return paths or
+  decoupling effectiveness.
 * Native KiCad copper-shape measurements, unrelated plated-through-hole
   pads versus tracks/vias on each common copper layer, are in
   trial-b-tht-clearance.json and baseline-tht-clearance.json. Trial B has
