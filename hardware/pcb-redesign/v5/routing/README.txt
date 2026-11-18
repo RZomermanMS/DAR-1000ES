@@ -169,11 +169,27 @@ chassis hardware are not established. They are leads for a future review,
 not evidence that the present placement meets physical requirements.
 
 The silk-7 folder includes provisional KiCad assembly, two-layer routing and
-schematic PDFs. Their first pages were rendered for inspection. The PCB
-pages show the full 100 x 300 mm outline but the assembly references are too
-small to assess comfortably at fit-to-page scale; zoom or better tiled plots
-are needed. The schematic's remaining pages and the routing second page have
-not been fully inspected for legibility.
+schematic PDFs. Visual inspection of assembly page 1 and routing pages 1–2 at
+150 dpi, and enlarged board tiles at 450 dpi, found:
+
+* The full PCB outline is visible on each page; no board artwork was visibly
+  clipped at the PDF page edges. The assembly's yellow component references
+  are very small and low-contrast on white at fit-to-page scale, but examples
+  including U1-CONTROLLER1, U6-AUDIO1, J5–J8, C9/C10/C12 and R4 are readable
+  when enlarged. Hole references H1–H6 touch or intersect the magenta
+  courtyard circles in this composite view. The C12 and JP2 references are
+  close together but individually distinguishable in the enlarged view.
+* Routing page 1 shows red copper; page 2 shows blue copper. Pads and tracks
+  are distinguishable when enlarged, but neither page prints a layer name,
+  component references or net labels, limiting standalone traceability.
+* On all three PCB pages the revision text "v5 experimental" overruns its
+  title-block cell and crosses the right-hand frame line. The text remains
+  visible; the experimental/not-for-fabrication warning itself is readable.
+  These PDFs therefore need improved plotting/layout before use as readable
+  assembly or routing documentation.
+
+The schematic PDF's remaining pages have not been fully inspected. This
+visual review does not establish physical, electrical or fabrication signoff.
 
 ## Focused tests
 
