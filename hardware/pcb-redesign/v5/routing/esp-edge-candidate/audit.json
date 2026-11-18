@@ -1,0 +1,253 @@
+{
+  "sha256": "5673845460e297290b65e6abe500a5d0790fd1cf6a52cc6211d78d1d00863e8b",
+  "authorized_positions_and_pad_geometry_verified": true,
+  "r4_r11_zone_connections_unchanged": true,
+  "zones": [
+    {
+      "layer": "F.Cu",
+      "net": "GND",
+      "filled_polygons": 5
+    },
+    {
+      "layer": "B.Cu",
+      "net": "GND",
+      "filled_polygons": 12
+    }
+  ],
+  "pairs": [
+    {
+      "capacitor": "C1",
+      "capacitor_pad": "1",
+      "ic": "U3",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 15.029,
+      "track_only_shortest_mm": 76.174
+    },
+    {
+      "capacitor": "C1",
+      "capacitor_pad": "2",
+      "ic": "U3",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 3.38,
+      "track_only_shortest_mm": 3.38
+    },
+    {
+      "capacitor": "C2",
+      "capacitor_pad": "1",
+      "ic": "U4",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 15.029,
+      "track_only_shortest_mm": 81.365
+    },
+    {
+      "capacitor": "C2",
+      "capacitor_pad": "2",
+      "ic": "U4",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 3.38,
+      "track_only_shortest_mm": 3.38
+    },
+    {
+      "capacitor": "C3",
+      "capacitor_pad": "1",
+      "ic": "U2",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 3.88,
+      "track_only_shortest_mm": 3.88
+    },
+    {
+      "capacitor": "C3",
+      "capacitor_pad": "2",
+      "ic": "U2",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 15.398,
+      "track_only_shortest_mm": 197.753
+    },
+    {
+      "capacitor": "C4",
+      "capacitor_pad": "1",
+      "ic": "U6",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 3.015,
+      "track_only_shortest_mm": 3.124
+    },
+    {
+      "capacitor": "C4",
+      "capacitor_pad": "2",
+      "ic": "U6",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 14.546,
+      "track_only_shortest_mm": 44.79
+    },
+    {
+      "capacitor": "C5",
+      "capacitor_pad": "1",
+      "ic": "U7",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 15.775,
+      "track_only_shortest_mm": 36.305
+    },
+    {
+      "capacitor": "C5",
+      "capacitor_pad": "2",
+      "ic": "U7",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 4.38,
+      "track_only_shortest_mm": 4.38
+    },
+    {
+      "capacitor": "C6",
+      "capacitor_pad": "1",
+      "ic": "U8",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 5.472,
+      "track_only_shortest_mm": 6.38
+    },
+    {
+      "capacitor": "C6",
+      "capacitor_pad": "2",
+      "ic": "U8",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 17.185,
+      "track_only_shortest_mm": 21.841
+    },
+    {
+      "capacitor": "C7",
+      "capacitor_pad": "1",
+      "ic": "U9",
+      "ic_pin": "14",
+      "net": "LOCAL_5V",
+      "pad_centers_mm": 4.38,
+      "track_only_shortest_mm": 4.38
+    },
+    {
+      "capacitor": "C7",
+      "capacitor_pad": "2",
+      "ic": "U9",
+      "ic_pin": "7",
+      "net": "GND",
+      "pad_centers_mm": 15.775,
+      "track_only_shortest_mm": 35.04
+    },
+    {
+      "capacitor": "C8",
+      "capacitor_pad": "1",
+      "ic": "U10",
+      "ic_pin": "2",
+      "net": "SONY_5V_SENSE",
+      "pad_centers_mm": 7.364,
+      "track_only_shortest_mm": 7.769
+    },
+    {
+      "capacitor": "C8",
+      "capacitor_pad": "2",
+      "ic": "U10",
+      "ic_pin": "3",
+      "net": "GND",
+      "pad_centers_mm": 5.63,
+      "track_only_shortest_mm": 7.179
+    },
+    {
+      "capacitor": "C14",
+      "capacitor_pad": "1",
+      "ic": "U11",
+      "ic_pin": "2",
+      "net": "SONY_5V_SENSE",
+      "pad_centers_mm": 5.73,
+      "track_only_shortest_mm": 7.429
+    },
+    {
+      "capacitor": "C14",
+      "capacitor_pad": "2",
+      "ic": "U11",
+      "ic_pin": "3",
+      "net": "GND",
+      "pad_centers_mm": 6.7,
+      "track_only_shortest_mm": 7.566
+    },
+    {
+      "capacitor": "C10",
+      "capacitor_pad": "1",
+      "ic": "U1-CONTROLLER1",
+      "ic_pin": "J1.21",
+      "net": "ESP_CTRL_5V",
+      "pad_centers_mm": 9.002,
+      "track_only_shortest_mm": 9.746
+    },
+    {
+      "capacitor": "C10",
+      "capacitor_pad": "2",
+      "ic": "U1-CONTROLLER1",
+      "ic_pin": "J1.22",
+      "net": "GND",
+      "pad_centers_mm": 9.006,
+      "track_only_shortest_mm": 10.516
+    },
+    {
+      "capacitor": "C11",
+      "capacitor_pad": "1",
+      "ic": "U1-CONTROLLER1",
+      "ic_pin": "J1.21",
+      "net": "ESP_CTRL_5V",
+      "pad_centers_mm": 4.079,
+      "track_only_shortest_mm": 4.331
+    },
+    {
+      "capacitor": "C11",
+      "capacitor_pad": "2",
+      "ic": "U1-CONTROLLER1",
+      "ic_pin": "J1.22",
+      "net": "GND",
+      "pad_centers_mm": 4.331,
+      "track_only_shortest_mm": 4.688
+    },
+    {
+      "capacitor": "C12",
+      "capacitor_pad": "1",
+      "ic": "U6-AUDIO1",
+      "ic_pin": "J1.21",
+      "net": "ESP_AUDIO_5V",
+      "pad_centers_mm": 7.046,
+      "track_only_shortest_mm": 9.331
+    },
+    {
+      "capacitor": "C12",
+      "capacitor_pad": "2",
+      "ic": "U6-AUDIO1",
+      "ic_pin": "J1.22",
+      "net": "GND",
+      "pad_centers_mm": 10.274,
+      "track_only_shortest_mm": 15.622
+    },
+    {
+      "capacitor": "C13",
+      "capacitor_pad": "1",
+      "ic": "U6-AUDIO1",
+      "ic_pin": "J1.21",
+      "net": "ESP_AUDIO_5V",
+      "pad_centers_mm": 4.079,
+      "track_only_shortest_mm": 4.331
+    },
+    {
+      "capacitor": "C13",
+      "capacitor_pad": "2",
+      "ic": "U6-AUDIO1",
+      "ic_pin": "J1.22",
+      "net": "GND",
+      "pad_centers_mm": 4.331,
+      "track_only_shortest_mm": 4.688
+    }
+  ]
+}

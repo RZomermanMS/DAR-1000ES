@@ -1,0 +1,38 @@
+{
+  "C11": {
+    "at_mm": [
+      62,
+      55
+    ],
+    "angle": 270,
+    "supply_center_mm": 4.079,
+    "ground_center_mm": 4.331
+  },
+  "C10": {
+    "at_mm": [
+      57,
+      56
+    ],
+    "angle": 270,
+    "supply_center_mm": 9.002,
+    "ground_center_mm": 9.006
+  },
+  "C13": {
+    "at_mm": [
+      90,
+      245
+    ],
+    "angle": 90,
+    "supply_center_mm": 4.079,
+    "ground_center_mm": 4.331
+  },
+  "C12": {
+    "at_mm": [
+      90,
+      250
+    ],
+    "angle": 0,
+    "supply_center_mm": 7.046,
+    "ground_center_mm": 10.274
+  }
+}

@@ -1,0 +1,31 @@
+2026-11-18 13:17:03.423 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-18 13:17:03.696 INFO   Hardware: 4 CPU cores, 493 CPU score, 2048 MB RAM
+2026-11-18 13:17:03.698 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-18 13:17:05.035 INFO   [77DDCD\B1B223] Loading board file 'route.dsn'...
+2026-11-18 13:17:05.149 INFO   [77DDCD\B1B223] Job '77DDCD\B1B223' started at 2026-11-18T13:17:05.149088941Z.
+2026-11-18 13:17:05.198 WARN   Design Warning: Board has 8 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 8 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 8 pin-to-pin clearance violations (first 5 shown):
+          - U10.3 [net GND] <-> U10.2 [net SONY_5V_SENSE]
+          - U10.3 [net GND] <-> U10.2 [net SONY_5V_SENSE]
+          - U10.2 [net SONY_5V_SENSE] <-> U10.1 [net SONY_RESET_N_RAW]
+          - U10.2 [net SONY_5V_SENSE] <-> U10.1 [net SONY_RESET_N_RAW]
+          - U11.3 [net GND] <-> U11.2 [net SONY_5V_SENSE]
+          ... and 3 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 8 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-18 13:17:05.231 INFO   [77DDCD\B1B223] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=2.
+2026-11-18 13:17:05.273 INFO   [77DDCD\B1B223] Auto-routing stage started on board '69cbe2894ca81b337d4d2180cee398f3' with baseline score 0.00 for 183 unrouted items.
+2026-11-18 13:17:10.221 INFO   [77DDCD\B1B223] Auto-routing pass #1 on board '69cbe2894ca81b337d4d2180cee398f3' was completed in 4.92 seconds with score 766.23 (32 unrouted and 8 violations), using 4.78 CPU seconds and the job allocated 4.63 GB of memory so far.
+2026-11-18 13:17:11.626 INFO   [77DDCD\B1B223] Auto-routing pass #2 on board 'bf3691b98719ec182813605372e9ef0f' was completed in 1.39 seconds with score 511.23 (67 unrouted and 8 violations), using 5.75 CPU seconds and the job allocated 6.00 GB of memory so far.
+2026-11-18 13:17:13.464 INFO   [77DDCD\B1B223] Auto-routing pass #3 on board '8665a0ff1ff45f8e2db79ca98f323c10' was completed in 1.82 seconds with score 533.08 (64 unrouted and 8 violations), using 7.71 CPU seconds and the job allocated 8.53 GB of memory so far.
+2026-11-18 13:17:16.061 INFO   [77DDCD\B1B223] Auto-routing pass #4 on board 'ffe809f505a672f323d89e29ea8bca33' was completed in 2.58 seconds with score 948.38 (7 unrouted and 8 violations), using 9.63 CPU seconds and the job allocated 10.89 GB of memory so far.
+2026-11-18 13:17:16.775 INFO   [77DDCD\B1B223] Auto-routing pass #5 on board 'a3102f3a2c9d5d93ef6c46d07bf0077c' was completed in 0.70 seconds with score 992.10 (1 unrouted and 8 violations), using 10.61 CPU seconds and the job allocated 12.31 GB of memory so far.
+2026-11-18 13:17:17.014 INFO   [77DDCD\B1B223] Auto-routing pass #6 on board '265b86601c95429666656917117ca402' was completed in 0.22 seconds with score 992.10 (1 unrouted and 8 violations), using 10.61 CPU seconds and the job allocated 12.31 GB of memory so far.
+2026-11-18 13:17:17.091 INFO   [77DDCD\B1B223] Auto-routing pass #7 on board '99dcbc62883b50daa5f638dfa23871fe' was completed in 0.06 seconds with score 999.39 (0 unrouted and 8 violations), using 10.61 CPU seconds and the job allocated 12.31 GB of memory so far.
+2026-11-18 13:17:17.111 INFO   [77DDCD\B1B223] Auto-routing pass #8 on board 'bd0cfbc6a10c7a2efedc7fc1d9dd6c4d' was completed in 0.01 seconds with score 999.39 (0 unrouted and 8 violations), using 10.61 CPU seconds and the job allocated 12.31 GB of memory so far.
+2026-11-18 13:17:17.135 INFO   [77DDCD\B1B223] Auto-routing stage completed: started with 183 unrouted nets, completed in 11.90 seconds, final score: 999.39 (0 unrouted and 8 violations), using 10.61 total CPU seconds, 12.31 GB total allocated, and 215.2 MB peak heap usage.
+2026-11-18 13:17:17.152 INFO   [77DDCD\B1B223] Job '77DDCD\B1B223' finished with state: COMPLETED (elapsed: 12.00 seconds, finished at UTC: 2026-11-18T13:17:17.151999697Z).
+2026-11-18 13:17:17.193 INFO   Saving output file '/home/runner/work/DAR-1000ES/DAR-1000ES/hardware/pcb-redesign/v5/routing/esp-edge-candidate-check/route.ses' (SES)...
+2026-11-18 13:17:17.195 INFO   Successfully saved output file '/home/runner/work/DAR-1000ES/DAR-1000ES/hardware/pcb-redesign/v5/routing/esp-edge-candidate-check/route.ses' (46077 bytes).
