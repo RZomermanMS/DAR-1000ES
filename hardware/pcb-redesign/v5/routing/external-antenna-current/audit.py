@@ -4,13 +4,14 @@ import hashlib
 import importlib.util
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
 import pcbnew as pcb
 
 HERE = Path(__file__).resolve().parent
-R = HERE.parent
+R = Path(os.environ.get("ROUTING_ROOT", HERE.parent))
 sys.path[:0] = [str(R), str(R / "decoupling-trial")]
 import board_ops as ops
 import measure_paths as paths
@@ -74,6 +75,9 @@ for cap, ic in paths.PAIRS.items():
                       "ic_pin": pin, "net": net,
                       "pad_centers_mm": round(pcb.ToMM(round(math.hypot(a.x - b.x, a.y - b.y))), 3),
                       "track_only_shortest_mm": round(pcb.ToMM(round(result[0])), 3) if result else None})
+c8 = next(item for item in pairs if item["capacitor"] == "C8" and item["net"] == "SONY_5V_SENSE")
+if c8["track_only_shortest_mm"] is None or c8["track_only_shortest_mm"] > 7.770:
+    raise ValueError("C8/U10 supply path exceeds 7.770 mm")
 report = {
     "sha256": hashlib.sha256((HERE / "result.kicad_pcb").read_bytes()).hexdigest(),
     "authorized_positions_and_pad_geometry_verified": True,

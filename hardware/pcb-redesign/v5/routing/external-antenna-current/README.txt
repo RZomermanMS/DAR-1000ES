@@ -7,7 +7,7 @@ libraries resolve via ../../DAR1000ES.pretty and ../../DAR1000ES.kicad_sym.
 The unchanged schematic PDF and 59-finding ERC report are in v5/.
 This is one new review checkpoint, not a replacement for prior boards.
 Saved, refilled board SHA-256:
-370c4c2a334d8c117bfada462bda1a3882b12a31b517c66dbeb9a0281cac5a4f
+4c8f37b11bd763e8fd1f9b1dcc80108237feb31861463b5faef0e5c6a775f538
 
 The chosen concept is an external whip connected to each dev board's own
 IPEX connector. This motherboard has no added RF connector, feed, matching
@@ -61,7 +61,10 @@ print legibility before manufacture.
 Routing and verification
 ------------------------
 The source route and zones were removed. Freerouting 2.5.0 generated 700
-segments and 25 vias, all segments at least 0.30 mm. For routing only, all
+segments and 25 vias. A guarded local edit replaces six B.Cu detour
+segments with two F.Cu segments at 0.30 mm for C8/U10, leaving 696 segments
+and 25 vias; all segments are at least 0.30 mm. The prior review board is
+preserved in checkpoint b0e0072. For routing only, all
 netclass clearances were raised to at least 0.30 mm; the source project was
 then restored byte-for-byte before DRC. The router reports eight unfixable
 0.30 mm pin-to-pin clearance warnings at the unchanged U10/U11 close-pitch
@@ -92,8 +95,9 @@ rule. No manufacturing clearance approval is implied.
 Actual bypass paths: audit.json records pad-center and routed track-only
 shortest paths including both power and ground. Supply paths C1-C8, C14,
 C10-C13 are respectively 3.380, 3.380, 3.880, 3.124, 4.380, 6.380,
-4.380, 14.375, 7.429, 15.331, 8.331, 15.331, 8.331 mm. C8 increased
-from 8.396 mm, C6 from 5.472 mm and C10 from 13.731 mm. C13's modeled
+4.380, 7.769, 7.429, 15.331, 8.331, 15.331, 8.331 mm. C8 decreases
+from 14.375 mm in b0e0072 (8.396 mm in placement-current); C6 increased
+from 5.472 mm and C10 from 13.731 mm relative to placement-current. C13's modeled
 ground track-only path increased from 15.168 to 32.637 mm. Other ground
 track-only paths include C1 79.679, C2 75.655, C3 28.767, C4 44.769,
 C5 39.861 and C6 46.060 mm; a plane can provide a different path but the
@@ -120,7 +124,9 @@ official Freerouting 2.5.0 JAR (SHA-256 verified by the script) are required:
 
 The script uses JAVA_HOME/bin/java when JAVA_HOME is nonempty, otherwise
 java from PATH. It requires Java major version 25 and checks it before
-creating the output directory.
+creating the output directory. Alternatively use --local-replay in place
+of the output name to build in this candidate's temporary .replay folder;
+remove that folder after review.
 
 The output sibling must not exist. Source board, source project, netlist
 and JAR hashes are checked. The script re-routes, restores the exact source

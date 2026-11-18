@@ -6,8 +6,12 @@ S=$R/placement-current
 P=$R/external-antenna-current
 NAME=${1:?usage: build.sh external-antenna-REPLAY PATH-TO-FREEROUTING-JAR}
 JAR=${2:?usage: build.sh external-antenna-REPLAY PATH-TO-FREEROUTING-JAR}
-[[ "$NAME" =~ ^external-antenna-[a-zA-Z0-9_-]+$ && "$NAME" != external-antenna-current ]] || { echo "Invalid replay name" >&2; exit 1; }
-O=$R/$NAME
+if [ "$NAME" = "--local-replay" ]; then
+  O=$P/.replay
+else
+  [[ "$NAME" =~ ^external-antenna-[a-zA-Z0-9_-]+$ && "$NAME" != external-antenna-current ]] || { echo "Invalid replay name" >&2; exit 1; }
+  O=$R/$NAME
+fi
 [ ! -e "$O" ] || { echo "Output already exists" >&2; exit 1; }
 if [ -n "${JAVA_HOME:-}" ]; then
   JAVA="$JAVA_HOME/bin/java"
@@ -34,9 +38,14 @@ mkdir -p "$O/.work" "$O/preview"
 trap 'rm -rf "$O/.work"; rm -f "$O/"*.kicad_prl "$O/input.kicad_pcb" "$O/input.kicad_pro" "$O/route.dsn" "$O/route.ses"' EXIT
 cp "$P/edge.py" "$P/audit.py" "$P/render.py" "$O/"
 cp "$S/result.kicad_pro" "$S/"*.kicad_sch "$S/fp-lib-table" "$S/sym-lib-table" "$O/"
+if [ "$NAME" = "--local-replay" ]; then
+  sed -i 's|../../DAR1000ES.pretty|../../../DAR1000ES.pretty|' "$O/fp-lib-table"
+  sed -i 's|../../DAR1000ES.kicad_sym|../../../DAR1000ES.kicad_sym|' "$O/sym-lib-table"
+fi
 run() {
   docker run --rm --network none --user "$(id -u):$(id -g)" \
     -e HOME="/work/$O/.work" -e TMPDIR="/work/$O/.work" -e PYTHONDONTWRITEBYTECODE=1 \
+    -e ROUTING_ROOT="/work/$R" \
     -v "$PWD:/work:ro" -v "$PWD/$O:/work/$O:rw" -w /work --entrypoint "$1" "$IMAGE" "${@:2}"
 }
 run /usr/bin/python3 "$O/edge.py" prepare

@@ -1,7 +1,7 @@
 {
   "tht_pad_count": 319,
-  "track_via_count": 725,
-  "unrelated_layer_pairs_examined": 230014,
+  "track_via_count": 721,
+  "unrelated_layer_pairs_examined": 228758,
   "minimum": {
     "clearance_mm": 0.301699,
     "layer": "F.Cu",
@@ -394,34 +394,6 @@
           100.5483
         ],
         "uuid": "0cacc943-ea88-4cae-b1dd-50be5d2caa88"
-      }
-    },
-    {
-      "clearance_mm": 0.3017,
-      "layer": "B.Cu",
-      "pad": {
-        "ref": "U10",
-        "number": "3",
-        "net": "GND",
-        "position_mm": [
-          50.54,
-          102.0
-        ],
-        "uuid": "58a02559-fefd-4819-914f-420454f3bf9f"
-      },
-      "item": {
-        "type": "track",
-        "net": "SONY_5V_SENSE",
-        "width_mm": 0.3,
-        "start_mm": [
-          50.9585,
-          103.2017
-        ],
-        "end_mm": [
-          49.27,
-          103.2017
-        ],
-        "uuid": "7380dafb-98ae-413e-b849-6c337d4bdd0b"
       }
     },
     {
@@ -1346,34 +1318,6 @@
           58.2534
         ],
         "uuid": "dcd6a67a-33b6-4444-8b30-e0d5594d6c1f"
-      }
-    },
-    {
-      "clearance_mm": 0.311555,
-      "layer": "B.Cu",
-      "pad": {
-        "ref": "U10",
-        "number": "3",
-        "net": "GND",
-        "position_mm": [
-          50.54,
-          102.0
-        ],
-        "uuid": "58a02559-fefd-4819-914f-420454f3bf9f"
-      },
-      "item": {
-        "type": "track",
-        "net": "SONY_5V_SENSE",
-        "width_mm": 0.3,
-        "start_mm": [
-          51.5613,
-          102.5989
-        ],
-        "end_mm": [
-          50.9585,
-          103.2017
-        ],
-        "uuid": "ab523224-8f32-48a8-940e-6f5615b4db0f"
       }
     },
     {
@@ -5773,34 +5717,6 @@
       }
     },
     {
-      "clearance_mm": 0.3463,
-      "layer": "B.Cu",
-      "pad": {
-        "ref": "U10",
-        "number": "3",
-        "net": "GND",
-        "position_mm": [
-          50.54,
-          102.0
-        ],
-        "uuid": "58a02559-fefd-4819-914f-420454f3bf9f"
-      },
-      "item": {
-        "type": "track",
-        "net": "SONY_5V_SENSE",
-        "width_mm": 0.3,
-        "start_mm": [
-          51.5613,
-          100.3149
-        ],
-        "end_mm": [
-          51.5613,
-          102.5989
-        ],
-        "uuid": "2f93e151-b68f-4f23-bc82-48e884da11f2"
-      }
-    },
-    {
       "clearance_mm": 0.3477,
       "layer": "B.Cu",
       "pad": {
@@ -9105,5 +9021,5 @@
       }
     }
   ],
-  "board_sha256": "370c4c2a334d8c117bfada462bda1a3882b12a31b517c66dbeb9a0281cac5a4f"
+  "board_sha256": "4c8f37b11bd763e8fd1f9b1dcc80108237feb31861463b5faef0e5c6a775f538"
 }

@@ -4,7 +4,8 @@ Current external-whip review candidate (not fabrication/power approval):
   routing/external-antenna-current/result.kicad_pcb
 Open with its adjacent project, schematic sheets and library tables.
 Its README, reports and preview/ document the fresh 0.30 mm route,
-native refill DRC/parity and read-only recheck, bypass-path regressions,
+native refill DRC/parity and read-only recheck, the local C8 supply-path
+improvement and remaining bypass-path regressions,
 conditional body/USB boxes, clearance scope and unresolved IPEX/selector,
 mechanical, RF and electrical blockers. The external whip is intended to
 connect to the dev board's own IPEX, with no motherboard antenna circuit

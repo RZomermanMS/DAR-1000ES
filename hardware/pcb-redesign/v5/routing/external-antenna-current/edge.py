@@ -3,13 +3,14 @@
 import importlib.util
 import json
 import math
+import os
 import re
 import sys
 from pathlib import Path
 
 import pcbnew as pcb
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(os.environ.get("ROUTING_ROOT", Path(__file__).resolve().parent.parent))
 V5 = ROOT.parent
 SOURCE = ROOT / "placement-current/result.kicad_pcb"
 OUT = Path(__file__).resolve().parent
@@ -99,12 +100,58 @@ def finish():
     segments = [t for t in tracks if not isinstance(t, pcb.PCB_VIA)]
     if not segments or min(t.GetWidth() for t in segments) < pcb.FromMM(.30):
         raise ValueError("Missing or undersized tracks")
+    held_tracks = improve_c8(board)
     source = pcb.LoadBoard(str(SOURCE))
     for zone in source.Zones():
         if not zone.GetIsRuleArea():
             board.Add(pcb.ZONE(zone))
     pcb.SaveBoard(str(OUT / "result.kicad_pcb"), board)
+    assert held_tracks
     print(f"Imported {len(segments)} segments, {len(tracks) - len(segments)} vias")
+
+
+def improve_c8(board):
+    def point(xy):
+        return pcb.VECTOR2I(pcb.FromMM(xy[0]), pcb.FromMM(xy[1]))
+
+    def coordinates(vector):
+        return (vector.x, vector.y)
+
+    old_points = [(45, 96), (47.2464, 96), (51.5613, 100.3149),
+                  (51.5613, 102.5989), (50.9585, 103.2017),
+                  (49.27, 103.2017), (49.27, 102)]
+    new_points = [(45, 96), (49.27, 100.27), (49.27, 102)]
+    fps = {f.GetReference(): f for f in board.GetFootprints()}
+    for ref, number, expected in (("C8", "1", new_points[0]),
+                                  ("U10", "2", new_points[-1])):
+        matches = [p for p in fps[ref].Pads() if p.GetNumber() == number]
+        if (len(matches) != 1 or matches[0].GetPosition() != point(expected)
+                or matches[0].GetNetname() != "SONY_5V_SENSE"):
+            raise ValueError(f"{ref}.{number} placement or net changed")
+    tracks = list(board.GetTracks())
+    removed = []
+    for a, b in zip(old_points, old_points[1:]):
+        endpoints = {coordinates(point(a)), coordinates(point(b))}
+        found = [t for t in tracks if type(t) == pcb.PCB_TRACK
+                 and t.GetNetname() == "SONY_5V_SENSE" and t.GetLayer() == pcb.B_Cu
+                 and t.GetWidth() == pcb.FromMM(.30)
+                 and {coordinates(t.GetStart()), coordinates(t.GetEnd())} == endpoints]
+        if len(found) != 1:
+            raise ValueError("C8 original detour differs from expected topology")
+        removed.append(found[0])
+    for track in removed:
+        board.Remove(track)
+    net = board.FindNet("SONY_5V_SENSE")
+    for a, b in zip(new_points, new_points[1:]):
+        track = pcb.PCB_TRACK(board)
+        track.SetStart(point(a))
+        track.SetEnd(point(b))
+        track.SetLayer(pcb.F_Cu)
+        track.SetWidth(pcb.FromMM(.30))
+        track.SetNet(net)
+        board.Add(track)
+    print("Replaced C8/U10 B.Cu detour with guarded 0.30 mm F.Cu path.")
+    return tracks
 
 
 def tidy():

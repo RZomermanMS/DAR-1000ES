@@ -1,5 +1,5 @@
 {
-  "sha256": "370c4c2a334d8c117bfada462bda1a3882b12a31b517c66dbeb9a0281cac5a4f",
+  "sha256": "4c8f37b11bd763e8fd1f9b1dcc80108237feb31861463b5faef0e5c6a775f538",
   "authorized_positions_and_pad_geometry_verified": true,
   "r4_r11_zone_connections_unchanged": true,
   "zones": [
@@ -148,7 +148,7 @@
       "ic_pin": "2",
       "net": "SONY_5V_SENSE",
       "pad_centers_mm": 7.364,
-      "track_only_shortest_mm": 14.375
+      "track_only_shortest_mm": 7.769
     },
     {
       "capacitor": "C8",
