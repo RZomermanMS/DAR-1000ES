@@ -17,6 +17,7 @@ decoupling impedance, or hardware operation.
 """
 
 import argparse
+import math
 from collections import Counter
 import json
 from pathlib import Path
@@ -40,9 +41,19 @@ SCREW_RADIUS = 3 * IU  # assumed 6 mm M3 screwhead envelope
 LINK_RE = re.compile(r"JW([1-9][0-9]*)")
 HOLE_RE = re.compile(r"H[1-9][0-9]*")
 CONNECTORS = tuple(f"J{n}" for n in range(2, 13))
-CONTROL_CONNECTORS = tuple(f"J{n}" for n in range(3, 10))
-AUDIO_CONNECTORS = ("J10", "J11")
+CONTROL_CONNECTORS = ("J3", "J4", "J5", "J6", "J7", "J8")
+AUDIO_CONNECTORS = ("J9", "J10", "J11")
 ESP_REFS = ("U1-CONTROLLER1", "U6-AUDIO1")
+CONTROL_PARTS = (*CONTROL_CONNECTORS, ESP_REFS[0], "U3", "U4", "U5", "U8",
+                 "JP1", "C2", "C3", "C6", "C10", "C11", "R2", "R3", "R4", "R8", "R9")
+AUDIO_PARTS = (*AUDIO_CONNECTORS, ESP_REFS[1], "U2", "U6", "U7", "U9",
+               "JP2", "C1", "C4", "C5", "C7", "C12", "C13", "R1", "R5", "R6", "R7", "R10", "R11")
+NAND_REALLOCATION = {
+    ("U8", "1"): "GND", ("U8", "2"): "GND",
+    ("U8", "3"): "unconnected-(U8-1Y-Pad3)",
+    ("U9", "8"): "U2_OE_N", ("U9", "9"): "ENABLE_U2",
+    ("U9", "10"): "SONY_POWER_GOOD",
+}
 
 
 class ValidationError(Exception):
@@ -140,13 +151,16 @@ def same_checks(report, baseline, label):
             f"{label}: native report omitted one or more severity classes")
 
 
-def verify_schematic(project, reports):
+def verify_schematic(project, reports, separated=False):
     sch = project / f"{STEM}.kicad_sch"
     netlist = reports / f"{STEM}-netlist.xml"
     erc_path = reports / f"{STEM}-ERC.json"
     cli("sch", "export", "netlist", "--format", "kicadxml", "-o", netlist, sch)
     cli("sch", "erc", "--format", "json", "--severity-all", "-o", erc_path, sch)
     expected_parts, expected_pins = read_netlist(REFERENCE / "pcb-v3-netlist.xml")
+    if separated:
+        for pin, net in NAND_REALLOCATION.items():
+            expected_pins[pin] = (net, expected_pins[pin][1])
     parts, nodes = read_netlist(netlist)
     compare(parts, expected_parts, "Schematic refs/values/footprints vs golden v3")
     compare(nodes, expected_pins, "Schematic pins/nets/functions vs golden v3")
@@ -260,6 +274,29 @@ def body_envelope(pcbnew, fp):
     return union(boxes)
 
 
+def module_access(fp):
+    # Planning allowances beyond the antenna and USB ends, not mechanical qualification.
+    x, y = xy(fp.GetPosition())
+    angle = math.radians(fp.GetOrientationDegrees())
+    c, s = math.cos(angle), math.sin(angle)
+    for l, t, r, b in [(-5, -12, 28, 2), (4, 54, 19, 84)]:
+        corners = [(round(x + (u*c + v*s)*IU), round(y + (v*c - u*s)*IU))
+                   for u in (l, r) for v in (t, b)]
+        yield union([(a, b, a, b) for a, b in corners])
+
+
+def functional_channels(pcbnew, footprints, pins):
+    control_limit = max(body_envelope(pcbnew, footprints[ref])[2] for ref in CONTROL_PARTS)
+    audio_limit = min(body_envelope(pcbnew, footprints[ref])[0] for ref in AUDIO_PARTS)
+    refs_by_net = {}
+    for (ref, _), net in pins.items():
+        if net:
+            refs_by_net.setdefault(net, set()).add(ref)
+    control, audio = set(CONTROL_PARTS), set(AUDIO_PARTS)
+    return {net: (0, audio_limit - IU) if refs <= control else (control_limit + IU, WIDTH)
+            for net, refs in refs_by_net.items() if refs <= control or refs <= audio}
+
+
 def verify_connectors(pcbnew, footprints, bodies):
     regions = {}
     for ref in CONNECTORS:
@@ -351,7 +388,7 @@ def verify_bridges(pcbnew, links, pins, obstructions, silk):
     return lengths
 
 
-def verify_board(pcbnew, board, parts, pins):
+def verify_board(pcbnew, board, parts, pins, separated=False, placement_only=False):
     fps = unique(((f.GetReference(), f) for f in board.GetFootprints()), "board footprint reference")
     require(not (parts.keys() - fps.keys()),
             f"Missing schematic footprints: {sorted(parts.keys() - fps.keys())}")
@@ -370,7 +407,10 @@ def verify_board(pcbnew, board, parts, pins):
     pad_map(pcbnew, fps, parts, pins)
     verify_outline(pcbnew, board)
     tracks = list(board.GetTracks())
-    require(tracks, "No routed tracks")
+    if placement_only:
+        require(not tracks and not links, "Placement-only check requires an unrouted board")
+    else:
+        require(tracks, "No routed tracks")
     require(board.GetCopperLayerCount() == 2, "Expected a two-layer board stackup")
     require(not any(isinstance(t, pcbnew.PCB_VIA) for t in tracks), "Routing via found")
     require(all(t.GetLayer() == pcbnew.B_Cu for t in tracks), "Track found off B.Cu")
@@ -389,11 +429,30 @@ def verify_board(pcbnew, board, parts, pins):
         radius = max(SCREW_RADIUS, max(xy(pad.GetDrillSize())) // 2)
         bodies[ref] = (x - radius, y - radius, x + radius, y + radius)
     insertion = verify_connectors(pcbnew, fps, bodies)
-    connector_gap = axis_gap(union([bodies[ref] for ref in CONTROL_CONNECTORS]),
-                             union([bodies[ref] for ref in AUDIO_CONNECTORS]))
+    control_connectors = CONTROL_CONNECTORS if separated else (*CONTROL_CONNECTORS, "J9")
+    audio_connectors = AUDIO_CONNECTORS if separated else ("J10", "J11")
+    connector_gap = axis_gap(union([bodies[ref] for ref in control_connectors]),
+                             union([bodies[ref] for ref in audio_connectors]))
     require(connector_gap > 0, "Controller and audio connector group envelopes are not separated")
-    obstructions = list(bodies.items()) + [(f"{ref} mating path", b) for ref, b in insertion.items()]
-    lengths = verify_bridges(pcbnew, links, pins, obstructions, list(top_silk(pcbnew, board, fps)))
+    control = union([bodies[ref] for ref in CONTROL_PARTS])
+    audio = union([bodies[ref] for ref in AUDIO_PARTS])
+    block_gap = audio[0] - control[2]
+    if separated:
+        require(block_gap >= 10 * IU, "Less than 10 mm between the control and audio assembly blocks")
+    channels = functional_channels(pcbnew, fps, pins) if separated else {}
+    excursions = set()
+    for track in tracks:
+        net = track.GetNetname()
+        if net in channels:
+            left, right = channels[net]
+            xs = [p.x for p in (track.GetStart(), track.GetEnd())]
+            if min(xs) - track.GetWidth() / 2 < left or max(xs) + track.GetWidth() / 2 > right:
+                excursions.add(net)
+    access = [(f"{ref} antenna/USB allowance", b)
+              for ref in ESP_REFS for b in module_access(fps[ref])] if separated else []
+    obstructions = list(bodies.items()) + [(f"{ref} mating path", b) for ref, b in insertion.items()] + access
+    lengths = {} if placement_only else verify_bridges(
+        pcbnew, links, pins, obstructions, list(top_silk(pcbnew, board, fps)))
     summary = {
         "outline_mm": [WIDTH / IU, LENGTH / IU],
         "connector_envelopes_mm": {ref: box_mm(bodies[ref]) for ref in CONNECTORS},
@@ -405,9 +464,14 @@ def verify_board(pcbnew, board, parts, pins):
         "vias": 0,
         "mounting_holes": len(fps) - len(parts) - len(links),
         "bridge_count": len(links),
-        "max_bridge_mm": max(lengths.values()),
+        "max_bridge_mm": max(lengths.values(), default=0),
         "bridge_lengths_mm": lengths,
     }
+    if separated:
+        summary.update(control_component_block_mm=box_mm(control),
+                       audio_component_block_mm=box_mm(audio),
+                       component_block_gap_mm=block_gap / IU,
+                       nets_outside_local_routing_channels=sorted(excursions))
     return links, summary
 
 
@@ -451,8 +515,13 @@ def main():
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--project", type=Path, default=HERE, help="v4 project directory")
     parser.add_argument("--reports", type=Path, required=True, help="new output directory")
-    parser.add_argument("--schematic-only", action="store_true",
-                        help="run schematic checks during bring-up; not full validation")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--schematic-only", action="store_true",
+                      help="run schematic checks during bring-up; not full validation")
+    mode.add_argument("--placement-only", action="store_true",
+                      help="check an unrouted board; not full validation")
+    parser.add_argument("--separated", action="store_true",
+                        help="check the separated-layout NAND delta and functional envelopes")
     args = parser.parse_args()
     project, reports = args.project.resolve(), args.reports.resolve()
     try:
@@ -468,22 +537,31 @@ def main():
         for suffix in required:
             require((project / f"{STEM}{suffix}").is_file(), f"Missing input: {STEM}{suffix} in {project}")
         reports.mkdir(parents=True)
-        parts, pins, erc = verify_schematic(project, reports)
+        parts, pins, erc = verify_schematic(project, reports, args.separated)
+        check_mode = "schematic-only" if args.schematic_only else "placement-only" if args.placement_only else "full"
         summary = {"kicad_version": cli_version, "schematic_pins_checked": len(pins),
-                   "inherited_erc_review_items": erc, "mode": "schematic-only" if args.schematic_only else "full"}
+                   "inherited_erc_review_items": erc, "mode": check_mode}
         if not args.schematic_only:
             board = load_board(pcbnew, project / f"{STEM}.kicad_pcb")
-            links, board_summary = verify_board(pcbnew, board, parts, pins)
+            links, board_summary = verify_board(pcbnew, board, parts, pins, args.separated,
+                                               args.placement_only)
             summary.update(board_summary)
             summary["native_drc_violations"] = 0
-            installed, omitted = verify_drc(pcbnew, board, links, project, reports)
-            summary["native_drc_unconnected"] = installed
-            summary["negative_test_unconnected"] = omitted
+            if args.placement_only:
+                report = drc(project / f"{STEM}.kicad_pcb", reports / f"{STEM}-DRC.json")
+                same_checks(report, json_file(BASELINE / "DAR-1000ES-v3-DRC.json"), "DRC")
+                require(not report["violations"] and not report["schematic_parity"],
+                        f"Placement DRC failed; see {reports}")
+                summary["native_drc_unconnected"] = len(report["unconnected_items"])
+            else:
+                installed, omitted = verify_drc(pcbnew, board, links, project, reports)
+                summary["native_drc_unconnected"] = installed
+                summary["negative_test_unconnected"] = omitted
         summary["review"] = "Inherited ERC issues remain; not electrical or fabrication sign-off."
         output = json.dumps(summary, indent=2) + "\n"
         (reports / "summary.json").write_text(output, encoding="utf-8")
         print(output, end="")
-        require(not summary.get("native_drc_unconnected"),
+        require(args.placement_only or not summary.get("native_drc_unconnected"),
                 f"Native DRC: {summary.get('native_drc_unconnected')} unconnected items; see {reports}")
         return 0
     except (ValidationError, ImportError, OSError, ValueError, KeyError,

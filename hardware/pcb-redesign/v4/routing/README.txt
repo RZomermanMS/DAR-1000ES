@@ -43,9 +43,44 @@ For a fresh route, use --fresh to omit the saved copper and wires. Add
 controller buffer placement; supply that same flag and path on import.
 The alternative placement passed native DRC with no tracks installed.
 
+Functionally separated placement trial
+-------------------------------------
+separated-blocks.txt groups J9/U2 mute and relay with the audio ESP, DAC/PCM
+buffers, audio passives and J10/J11. U3/U4/U5 and J3–J8 stay on the left.
+J2, J12, C8/C9, U10 and R12/R13 are shared support, not isolated supplies.
+The NAND change moves ENABLE_U2/SONY_POWER_GOOD/U2_OE_N from U8 pins
+1/2/3 to U9 pins 9/10/8. Former U8 inputs 1/2 tie to GND and pin 3 is
+explicitly unconnected. The other four gates, connector and ESP pins,
+capacitor rails and firmware are unchanged. The importer installs the
+matching separated-interlock sheet only in the candidate directory.
+
+    : > /tmp/dar-empty.txt
+    /usr/bin/python3 routing/kicad_route.py DAR-1000ES-v4.kicad_pcb \
+        --placement routing/separated-blocks.txt --routes /tmp/dar-empty.txt \
+        --output /tmp/dar-separated-placement
+    /usr/bin/python3 verify.py --separated --placement-only \
+        --project /tmp/dar-separated-placement --reports /tmp/dar-placement-reports
+    /usr/bin/python3 routing/kicad_route.py DAR-1000ES-v4.kicad_pcb \
+        --fresh --channels --placement routing/separated-blocks.txt > /tmp/dar-separated.in
+    /tmp/dar-route --order long --seed 41 --escape 24 --attempts 8 \
+        --passes 13 --budget 42000 --bridge-penalty 2.5 \
+        --checkpoint /tmp/dar-separated-best.txt \
+        < /tmp/dar-separated.in > /tmp/dar-separated-routes.txt
+    /usr/bin/python3 routing/kicad_route.py DAR-1000ES-v4.kicad_pcb \
+        --placement routing/separated-blocks.txt --routes /tmp/dar-separated-routes.txt \
+        --output /tmp/dar-separated-routed --trim-dangling
+    /usr/bin/python3 verify.py --separated \
+        --project /tmp/dar-separated-routed --reports /tmp/dar-separated-reports
+
+The placement-only run checks physical placement and parity, not routing
+completion. Channels allow local nets to use part of the central gap, but
+not the opposite assembly block. Cross-block nets and common power and
+ground have no artificial channel boundary or split.
+
 Routing interchange (millimetres, top-view world coordinates):
 
     width NET WIDTH
+    channel NET MIN_X MAX_X
     pad NET X Y HALF_WIDTH HALF_HEIGHT
     block MIN_X MIN_Y MAX_X MAX_Y
     segment NET X1 Y1 X2 Y2

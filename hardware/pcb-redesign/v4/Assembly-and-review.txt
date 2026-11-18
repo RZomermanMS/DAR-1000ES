@@ -16,6 +16,9 @@ open count from 67 to 26. The remaining opens include U2/U6/U7 /OE,
 ENABLE_U6, ENABLE_U7, LOCAL_5V, display, keypad and audio signals; use the
 native report for exact endpoints. See routing/README.txt for the routing
 tools. The repositioned controller trial did not beat this placement.
+The functionally separated placement trial and its matching NAND sheet
+are reproducible from routing/README.txt. They are not installed on this
+26-open checkpoint; keep the two netlists and layouts distinct.
 
 The saved draft has 1,975 B.Cu segments, no F.Cu tracks, no routing vias
 and 82 board-only JW links at 2.75–15.00 mm pitch. Each link has two

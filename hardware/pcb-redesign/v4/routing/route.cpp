@@ -112,6 +112,7 @@ struct World {
     std::vector<Box> blocks;
     std::vector<Route> routes;
     std::map<int,double> widths;
+    std::map<int,std::pair<double,double>> channels;
     std::map<int,std::vector<int>> pins;
     std::vector<Copper> copper;
     std::vector<Box> top;
@@ -141,6 +142,9 @@ struct World {
     bool clear(int net, P a,P b,double r,std::map<int,int>* hits=nullptr,
                std::vector<int>* conflicts=nullptr,bool terminal=false) const {
         if (!inside(a,r) || !inside(b,r)) return false;
+        if (const auto i=channels.find(net); i!=channels.end())
+            if (std::min(a.x,b.x)-r<i->second.first ||
+                std::max(a.x,b.x)+r>i->second.second) return false;
         const Box box=bounds(a,b,r+GAP);
         return bottom.visit(box,[&](int i) {
             const auto& c=copper[i];
@@ -538,6 +542,11 @@ void load(World& w) {
             P a,b;
             if (!(in>>a.x>>a.y>>b.x>>b.y) || !valid(a) || !valid(b)) bad();
             w.blocks.push_back(bounds(a,b));
+        } else if (kind=="channel") {
+            int net; double left,right;
+            if (!(in>>net>>left>>right) || net<=0 || !std::isfinite(left) ||
+                !std::isfinite(right) || left<0 || right>W || left>=right) bad();
+            w.channels[net]={left,right};
         } else if (kind=="width") {
             int net; double width;
             if (!(in>>net>>width) || net<=0 || !std::isfinite(width) || width<=0 || width>=W) bad();

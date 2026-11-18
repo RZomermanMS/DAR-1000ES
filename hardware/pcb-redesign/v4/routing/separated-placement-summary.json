@@ -1,0 +1,124 @@
+{
+  "kicad_version": "10.0.2",
+  "schematic_pins_checked": 310,
+  "inherited_erc_review_items": {
+    "label_dangling": 3,
+    "pin_not_connected": 47,
+    "pin_not_driven": 2,
+    "power_pin_not_driven": 10,
+    "same_local_global_label": 1
+  },
+  "mode": "placement-only",
+  "outline_mm": [
+    100.0,
+    300.0
+  ],
+  "connector_envelopes_mm": {
+    "J2": [
+      65.055,
+      287.495,
+      73.445,
+      299.995
+    ],
+    "J3": [
+      0.005,
+      211.055,
+      12.505,
+      224.445
+    ],
+    "J4": [
+      0.005,
+      228.055,
+      12.505,
+      238.945
+    ],
+    "J5": [
+      0.005,
+      257.055,
+      12.505,
+      270.445
+    ],
+    "J6": [
+      0.005,
+      272.055,
+      12.505,
+      285.445
+    ],
+    "J7": [
+      0.005,
+      286.055,
+      12.505,
+      299.445
+    ],
+    "J8": [
+      17.055,
+      287.495,
+      27.945,
+      299.995
+    ],
+    "J9": [
+      87.495,
+      210.555,
+      99.995,
+      223.945
+    ],
+    "J10": [
+      87.495,
+      246.055,
+      99.995,
+      261.945
+    ],
+    "J11": [
+      87.495,
+      228.555,
+      99.995,
+      241.945
+    ],
+    "J12": [
+      52.055,
+      287.495,
+      60.445,
+      299.995
+    ]
+  },
+  "connector_group_separation_along_axis_mm": 59.55,
+  "esp_module_envelopes_mm": {
+    "U1-CONTROLLER1": [
+      10.235,
+      6.235,
+      36.625,
+      63.105
+    ],
+    "U6-AUDIO1": [
+      62.235,
+      6.235,
+      88.625,
+      63.105
+    ]
+  },
+  "esp_envelope_separation_along_axis_mm": 25.61,
+  "bottom_tracks": 0,
+  "front_tracks": 0,
+  "vias": 0,
+  "mounting_holes": 6,
+  "bridge_count": 0,
+  "max_bridge_mm": 0,
+  "bridge_lengths_mm": {},
+  "control_component_block_mm": [
+    0.005,
+    6.235,
+    43.045,
+    299.995
+  ],
+  "audio_component_block_mm": [
+    57.505,
+    6.235,
+    99.995,
+    261.945
+  ],
+  "component_block_gap_mm": 14.46,
+  "nets_outside_local_routing_channels": [],
+  "native_drc_violations": 0,
+  "native_drc_unconnected": 175,
+  "review": "Inherited ERC issues remain; not electrical or fabrication sign-off."
+}

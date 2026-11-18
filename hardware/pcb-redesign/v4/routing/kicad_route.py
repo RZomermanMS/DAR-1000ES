@@ -51,21 +51,23 @@ def obstacles(board, parts):
     insertion = verify.verify_connectors(pcb, parts, bodies)
     # Planning envelopes, not dimensional approval: provide antenna and USB
     # access beyond the horizontal socket ends. No wire may cross them.
-    module_access = [
-        tuple(round(v * verify.IU) for v in box)
-        for box in [(0, 64, 12, 98), (65, 73, 100, 91),
-                    (88, 157, 100, 192), (0, 166, 35, 182)]
-    ]
+    module_access = [b for ref in verify.ESP_REFS for b in verify.module_access(parts[ref])]
     return [*bodies.values(), *insertion.values(), *module_access,
             *(bounds for _, bounds in verify.top_silk(pcb, board, parts))]
 
 
-def export(board, fresh):
+def export(board, fresh, channels=False):
     footprints = {fp.GetReference(): fp for fp in board.GetFootprints()}
     parts = {ref: fp for ref, fp in footprints.items() if not verify.LINK_RE.fullmatch(ref)}
     nets = routing_nets(parts.values())
     for name, net in nets.items():
         emit("width", net, 0.8 if name in POWER else 0.3)
+    if channels:
+        pins = {(ref, p.GetNumber()): p.GetNetname()
+                for ref, fp in parts.items() for p in fp.Pads()}
+        for name, channel in verify.functional_channels(pcb, parts, pins).items():
+            if name in nets:
+                emit("channel", nets[name], *mm(channel))
     for ref in sorted(parts):
         for pad in sorted(parts[ref].Pads(), key=lambda p: p.GetNumber()):
             x1, y1, x2, y2 = mm(verify.bounds(pad.GetBoundingBox()))
@@ -143,6 +145,10 @@ def build(source, routes, output, placement):
     board = unroute(source, dest)
     if placement:
         place(board, placement)
+        if any(line.partition("#")[0].strip() == "nand-reallocation"
+               for line in placement.read_text().splitlines()):
+            shutil.copyfile(Path(__file__).with_name("separated-interlock.kicad_sch"),
+                            output / f"{source.stem}-interlock.kicad_sch")
     parts = {fp.GetReference(): fp for fp in board.GetFootprints()}
     blocked = obstacles(board, parts)
     nets = {i: board.FindNet(name) for name, i in routing_nets(parts.values()).items()}
@@ -245,6 +251,20 @@ def place(board, placement):
         fields = line.partition("#")[0].split()
         if not fields:
             continue
+        if fields == ["nand-reallocation"]:
+            for (ref, number), name in verify.NAND_REALLOCATION.items():
+                net = board.FindNet(name)
+                if net is None:
+                    net = pcb.NETINFO_ITEM(board, name)
+                    board.Add(net)
+                next(p for p in parts[ref].Pads() if p.GetNumber() == number).SetNet(net)
+            continue
+        if fields[0] == "label":
+            _, x, y, text = line.split(maxsplit=3)
+            label = next(d for d in board.GetDrawings()
+                         if isinstance(d, pcb.PCB_TEXT) and d.GetText() == text)
+            label.SetPosition(point(float(x), float(y)))
+            continue
         ref, x, y, angle = fields
         if ref not in parts or verify.LINK_RE.fullmatch(ref):
             raise ValueError(f"Unknown placement reference {ref}")
@@ -260,6 +280,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("board", type=Path)
     parser.add_argument("--fresh", action="store_true", help="Export only coarse and physical obstacles, no existing routes")
+    parser.add_argument("--channels", action="store_true", help="Keep local nets out of the opposite functional block")
     parser.add_argument("--placement", type=Path, help="Override placement using ref x y angle records")
     parser.add_argument("--routes", type=Path, help="Build a candidate from these routing records")
     parser.add_argument("--output", type=Path, help="New candidate project directory")
@@ -279,7 +300,7 @@ def main():
         board = verify.load_board(pcb, args.board)
         if args.placement:
             place(board, args.placement)
-        export(board, args.fresh)
+        export(board, args.fresh, args.channels)
 
 
 if __name__ == "__main__":
