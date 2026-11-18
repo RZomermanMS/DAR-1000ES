@@ -16,11 +16,20 @@ Experimental alternate only (does not replace placement-current):
   routing/esp-edge-candidate/result.kicad_pcb
 Its README.txt, audit.json and preview/ identify the revised ESP socket
 orientations, native reports, fitted PDFs, rendered PNGs and controller/audio
-closeups. The installed manufacturer/devkit revision, antenna offset and body
-dimensions are unverified, and this alternate has no antenna rule areas.
-The modeled antenna projection outside the PCB is therefore not verified RF
-clearance. GND return loops, soldering and physical fit remain unresolved.
-This alternate is not approved for fabrication, assembly or power.
+closeups. The installed devkit and module variant, antenna offset and
+clearance remain unverified, and this alternate has no antenna rule areas.
+Its historical assumed antenna projection is not verified RF clearance.
+GND return loops, soldering and physical fit remain unresolved.
+This alternate is not approved for fabrication, assembly or power. Its
+original geometry assumptions are superseded; see its README warning.
+
+Geometry-only alternate (does not replace placement-current):
+  routing/esp-reference-candidate/result.kicad_pcb
+This preserves the edge candidate's placement and routing without a re-route,
+and corrects the native carrier artwork using the supplied v1.1 bounds.
+Its README, reports and plots document the checks and their limitations.
+No verified antenna/RF restriction or clearance has been established or
+implemented. It is not approved for fabrication, assembly or power.
 
 The earlier combined reviews and standalone derivatives are preserved at
   routing/placement-integrated/result.kicad_pcb

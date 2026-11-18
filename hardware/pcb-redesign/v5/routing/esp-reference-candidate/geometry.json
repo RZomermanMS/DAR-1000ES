@@ -1,0 +1,44 @@
+{
+  "U1-CONTROLLER1": {
+    "carrier_bbox_mm": [
+      64.73,
+      3.6,
+      90.13,
+      66.34
+    ],
+    "nearest_courtyard_bbox_gap_mm": 1.095,
+    "nearest_courtyard_reference": "H2",
+    "zero_gap_courtyard_bboxes": [],
+    "edge_inset_mm": 3.6,
+    "unverified_raster_feature_bbox_mm": [
+      68.4,
+      -2.9,
+      86.5,
+      3.5
+    ],
+    "unverified_feature_substrate_intersection_mm2": 63.35,
+    "unverified_feature_other_courtyard_bbox_hits": [],
+    "unverified_feature_track_via_bbox_hits": 5
+  },
+  "U6-AUDIO1": {
+    "carrier_bbox_mm": [
+      61.87,
+      233.66,
+      87.27,
+      296.4
+    ],
+    "nearest_courtyard_bbox_gap_mm": 0.955,
+    "nearest_courtyard_reference": "C12",
+    "zero_gap_courtyard_bboxes": [],
+    "edge_inset_mm": 3.6,
+    "unverified_raster_feature_bbox_mm": [
+      65.5,
+      296.5,
+      83.6,
+      302.9
+    ],
+    "unverified_feature_substrate_intersection_mm2": 63.35,
+    "unverified_feature_other_courtyard_bbox_hits": [],
+    "unverified_feature_track_via_bbox_hits": 2
+  }
+}

@@ -1,5 +1,17 @@
+SUPERSEDED GEOMETRY WARNING
+==========================
+The placement and routing below are historical. The body and antenna model
+and edge-flush claim in this original account are superseded; they do not
+describe the corrected comparison at ../esp-orientation-comparison/README.txt.
+Using the supplied v1.1 carrier bounds, each carrier's pin-1-end edge is
+3.60 mm inside the motherboard edge. See ../esp-reference-candidate/README.txt
+for the geometry-only derivative and unresolved RF restrictions. The original
+PCB in this directory remains unchanged.
+
 ESP edge-routing experiment — NOT FOR FABRICATION OR POWER
 =========================================================
+
+Historical account follows; geometry assumptions are superseded as above.
 
 This is one experimental two-layer candidate, not an RF, mechanical,
 electrical or manufacturing sign-off. The source remains unchanged:
