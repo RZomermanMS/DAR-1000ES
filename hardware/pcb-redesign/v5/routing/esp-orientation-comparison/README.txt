@@ -1,5 +1,11 @@
 ESP rigid-assembly orientation experiment
 
+IDENTIFICATION UPDATE: the fitted board is a dual-USB-C DevKitC-1 N16R8
+with XH-S3E module markings. The v1.1 carrier below is an Espressif
+reference model, not verified dimensions for that board. The collision
+screens and edge distances are therefore hypothetical for the fitted board.
+See ../../ESP-BOARD-QUALIFICATION.txt for evidence and missing measurements.
+
 **Exploratory placement evidence, not a routed board or fabrication/RF
 approval.** Input: `../placement-current/result.kicad_pcb`, SHA-256
 `1639ae39478dff811224cf6ff1e299ec685bb6e8568631e4d861dfafcb36eafa`.
@@ -29,7 +35,7 @@ The original PDF/guide could not be fetched in this environment (DNS
 unavailable), so the supplied datum alignment was not independently
 verified against the primary drawing. The guide's indexed text distinguishes
 WROOM-1/-2 PCB antennas from a WROOM-1U external antenna connector. The
-installed variant is not established.
+fitted XH-S3E board is not established to use either reference variant.
 
 A secondary raster reproduction was inspected during this run, from
 `JamelHammoud/basecase`, `tools/parts/specs/esp32-s3-devkitc-1/dim-1.png`.

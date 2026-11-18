@@ -4,7 +4,10 @@ The placement and routing below are historical. The body and antenna model
 and edge-flush claim in this original account are superseded; they do not
 describe the corrected comparison at ../esp-orientation-comparison/README.txt.
 Using the supplied v1.1 carrier bounds, each carrier's pin-1-end edge is
-3.60 mm inside the motherboard edge. See ../esp-reference-candidate/README.txt
+3.60 mm inside the motherboard edge *if* the fitted carrier has those bounds.
+The user has since identified a dual-USB-C XH-S3E board; that assumption is
+not verified for it. See ../../ESP-BOARD-QUALIFICATION.txt and
+../esp-reference-candidate/README.txt
 for the geometry-only derivative and unresolved RF restrictions. The original
 PCB in this directory remains unchanged.
 

@@ -1,5 +1,11 @@
 DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
 
+Installed-board identification update: the user identifies a dual-USB-C
+DevKitC-1 N16R8 board with an XH-S3E module. The Espressif v1.1 carrier
+outline in the geometry-only alternate is a reference assumption, not a
+measurement of this board. Its socket spacing, antenna and pinout are not
+qualified. See ESP-BOARD-QUALIFICATION.txt before using any candidate.
+
 Latest combined review candidate (still incomplete):
   routing/placement-current/result.kicad_pcb
 Open with its adjacent result.kicad_pro, schematic sheets and both library tables.
@@ -16,8 +22,9 @@ Experimental alternate only (does not replace placement-current):
   routing/esp-edge-candidate/result.kicad_pcb
 Its README.txt, audit.json and preview/ identify the revised ESP socket
 orientations, native reports, fitted PDFs, rendered PNGs and controller/audio
-closeups. The installed devkit and module variant, antenna offset and
-clearance remain unverified, and this alternate has no antenna rule areas.
+closeups. The fitted board's carrier revision, XH-S3E module revision,
+antenna offset and clearance remain unverified, and this alternate has no
+antenna rule areas.
 Its historical assumed antenna projection is not verified RF clearance.
 GND return loops, soldering and physical fit remain unresolved.
 This alternate is not approved for fabrication, assembly or power. Its

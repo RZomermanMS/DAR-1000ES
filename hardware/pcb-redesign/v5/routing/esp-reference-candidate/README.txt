@@ -1,6 +1,11 @@
 ESP reference-envelope correction — NOT FOR FABRICATION OR POWER
 ================================================================
 
+The user has identified a dual-USB-C DevKitC-1 N16R8 board bearing XH-S3E
+module markings. The F.Fab carrier outline below is the Espressif v1.1
+reference only, not a verified outline of that installed board. Distances
+derived from it are conditional. See ../../ESP-BOARD-QUALIFICATION.txt.
+
 This is a non-RF CAD correction of ../esp-edge-candidate/result.kicad_pcb,
 not an antenna-safe redesign. The original, already Freerouting-routed board
 is preserved; neither placement nor routing was changed here. A fresh route
