@@ -1,0 +1,6 @@
+Section audit passed at y=150 mm.
+All classified component footprint envelopes remain in their sections.
+Exact board diff: 5 existing segments, endpoints only; all other board text unchanged.
+Netlist and UART endpoint checks passed; 715 segments, 7 vias, minimum width 0.300 mm.
+Both inherited two-layer antenna rule areas retained; outline and placement unchanged.
+Candidate SHA-256: f99f7348a54bc94fd867fb7ec5e5e0f9a544eb5cf260c7a8530197dcbbef90fb

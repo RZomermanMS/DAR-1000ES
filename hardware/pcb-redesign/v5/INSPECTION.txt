@@ -22,6 +22,13 @@ Review files, relative to routing/experiment-silk-7/:
 These are fitted inspection plots, not 1:1 fabrication artwork. The PCB
 outline is visible, but references are small and the routing pages do not
 identify layers or nets; revision text crosses the title-block frame.
+Alternate plots with clearer titles and identified copper sides are in
+routing/inspection-readable/; they depict this same checkpoint board.
+
+The separate routing/clearance-trial-c/ contains a small, locally rerouted
+derivative of placement-trial B, not the board shown in these plots. Its
+minimum measured unrelated track-to-PTH-pad gap remains 0.201657 mm;
+see its README for the modest local improvements and limitations.
 
 The candidate's KiCad 10 reports zero DRC violations, zero missing
 connections and zero schematic-parity issues. Four inherited checks were
