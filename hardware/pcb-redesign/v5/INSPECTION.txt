@@ -1,0 +1,36 @@
+DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
+
+The reviewable routed board is routing/experiment-silk-7/result.kicad_pcb,
+not routing/synchronized.kicad_pcb or an experiment's input.kicad_pcb.
+Open it with routing/experiment-silk-7/result.kicad_pro and its adjacent
+fp-lib-table and DAR1000ES.pretty. The matching schematic is
+DAR-1000ES-v5.kicad_sch (with its power and interlock sheets).
+
+Review files, relative to routing/experiment-silk-7/:
+  assembly-experimental.pdf       top assembly
+  routing-experimental.pdf        both copper layers, two pages
+  inspection-assembly.png         assembly PDF page, rendered at 150 dpi
+  inspection-routing-page-1.png   routing page 1 (red), rendered at 150 dpi
+  inspection-routing-page-2.png   routing page 2 (blue), rendered at 150 dpi
+  schematic-v5.pdf                schematic
+  drc.json                       native KiCad PCB DRC report
+  schematic-parity.json           native KiCad schematic parity report
+  decoupling-distances.txt        pad-center distance measurements
+
+These are fitted inspection plots, not 1:1 fabrication artwork. The PCB
+outline is visible, but references are small and the routing pages do not
+identify layers or nets; revision text crosses the title-block frame.
+
+The candidate's KiCad 10 reports zero DRC violations, zero missing
+connections and zero schematic-parity issues. Four inherited checks were
+ignored: track centering on vias, tuning-profile geometry, footprint filters,
+and footprint type. See routing/README.txt for the attempt and limitations.
+The schematic ERC has 59 findings and inherited ignored checks.
+
+This is not a finished electrical or physical design. C7 is about 70 mm
+from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
+35 mm from U11. Actual decoupling loops, return paths, RF antenna clearance,
+complete module/USB and connector plug/cable envelopes, screwhead/chassis
+fit, and unrelated track/via to solder-pad clearances remain unverified.
+Sony/local supply sequencing, back-powering, inrush and actual mute/relay
+behavior require bench validation. Do not fabricate, assemble, or power it.
