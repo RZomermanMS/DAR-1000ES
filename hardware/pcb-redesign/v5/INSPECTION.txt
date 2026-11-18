@@ -1,5 +1,13 @@
 DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
 
+Latest combined review candidate (still incomplete):
+  routing/integrated-review/clearance-first-corrected/result.kicad_pcb
+Open with its adjacent result.kicad_pro, schematic sheets and fp-lib-table.
+Its README and preview/ identify the saved-board reports and inspection
+plots. The copper fill, partial power reroute, silkscreen and clearance
+changes are combined; capacitor placement and physical/electrical review
+remain unresolved. This is not a fabrication or power-up approval.
+
 The reviewable routed board is routing/experiment-silk-7/result.kicad_pcb,
 not routing/synchronized.kicad_pcb or an experiment's input.kicad_pcb.
 Open it with routing/experiment-silk-7/result.kicad_pro and its adjacent

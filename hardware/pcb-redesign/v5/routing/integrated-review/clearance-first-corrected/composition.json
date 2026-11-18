@@ -1,0 +1,7 @@
+{
+  "board_sha256": "c63fa89924e244bbf6bfd92f2c72e6c9d34117106b4bd87cf46f7971078920c5",
+  "replay_equals_saved_clearance": true,
+  "silk_items_match_saved": 61,
+  "power_tracks_match_saved_except_c6_junction_move": 46,
+  "existing_tracks_match_clearance": true
+}
