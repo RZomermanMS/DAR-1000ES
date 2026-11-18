@@ -20,11 +20,12 @@ def footprint(ref, y, pads=()):
                            Pads=lambda: pads)
 
 
-def design(extra=(), tracks=()):
+def design(extra=(), tracks=(), zones=()):
     audio = ("U2", "J9", "U6-AUDIO1", "U9", "U11")
     ctrl = ("U1-CONTROLLER1", "U8", "U10")
     fps = [footprint(r, 200) for r in audio] + [footprint(r, 40) for r in ctrl] + list(extra)
-    return SimpleNamespace(GetFootprints=lambda: fps, GetTracks=lambda: tracks)
+    return SimpleNamespace(GetFootprints=lambda: fps, GetTracks=lambda: tracks,
+                           Zones=lambda: zones)
 
 
 class SectionTests(unittest.TestCase):
@@ -49,6 +50,18 @@ class SectionTests(unittest.TestCase):
                                 GetNetname=lambda: "/DATA")
         with self.assertRaisesRegex(ValueError, "cross-boundary"):
             ops.audit_sections(design(tracks=[track]), 150, "lower")
+
+    def test_straddling_copper_zone(self):
+        zone = SimpleNamespace(GetIsRuleArea=lambda: False, GetBoundingBox=lambda: box(140, 20),
+                               GetNetname=lambda: "/DATA")
+        with self.assertRaisesRegex(ValueError, "cross-boundary"):
+            ops.audit_sections(design(zones=[zone]), 150, "lower")
+        zone.GetNetname = lambda: "GND"
+        ops.audit_sections(design(zones=[zone]), 150, "lower")
+
+    def test_rule_area_is_not_copper(self):
+        zone = SimpleNamespace(GetIsRuleArea=lambda: True)
+        ops.audit_sections(design(zones=[zone]), 150, "lower")
 
     def test_touching_pad(self):
         board = design([footprint("A", 149, [pad("/DATA", 149, 2)])])

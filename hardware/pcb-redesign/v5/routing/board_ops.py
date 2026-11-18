@@ -155,6 +155,12 @@ def audit_sections(board, boundary_mm, audio_side):
         box = track.GetBoundingBox()
         if box.GetY() <= boundary <= box.GetY() + box.GetHeight() and track.GetNetname() not in allowed:
             crossed.append(track.GetNetname())
+    for zone in board.Zones():
+        if zone.GetIsRuleArea():
+            continue
+        box = zone.GetBoundingBox()
+        if box.GetY() <= boundary <= box.GetY() + box.GetHeight() and zone.GetNetname() not in allowed:
+            crossed.append(zone.GetNetname())
     if crossed:
         fail(f"unauthorized cross-boundary nets: {sorted(set(crossed))}")
     print(f"Section audit passed at y={boundary_mm} mm.")
