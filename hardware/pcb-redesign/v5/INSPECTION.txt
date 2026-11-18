@@ -1,17 +1,21 @@
 DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
 
 Latest combined review candidate (still incomplete):
-  routing/placement-integrated/result.kicad_pcb
-Open with its adjacent result.kicad_pro, schematic sheets and fp-lib-table.
+  routing/placement-current/result.kicad_pcb
+Open with its adjacent result.kicad_pro, schematic sheets and both library tables.
 Its README, audit.json and preview/ identify the saved-board reports, exact
-placements and inspection plots. This combines the published C6 placement
-with controller C1/C2, audio C3/C4/C5 and supervisor C8 edits. C6 ground-pad
-to U8.7 center distance increased from 9.231 to 24.319 mm; a short supply
-route and sampled ground fill do not prove a compact or continuous return
-loop. C8 supply track is 10.166 mm. Physical, electrical and RF review
+placements and inspection plots. This combines the previously integrated
+placements with the independent loop and clearance edits. C6-to-U8.14
+supply track is 5.472 mm and C6 ground-pad to U8.7 center distance is
+17.185 mm (24.319 mm in placement-integrated; 9.231 mm before C6 moved).
+C8-to-U10.2 supply track is 8.396 mm. Sampled ground fill does not prove a
+compact or continuous return loop. Physical, electrical and RF review
 remain unresolved. This is not a fabrication or power-up approval.
 
-The earlier combined review is preserved at
+The earlier combined reviews and standalone derivatives are preserved at
+  routing/placement-integrated/result.kicad_pcb
+  routing/placement-loop/result.kicad_pcb
+  routing/placement-clearance/result.kicad_pcb
   routing/integrated-review/clearance-first-corrected/result.kicad_pcb
 and the separate published C6 milestone at
   routing/placement-c6/result.kicad_pcb.
