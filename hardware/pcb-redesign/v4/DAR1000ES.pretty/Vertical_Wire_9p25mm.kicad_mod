@@ -1,6 +1,6 @@
 (footprint "Vertical_Wire_9p25mm"
  (version 20260206) (generator "pcbnew") (layer "F.Cu")
- (descr "Straight vertical insulated wire, 9.25 mm pitch; fit the wire to connect the two plated terminals")
+ (descr "Straight insulated component-side wire with two plated terminals")
  (property "Reference" "JW**" (at 2.8 4.625000) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
  (property "Value" "Insulated wire link" (at 0 0) (layer "F.Fab") (hide yes) (effects (font (size 1 1))))
  (attr through_hole board_only exclude_from_pos_files)

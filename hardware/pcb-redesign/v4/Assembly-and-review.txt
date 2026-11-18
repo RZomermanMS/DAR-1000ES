@@ -8,18 +8,22 @@ standard 10.x symbol and footprint libraries are also required.
 Routing status
 --------------
 This is a partially routed draft. KiCad 10.0.2 reports zero rule violations
-and 67 unconnected items with all depicted wires installed. Do not order,
+and 26 unconnected items with all depicted wires installed. Do not order,
 assemble or power this design as delivered. Single-layer routing without
 bridges and several constrained bridge-routing orders did not close the
-design; remaining airwires need placement/channel and route iteration.
+design. Local rip-up, repair and long-net-first routing reduced the native
+open count from 67 to 26. The remaining opens include U2/U6/U7 /OE,
+ENABLE_U6, ENABLE_U7, LOCAL_5V, display, keypad and audio signals; use the
+native report for exact endpoints. See routing/README.txt for the routing
+tools. The repositioned controller trial did not beat this placement.
 
-The saved draft has 1,399 B.Cu segments, no F.Cu tracks, no routing vias
-and 36 board-only JW links at 2.75–14.50 mm pitch. Each link has two
+The saved draft has 1,975 B.Cu segments, no F.Cu tracks, no routing vias
+and 82 board-only JW links at 2.75–15.00 mm pitch. Each link has two
 plated 0.80 mm holes and one straight Y-axis insulated wire on top.
 Normal through-hole annuli are present on both faces. Wire-schedule.txt
 gives top-view coordinates; pitch is centre-to-centre, not cut length.
 Opening all JW links without removing the holes or copper increases the
-native unconnected count to 103. These links are not JP1/JP2 shunts.
+native unconnected count to 108. These links are not JP1/JP2 shunts.
 
 The PDFs are review drawings fitted to the page, not 1:1 artwork.
 The assembly sheet is top-view and the bottom copper sheet is mirrored.

@@ -1,0 +1,15 @@
+# Alternative controller placement, in top-view millimetres and KiCad degrees.
+# Opens the left-side routes to the connectors and brings buffer inputs forward.
+U3 19 108 0
+R2 27 100 180
+C2 32 111 90
+U4 19 144 0
+R3 27 138 180
+C3 33 155 0
+U2 51 139 0
+R1 70 138 180
+C1 64 148 90
+R4 13 129 0
+R7 48 130 0
+R8 30 130 0
+R9 34 141 0
