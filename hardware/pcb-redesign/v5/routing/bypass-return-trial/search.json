@@ -1,0 +1,54 @@
+{
+  "limit_seconds": 210,
+  "elapsed_seconds": 0.29,
+  "results": [
+    {
+      "capacitor": "C1",
+      "capacitor_pad": "1",
+      "ic": "U3",
+      "target_pad": "7",
+      "old_path_mm": 123.004,
+      "candidates": 111,
+      "geometric_rejections": 222,
+      "native_drc_tests": 0,
+      "native_drc_rejections": 0,
+      "accepted": null
+    },
+    {
+      "capacitor": "C2",
+      "capacitor_pad": "1",
+      "ic": "U4",
+      "target_pad": "7",
+      "old_path_mm": 122.19,
+      "candidates": 111,
+      "geometric_rejections": 222,
+      "native_drc_tests": 0,
+      "native_drc_rejections": 0,
+      "accepted": null
+    },
+    {
+      "capacitor": "C3",
+      "capacitor_pad": "2",
+      "ic": "U2",
+      "target_pad": "7",
+      "old_path_mm": 181.309,
+      "candidates": 139,
+      "geometric_rejections": 278,
+      "native_drc_tests": 0,
+      "native_drc_rejections": 0,
+      "accepted": null
+    },
+    {
+      "capacitor": "C4",
+      "capacitor_pad": "2",
+      "ic": "U6",
+      "target_pad": "7",
+      "old_path_mm": 120.79,
+      "candidates": 139,
+      "geometric_rejections": 278,
+      "native_drc_tests": 0,
+      "native_drc_rejections": 0,
+      "accepted": null
+    }
+  ]
+}

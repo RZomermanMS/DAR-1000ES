@@ -1,0 +1,102 @@
+{
+  "step_mm": 0.5,
+  "time_limit_seconds_per_layer": 25,
+  "results": [
+    {
+      "capacitor": "C1",
+      "capacitor_pad": "1",
+      "ic": "U3",
+      "target_pad": "7",
+      "old_path_mm": 123.004,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "elapsed_seconds": 0.02,
+          "tested_edges": 1954,
+          "explored_nodes": 1211,
+          "found": false
+        },
+        {
+          "layer": "B.Cu",
+          "elapsed_seconds": 0.01,
+          "tested_edges": 712,
+          "explored_nodes": 495,
+          "found": false
+        }
+      ],
+      "accepted": null
+    },
+    {
+      "capacitor": "C2",
+      "capacitor_pad": "1",
+      "ic": "U4",
+      "target_pad": "7",
+      "old_path_mm": 122.19,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "elapsed_seconds": 0.02,
+          "tested_edges": 2019,
+          "explored_nodes": 1280,
+          "found": false
+        },
+        {
+          "layer": "B.Cu",
+          "elapsed_seconds": 0.03,
+          "tested_edges": 2925,
+          "explored_nodes": 1801,
+          "found": false
+        }
+      ],
+      "accepted": null
+    },
+    {
+      "capacitor": "C3",
+      "capacitor_pad": "2",
+      "ic": "U2",
+      "target_pad": "7",
+      "old_path_mm": 181.309,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "elapsed_seconds": 0.03,
+          "tested_edges": 2264,
+          "explored_nodes": 1394,
+          "found": false
+        },
+        {
+          "layer": "B.Cu",
+          "elapsed_seconds": 0.02,
+          "tested_edges": 1540,
+          "explored_nodes": 877,
+          "found": false
+        }
+      ],
+      "accepted": null
+    },
+    {
+      "capacitor": "C4",
+      "capacitor_pad": "2",
+      "ic": "U6",
+      "target_pad": "7",
+      "old_path_mm": 120.79,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "elapsed_seconds": 0.02,
+          "tested_edges": 1752,
+          "explored_nodes": 1142,
+          "found": false
+        },
+        {
+          "layer": "B.Cu",
+          "elapsed_seconds": 0.03,
+          "tested_edges": 2129,
+          "explored_nodes": 1270,
+          "found": false
+        }
+      ],
+      "accepted": null
+    }
+  ]
+}

@@ -34,6 +34,8 @@ and U11 clearance changes to trial B; its README identifies its exact
 board, reports and unresolved bypass loops, and its preview/ directory
 contains labeled views and closeups of that candidate. It is not a finished or
 fabrication-ready replacement for the inspection checkpoint.
+The bounded routing search in routing/bypass-return-trial/ found no
+compact C1–C4 ground returns; it retained no additional routing changes.
 
 The candidate's KiCad 10 reports zero DRC violations, zero missing
 connections and zero schematic-parity issues. Four inherited checks were
