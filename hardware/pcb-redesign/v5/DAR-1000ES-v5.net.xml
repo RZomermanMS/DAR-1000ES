@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/work/DAR-1000ES-v5.kicad_sch</source>
-    <date>2026-11-18T08:50:27</date>
+    <date>2026-11-18T16:55:53</date>
     <tool>Eeschema 10.0.2</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -855,7 +855,7 @@
       <property name="ki_keywords" value="AHCT buffer 3-state through-hole"/>
       <property name="ki_fp_filters" value="DIP-14_W7.62mm*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a564d16-07e9-4a2f-a5a8-fa5ffa821c66 5836115e-0624-4bf4-9762-6956838fd3ba a282b35d-8cde-401a-8b31-af8a1f831295 34b8aa81-667f-4f35-a198-b2617eef5cd3 1553769e-81bd-4a87-ac52-02245baa2236</tstamps>
+      <tstamps>7a564d16-07e9-4a2f-a5a8-fa5ffa821c66 a282b35d-8cde-401a-8b31-af8a1f831295 5836115e-0624-4bf4-9762-6956838fd3ba 34b8aa81-667f-4f35-a198-b2617eef5cd3 1553769e-81bd-4a87-ac52-02245baa2236</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2554,34 +2554,34 @@
       <node ref="U1-CONTROLLER1" pin="J3.22" pinfunction="GND_J3.22" pintype="power_in"/>
     </net>
     <net code="81" name="unconnected-(U1-CONTROLLER1-IO0-PadJ3.14)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.14" pinfunction="IO0_J3.14" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.14" pinfunction="IO0_J3.14" pintype="bidirectional+no_connect"/>
     </net>
     <net code="82" name="unconnected-(U1-CONTROLLER1-IO3-PadJ1.13)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.13" pinfunction="IO3_J1.13" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.13" pinfunction="IO3_J1.13" pintype="bidirectional+no_connect"/>
     </net>
     <net code="83" name="unconnected-(U1-CONTROLLER1-IO6-PadJ1.6)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.6" pinfunction="IO6_J1.6" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.6" pinfunction="IO6_J1.6" pintype="bidirectional+no_connect"/>
     </net>
     <net code="84" name="unconnected-(U1-CONTROLLER1-IO9-PadJ1.15)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.15" pinfunction="IO9_J1.15" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.15" pinfunction="IO9_J1.15" pintype="bidirectional+no_connect"/>
     </net>
     <net code="85" name="unconnected-(U1-CONTROLLER1-IO10-PadJ1.16)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.16" pinfunction="IO10_J1.16" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.16" pinfunction="IO10_J1.16" pintype="bidirectional+no_connect"/>
     </net>
     <net code="86" name="unconnected-(U1-CONTROLLER1-IO11-PadJ1.17)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.17" pinfunction="IO11_J1.17" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.17" pinfunction="IO11_J1.17" pintype="bidirectional+no_connect"/>
     </net>
     <net code="87" name="unconnected-(U1-CONTROLLER1-IO12-PadJ1.18)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.18" pinfunction="IO12_J1.18" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.18" pinfunction="IO12_J1.18" pintype="bidirectional+no_connect"/>
     </net>
     <net code="88" name="unconnected-(U1-CONTROLLER1-IO17-PadJ1.10)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.10" pinfunction="IO17_J1.10" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.10" pinfunction="IO17_J1.10" pintype="bidirectional+no_connect"/>
     </net>
     <net code="89" name="unconnected-(U1-CONTROLLER1-IO19_USB_D--PadJ3.20)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.20" pinfunction="IO19_USB_D-_J3.20" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.20" pinfunction="IO19_USB_D-_J3.20" pintype="bidirectional+no_connect"/>
     </net>
     <net code="90" name="unconnected-(U1-CONTROLLER1-IO20_USB_D+-PadJ3.19)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.19" pinfunction="IO20_USB_D+_J3.19" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.19" pinfunction="IO20_USB_D+_J3.19" pintype="bidirectional+no_connect"/>
     </net>
     <net code="91" name="unconnected-(U1-CONTROLLER1-IO35_PSRAM-PadJ3.13)" class="Default">
       <node ref="U1-CONTROLLER1" pin="J3.13" pinfunction="IO35_PSRAM_J3.13" pintype="no_connect"/>
@@ -2593,34 +2593,34 @@
       <node ref="U1-CONTROLLER1" pin="J3.11" pinfunction="IO37_PSRAM_J3.11" pintype="no_connect"/>
     </net>
     <net code="94" name="unconnected-(U1-CONTROLLER1-IO38-PadJ3.10)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.10" pinfunction="IO38_J3.10" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.10" pinfunction="IO38_J3.10" pintype="bidirectional+no_connect"/>
     </net>
     <net code="95" name="unconnected-(U1-CONTROLLER1-IO41-PadJ3.7)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.7" pinfunction="IO41_J3.7" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.7" pinfunction="IO41_J3.7" pintype="bidirectional+no_connect"/>
     </net>
     <net code="96" name="unconnected-(U1-CONTROLLER1-IO45-PadJ3.15)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.15" pinfunction="IO45_J3.15" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.15" pinfunction="IO45_J3.15" pintype="bidirectional+no_connect"/>
     </net>
     <net code="97" name="unconnected-(U1-CONTROLLER1-IO46-PadJ1.14)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J1.14" pinfunction="IO46_J1.14" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J1.14" pinfunction="IO46_J1.14" pintype="bidirectional+no_connect"/>
     </net>
     <net code="98" name="unconnected-(U1-CONTROLLER1-IO48-PadJ3.16)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.16" pinfunction="IO48_J3.16" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.16" pinfunction="IO48_J3.16" pintype="bidirectional+no_connect"/>
     </net>
     <net code="99" name="unconnected-(U1-CONTROLLER1-RX_IO44-PadJ3.3)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.3" pinfunction="RX_IO44_J3.3" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.3" pinfunction="RX_IO44_J3.3" pintype="bidirectional+no_connect"/>
     </net>
     <net code="100" name="unconnected-(U1-CONTROLLER1-TX_IO43-PadJ3.2)" class="Default">
-      <node ref="U1-CONTROLLER1" pin="J3.2" pinfunction="TX_IO43_J3.2" pintype="bidirectional"/>
+      <node ref="U1-CONTROLLER1" pin="J3.2" pinfunction="TX_IO43_J3.2" pintype="bidirectional+no_connect"/>
     </net>
     <net code="101" name="unconnected-(U2-Pad6)" class="Default">
-      <node ref="U2" pin="6" pintype="tri_state"/>
+      <node ref="U2" pin="6" pintype="tri_state+no_connect"/>
     </net>
     <net code="102" name="unconnected-(U3-Pad6)" class="Default">
-      <node ref="U3" pin="6" pintype="tri_state"/>
+      <node ref="U3" pin="6" pintype="tri_state+no_connect"/>
     </net>
     <net code="103" name="unconnected-(U4-Pad6)" class="Default">
-      <node ref="U4" pin="6" pintype="tri_state"/>
+      <node ref="U4" pin="6" pintype="tri_state+no_connect"/>
     </net>
     <net code="104" name="unconnected-(U5-3Vo-PadJP4.2)" class="Default">
       <node ref="U5" pin="JP4.2" pinfunction="3Vo_JP4.2" pintype="power_out"/>
@@ -2653,31 +2653,31 @@
       <node ref="U6-AUDIO1" pin="J3.22" pinfunction="GND_J3.22" pintype="power_in"/>
     </net>
     <net code="114" name="unconnected-(U6-AUDIO1-IO0-PadJ3.14)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.14" pinfunction="IO0_J3.14" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.14" pinfunction="IO0_J3.14" pintype="bidirectional+no_connect"/>
     </net>
     <net code="115" name="unconnected-(U6-AUDIO1-IO3-PadJ1.13)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.13" pinfunction="IO3_J1.13" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.13" pinfunction="IO3_J1.13" pintype="bidirectional+no_connect"/>
     </net>
     <net code="116" name="unconnected-(U6-AUDIO1-IO10-PadJ1.16)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.16" pinfunction="IO10_J1.16" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.16" pinfunction="IO10_J1.16" pintype="bidirectional+no_connect"/>
     </net>
     <net code="117" name="unconnected-(U6-AUDIO1-IO15-PadJ1.8)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.8" pinfunction="IO15_J1.8" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.8" pinfunction="IO15_J1.8" pintype="bidirectional+no_connect"/>
     </net>
     <net code="118" name="unconnected-(U6-AUDIO1-IO16-PadJ1.9)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.9" pinfunction="IO16_J1.9" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.9" pinfunction="IO16_J1.9" pintype="bidirectional+no_connect"/>
     </net>
     <net code="119" name="unconnected-(U6-AUDIO1-IO17-PadJ1.10)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.10" pinfunction="IO17_J1.10" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.10" pinfunction="IO17_J1.10" pintype="bidirectional+no_connect"/>
     </net>
     <net code="120" name="unconnected-(U6-AUDIO1-IO18-PadJ1.11)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.11" pinfunction="IO18_J1.11" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.11" pinfunction="IO18_J1.11" pintype="bidirectional+no_connect"/>
     </net>
     <net code="121" name="unconnected-(U6-AUDIO1-IO19_USB_D--PadJ3.20)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.20" pinfunction="IO19_USB_D-_J3.20" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.20" pinfunction="IO19_USB_D-_J3.20" pintype="bidirectional+no_connect"/>
     </net>
     <net code="122" name="unconnected-(U6-AUDIO1-IO20_USB_D+-PadJ3.19)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.19" pinfunction="IO20_USB_D+_J3.19" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.19" pinfunction="IO20_USB_D+_J3.19" pintype="bidirectional+no_connect"/>
     </net>
     <net code="123" name="unconnected-(U6-AUDIO1-IO35_PSRAM-PadJ3.13)" class="Default">
       <node ref="U6-AUDIO1" pin="J3.13" pinfunction="IO35_PSRAM_J3.13" pintype="no_connect"/>
@@ -2689,28 +2689,28 @@
       <node ref="U6-AUDIO1" pin="J3.11" pinfunction="IO37_PSRAM_J3.11" pintype="no_connect"/>
     </net>
     <net code="126" name="unconnected-(U6-AUDIO1-IO38-PadJ3.10)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.10" pinfunction="IO38_J3.10" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.10" pinfunction="IO38_J3.10" pintype="bidirectional+no_connect"/>
     </net>
     <net code="127" name="unconnected-(U6-AUDIO1-IO39-PadJ3.9)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.9" pinfunction="IO39_J3.9" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.9" pinfunction="IO39_J3.9" pintype="bidirectional+no_connect"/>
     </net>
     <net code="128" name="unconnected-(U6-AUDIO1-IO45-PadJ3.15)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.15" pinfunction="IO45_J3.15" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.15" pinfunction="IO45_J3.15" pintype="bidirectional+no_connect"/>
     </net>
     <net code="129" name="unconnected-(U6-AUDIO1-IO46-PadJ1.14)" class="Default">
-      <node ref="U6-AUDIO1" pin="J1.14" pinfunction="IO46_J1.14" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J1.14" pinfunction="IO46_J1.14" pintype="bidirectional+no_connect"/>
     </net>
     <net code="130" name="unconnected-(U6-AUDIO1-IO48-PadJ3.16)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.16" pinfunction="IO48_J3.16" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.16" pinfunction="IO48_J3.16" pintype="bidirectional+no_connect"/>
     </net>
     <net code="131" name="unconnected-(U6-AUDIO1-RX_IO44-PadJ3.3)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.3" pinfunction="RX_IO44_J3.3" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.3" pinfunction="RX_IO44_J3.3" pintype="bidirectional+no_connect"/>
     </net>
     <net code="132" name="unconnected-(U6-AUDIO1-TX_IO43-PadJ3.2)" class="Default">
-      <node ref="U6-AUDIO1" pin="J3.2" pinfunction="TX_IO43_J3.2" pintype="bidirectional"/>
+      <node ref="U6-AUDIO1" pin="J3.2" pinfunction="TX_IO43_J3.2" pintype="bidirectional+no_connect"/>
     </net>
     <net code="133" name="unconnected-(U7-Pad8)" class="Default">
-      <node ref="U7" pin="8" pintype="tri_state"/>
+      <node ref="U7" pin="8" pintype="tri_state+no_connect"/>
     </net>
     <net code="134" name="unconnected-(U8-1Y-Pad3)" class="Default">
       <node ref="U8" pin="3" pinfunction="1Y_3" pintype="output+no_connect"/>

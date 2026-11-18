@@ -11,6 +11,9 @@ mechanical, RF and electrical blockers. The external whip is intended to
 connect to the dev board's own IPEX, with no motherboard antenna circuit
 or cutout. Neither the connector/selector nor the fitted geometry is
 verified. Previous inspection checkpoints remain available below.
+The current schematic has 22 outstanding ERC findings after bounded triage;
+see Electrical-review-v5.txt for the 59-item classification, the unverified
+EN/power/GND issues and exact connectivity comparison. No PCB was changed.
 
 Installed-board identification update: the user identifies a dual-USB-C
 DevKitC-1 N16R8 board with an XH-S3E module. The Espressif v1.1 carrier
@@ -99,7 +102,8 @@ The candidate's KiCad 10 reports zero DRC violations, zero missing
 connections and zero schematic-parity issues. Four inherited checks were
 ignored: track centering on vias, tuning-profile geometry, footprint filters,
 and footprint type. See routing/README.txt for the attempt and limitations.
-The schematic ERC has 59 findings and inherited ignored checks.
+The historical schematic ERC had 59 findings and inherited ignored checks;
+the current generated schematic has 22 unresolved findings.
 MECHANICAL-REVIEW.txt records nominal checkpoint envelope comparisons,
 source-access limitations and the inboard antenna/substrate concern.
 

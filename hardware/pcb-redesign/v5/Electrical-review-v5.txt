@@ -96,9 +96,10 @@ Verification and reproducibility
 From the repository root, python hardware/pcb-redesign/v5/generate_schematic.py
 reconstructs schematic/project/library files from baseline-v3 only. The
 netlist is exported from the generated schematic using KiCad 10.0.2:
-  docker run --rm --user "$(id -u):$(id -g)" -e HOME=/work \
-    -v "$PWD/hardware/pcb-redesign/v5:/work" -w /work kicad/kicad:10.0.2 \
-    sh -c 'kicad-cli sch export netlist --format kicadxml -o DAR-1000ES-v5.net.xml DAR-1000ES-v5.kicad_sch && kicad-cli sch erc --format json --units mm -o DAR-1000ES-v5-ERC.json DAR-1000ES-v5.kicad_sch'
+  mkdir -p hardware/pcb-redesign/v5/.erc-work
+  docker run --rm --network none --user "$(id -u):$(id -g)" -e HOME=/work/.erc-work -e TMPDIR=/work/.erc-work \
+    -v "$PWD/hardware/pcb-redesign/v5:/work" -w /work kicad/kicad@sha256:165c81785b2df23a09892f4cc53bc0095a83b469bfbbe07989670d64049677a7 \
+    sh -c 'kicad-cli sch export netlist --format kicadxml -o DAR-1000ES-v5.net.xml DAR-1000ES-v5.kicad_sch && kicad-cli sch erc --format json --units mm -o DAR-1000ES-v5-ERC.json DAR-1000ES-v5.kicad_sch && kicad-cli sch export pdf -o DAR-1000ES-v5-schematic.pdf DAR-1000ES-v5.kicad_sch'
   python hardware/pcb-redesign/v5/verify_netlist.py
 KiCad may write .kicad_prl and local configuration/cache files; these are
 not part of the deliverable. The XML source path records the container
@@ -134,14 +135,58 @@ accompany U2/U6/U7 (audio), and C6/C7 accompany U8/U9 respectively.
 The C3 assignment follows its U2 decoupling role even though the v3
 placement was near the controller region.
 
-KiCad 10.0.2 ERC: 59 outstanding items, not waived or signed off: 47
-pin_not_connected, 9 power_pin_not_driven, 2 pin_not_driven, 1
-same_local_global_label. See DAR-1000ES-v5-ERC.json for details.
+ERC triage (KiCad 10.0.2, baseline c597ccd)
+-------------------------------------------
+Of the original 59 findings, 37 pin_not_connected items are now marked
+no-connect: U2.6, U3.6, U4.6, U7.8 (unused buffer outputs), plus 33
+unwired dev-board GPIO header pins. These markers mean unused by THIS
+motherboard only; they say nothing about carrier-internal USB, boot straps,
+firmware or safe operation of the actual unqualified board. The exact pins
+and coordinates are in generate_schematic.py and the before/after XML.
+
+The remaining 22 findings are not waived or signed off:
+* 10 pin_not_connected: audio J1.1/J1.2 3V3, controller J1.2 3V3,
+  U5.JP4.2 3Vo; both dev-board J1.3 EN; both dev-board J3.21/J3.22 GND.
+  Leave these visible pending actual carrier/power and ground review.
+* 2 pin_not_driven: the same two EN pins. No external pullup is assumed.
+* 9 power_pin_not_driven: U2.14 on LOCAL_5V, U10.2 on SONY_5V_SENSE,
+  both dev-board J1.21 on their respective post-jumper 5V nets, controller
+  J1.22 on GND, and both dev-board J3.21/J3.22 isolated GND pins.
+  J2.2 is the intended LOCAL_5V input; J12.2 is the distinct intended Sony
+  sense input, not a local supply. No power flags were added: intended external
+  connections are documented, but actual source/return, fitted carrier and
+  operational supply states are not established. Flags would not prove
+  voltages, sequencing, or safety. In particular do not flag isolated GND.
+* 1 same_local_global_label: inherited local GND at (346.71,208.28)
+  labels a large wired component including J5.1; the global GND at
+  (215.9,165.1) labels a separate wired component. The original XML joins
+  these by name into the 50-node GND net. There is also local GND at
+  (40.64,154.94). Removing the first local label without replacing its
+  function can split that network; converting it alone does not establish
+  that all other local-GND connections remain equivalent or remove the
+  collision. Retain the finding until a separately verified label cleanup.
+
+See DAR-1000ES-v5-ERC.json for individual findings and coordinates.
 Inherited project settings ignore single_global_label, four_way_junction,
 simulation_model_issue and footprint_filter. The netlist checks above are
 needed because ERC alone can miss disconnected global labels; they do not
-replace a complete ERC review. In particular unconnected dev-board EN/power
-abstract pins and inherited pin-not-connected items require explicit review.
+replace carrier qualification or review of the unresolved items.
+
+Connectivity verification: before and after KiCad XML have exactly the
+same 136 named nets and 319 (reference,pin) nodes, including all 60 singleton
+nets. The 37 marked singleton nodes remain present in XML with +no_connect
+pin types; they were not dropped from the comparison. From repository root:
+  V=hardware/pcb-redesign/v5
+  mkdir -p "$V/.erc-work"
+  git show c597ccd:"$V/DAR-1000ES-v5.net.xml" > "$V/.erc-work/before.xml"
+  python3 -B "$V/compare_connectivity.py" "$V/.erc-work/before.xml" "$V/DAR-1000ES-v5.net.xml"
+  python3 -B "$V/test_generate_schematic.py"
+  rm -rf "$V/.erc-work"
+Use the generation and pinned KiCad export commands above before the compare.
+The canonical external-antenna-current sheets are copies of the generated
+root sheets; its saved-board parity was rerun against those copies. Its
+replay script copies the current root sheets, then compares a fresh export
+against the root XML before routing, rather than copying historical sheets.
 
 Remaining safety risks — unresolved
 -----------------------------------

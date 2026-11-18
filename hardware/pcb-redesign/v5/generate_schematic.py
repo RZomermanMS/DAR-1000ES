@@ -129,6 +129,22 @@ def find_label(root, name, xy):
     return found[0]
 
 
+def add_unused_marker(root, group, xy):
+    # Refuse to hide a connection if the inherited schematic changes.
+    for kind in ("no_connect", "label", "global_label", "hierarchical_label", "junction"):
+        assert not any(at(n) == xy for n in ch(root, kind)), (group, xy, kind)
+    for wire in ch(root, "wire"):
+        ends = [tuple(round(float(v), 2) for v in p[1:3])
+                for p in ch(ch(wire, "pts")[0], "xy")]
+        (x1, y1), (x2, y2) = ends
+        x, y = xy
+        assert not (min(x1, x2) <= x <= max(x1, x2) and
+                    min(y1, y2) <= y <= max(y1, y2) and
+                    abs((x - x1) * (y2 - y1) - (y - y1) * (x2 - x1)) < 1e-6), (group, xy)
+    root.append(["no_connect", ["at", *map(str, xy)],
+                 ["uuid", uid(f"unused-{group}-{xy}")]])
+
+
 def main_sheet(root):
     # Keep the existing U4-to-J4 nets and attach the three labels to J4 pins.
     for name in ("FLSTB", "FLSDATA", "FLSCLK"):
@@ -158,6 +174,23 @@ def main_sheet(root):
     # Both dev boards' second GND pin was tied together but not to GND.
     # Attach the existing common node to the actual ground net.
     root.append(label("global_label", "GND", (215.9, 165.1), 0, "second-ground"))
+
+    # These are unused by the motherboard, not necessarily by the dev board.
+    # Leave EN, 3V3 and GND pins visible for review.
+    unused = {
+        "buffer": [(82.55, 210.82), (83.82, 57.15),
+                   (116.84, 190.5), (308.61, 189.23)],
+        "audio-j1": [(158.75, y) for y in (72.39, 74.93, 77.47, 80.01, 85.09, 87.63, 92.71)],
+        "audio-j3": [(214.63, y) for y in (74.93, 77.47, 87.63, 90.17, 92.71,
+                                            95.25, 97.79, 100.33, 102.87)],
+        "controller-j1": [(160.02, y) for y in (198.12, 200.66, 213.36)],
+        "controller-j3": [(215.9, y) for y in (172.72, 175.26, 177.8, 180.34, 182.88,
+                                                185.42, 187.96, 198.12, 200.66, 203.2,
+                                                205.74, 208.28, 210.82, 213.36)],
+    }
+    for group, positions in unused.items():
+        for xy in positions:
+            add_unused_marker(root, group, xy)
 
 
 def interlock(root):

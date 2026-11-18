@@ -114,6 +114,16 @@ not fabrication artwork. Sony/local supply sequencing, back-powering,
 inrush, mute/relay behavior, antenna configuration and the unresolved
 schematic ERC findings all require engineering and bench review.
 
+Schematic ERC review
+--------------------
+The current adjacent schematic copies match the generated v5 root sheets.
+Bounded review of 59 findings leaves 22 unresolved; 37 unused motherboard
+GPIO/buffer pins received no-connect markers, with no board connectivity
+change. See ../../Electrical-review-v5.txt for the full classification,
+including the untouched EN, power, isolated GND and local/global GND issues.
+The saved-board parity report was rerun against the updated adjacent sheets.
+This is not electrical approval.
+
 Reproduction
 ------------
 From repository root, Docker with the pinned KiCad image, Java 25 and the
@@ -128,8 +138,11 @@ creating the output directory. Alternatively use --local-replay in place
 of the output name to build in this candidate's temporary .replay folder;
 remove that folder after review.
 
-The output sibling must not exist. Source board, source project, netlist
-and JAR hashes are checked. The script re-routes, restores the exact source
+The output sibling must not exist. Source board, source project and JAR
+hashes are checked. Current generated root sheets are copied, exported,
+and their exact named-net/node partition (singletons included) is compared
+to the root netlist before routing. Regenerate and export the root schematic
+first as described in ../../Electrical-review-v5.txt. The script re-routes, restores the exact source
 project, runs native refill DRC and parity, exact netlist/domain/placement/
 plane and clearance audits, plots, hashes, and performs a read-only DRC.
 Generated UUIDs can change hashes. Review the replay's own reports.

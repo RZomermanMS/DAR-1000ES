@@ -31,13 +31,14 @@ IMAGE=kicad/kicad@sha256:165c81785b2df23a09892f4cc53bc0095a83b469bfbbe07989670d6
 sha256sum --check <<EOF
 1639ae39478dff811224cf6ff1e299ec685bb6e8568631e4d861dfafcb36eafa  $S/result.kicad_pcb
 c86217ae0f5bfc47f1a15b5cc06b149c8b6f91ff1359970723f73f63fbff52f5  $S/result.kicad_pro
-c6d424b06f11b597e3b0e87ac63e1d30de1104816e0750a6b74f89be3b16abec  hardware/pcb-redesign/v5/DAR-1000ES-v5.net.xml
 f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7  $JAR
 EOF
 mkdir -p "$O/.work" "$O/preview"
 trap 'rm -rf "$O/.work"; rm -f "$O/"*.kicad_prl "$O/input.kicad_pcb" "$O/input.kicad_pro" "$O/route.dsn" "$O/route.ses"' EXIT
 cp "$P/edge.py" "$P/audit.py" "$P/render.py" "$O/"
-cp "$S/result.kicad_pro" "$S/"*.kicad_sch "$S/fp-lib-table" "$S/sym-lib-table" "$O/"
+cp "$S/result.kicad_pro" "$S/fp-lib-table" "$S/sym-lib-table" "$O/"
+cp hardware/pcb-redesign/v5/DAR-1000ES-v5.kicad_sch "$O/result.kicad_sch"
+cp hardware/pcb-redesign/v5/DAR-1000ES-v5-{interlock,power}.kicad_sch "$O/"
 if [ "$NAME" = "--local-replay" ]; then
   sed -i 's|../../DAR1000ES.pretty|../../../DAR1000ES.pretty|' "$O/fp-lib-table"
   sed -i 's|../../DAR1000ES.kicad_sym|../../../DAR1000ES.kicad_sym|' "$O/sym-lib-table"
@@ -48,6 +49,10 @@ run() {
     -e ROUTING_ROOT="/work/$R" \
     -v "$PWD:/work:ro" -v "$PWD/$O:/work/$O:rw" -w /work --entrypoint "$1" "$IMAGE" "${@:2}"
 }
+run /usr/bin/kicad-cli sch export netlist --format kicadxml \
+  -o "$O/.work/generated.xml" "$O/result.kicad_sch"
+python3 hardware/pcb-redesign/v5/compare_connectivity.py \
+  hardware/pcb-redesign/v5/DAR-1000ES-v5.net.xml "$O/.work/generated.xml"
 run /usr/bin/python3 "$O/edge.py" prepare
 cp "$S/result.kicad_pro" "$O/input.kicad_pro"
 FREEROUTING__USAGE_AND_DIAGNOSTIC_DATA__DISABLE_ANALYTICS=true \
