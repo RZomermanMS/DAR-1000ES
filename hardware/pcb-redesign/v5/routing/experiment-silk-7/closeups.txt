@@ -1,0 +1,22 @@
+Close-up index
+
+Each image is a 600 dpi, unmirrored crop of the indicated PDF page.
+Controller is the upper board section; audio is the lower section. The
+sections overlap slightly so traces crossing the split can be followed.
+
+closeup-assembly-controller.png       assembly-experimental.pdf page 1
+closeup-assembly-audio.png            assembly-experimental.pdf page 1
+closeup-routing-page-1-controller.png routing-experimental.pdf page 1
+closeup-routing-page-1-audio.png      routing-experimental.pdf page 1
+closeup-routing-page-2-controller.png routing-experimental.pdf page 2
+closeup-routing-page-2-audio.png      routing-experimental.pdf page 2
+
+Routing page 1 is red and page 2 is blue as in the source; the PDFs do not
+label the copper sides, so these crops do not assign layer names. Match pads
+to component references using the assembly views and the original board
+design; not every circle is necessarily a hand-soldered joint. Assembly
+markings retain the source's pale colors. These are inspection aids, not
+photographs, fabrication files, clearance measurements, or DRC signoff.
+Refer to the complete PDFs for the full page and original title-block notes.
+The design is experimental and not for fabrication; electrical, RF and
+mechanical review remains necessary.

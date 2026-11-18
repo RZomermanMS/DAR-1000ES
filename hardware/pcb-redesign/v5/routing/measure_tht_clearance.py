@@ -25,6 +25,11 @@ def related(a, b):
     return a.GetNetCode() > 0 and a.GetNetCode() == b.GetNetCode()
 
 
+def order(record):
+    return (record["clearance_mm"], record["pad"]["ref"], record["pad"]["number"],
+            record["item"]["uuid"], record["layer"])
+
+
 def measure(board, threshold_mm):
     if board.GetCopperLayerCount() != 2:
         raise ValueError("This measurement supports two copper layers only")
@@ -40,7 +45,7 @@ def measure(board, threshold_mm):
     minimum_distance = None
     for ref, pad in pads:
         for layer, layer_name in LAYERS:
-            if not pad.IsOnLayer(layer):
+            if not pad.IsOnLayer(layer) or not pad.FlashLayer(layer):
                 continue
             pad_shape = pad.GetEffectiveShape(layer)
             if pad_shape.IsNull():
@@ -48,13 +53,15 @@ def measure(board, threshold_mm):
             for track in tracks:
                 if not track.IsOnLayer(layer) or related(pad, track):
                     continue
+                via = isinstance(track, pcb.PCB_VIA)
+                if via and not track.FlashLayer(layer):
+                    continue
                 shape = track.GetEffectiveShape(layer)
                 if shape.IsNull():
                     raise ValueError("Null track/via copper shape")
                 pair_count += 1
                 distance = pad_shape.GetClearance(shape)
-                if distance <= threshold or minimum_distance is None or distance < minimum_distance:
-                    via = isinstance(track, pcb.PCB_VIA)
+                if distance <= threshold or minimum_distance is None or distance <= minimum_distance:
                     record = {
                         "clearance_mm": mm(distance),
                         "layer": layer_name,
@@ -63,16 +70,17 @@ def measure(board, threshold_mm):
                                 "uuid": pad.m_Uuid.AsString()},
                         "item": {"type": "via" if via else
                                  "arc" if isinstance(track, pcb.PCB_ARC) else "track",
-                                 "net": track.GetNetname(), "width_mm": mm(track.GetWidth()),
+                                 "net": track.GetNetname(),
+                                 "width_mm": mm(track.GetWidth(layer) if via else track.GetWidth()),
                                  "start_mm": xy(track.GetStart()), "end_mm": xy(track.GetEnd()),
                                  "uuid": track.m_Uuid.AsString()},
                     }
-                    if minimum_distance is None or distance < minimum_distance:
+                    if (minimum_distance is None or distance < minimum_distance or
+                            (distance == minimum_distance and order(record) < order(minimum))):
                         minimum, minimum_distance = record, distance
                     if distance <= threshold:
                         candidates.append(record)
-    candidates.sort(key=lambda c: (c["clearance_mm"], c["pad"]["ref"],
-                                   c["pad"]["number"], c["item"]["uuid"], c["layer"]))
+    candidates.sort(key=order)
     return {"tht_pad_count": len(pads), "track_via_count": len(tracks),
             "unrelated_layer_pairs_examined": pair_count,
             "minimum": minimum, "threshold_mm": threshold_mm, "within_threshold": candidates}

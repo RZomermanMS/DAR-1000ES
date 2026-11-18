@@ -2,6 +2,34 @@
   "tht_pad_count": 319,
   "track_via_count": 748,
   "unrelated_layer_pairs_examined": 233002,
+  "minimum": {
+    "clearance_mm": 0.201657,
+    "layer": "B.Cu",
+    "pad": {
+      "ref": "U1-CONTROLLER1",
+      "number": "J3.11",
+      "net": "unconnected-(U1-CONTROLLER1-IO37_PSRAM-PadJ3.11)",
+      "position_mm": [
+        87.86,
+        55.4
+      ],
+      "uuid": "b7c69c8b-4185-4447-b9da-854c46083cae"
+    },
+    "item": {
+      "type": "track",
+      "net": "Net-(U5-VIN)",
+      "width_mm": 0.3,
+      "start_mm": [
+        86.6583,
+        54.9023
+      ],
+      "end_mm": [
+        87.4306,
+        54.13
+      ],
+      "uuid": "7895f566-7e59-46ab-b51c-8451310bd04e"
+    }
+  },
   "threshold_mm": 0.5,
   "within_threshold": [
     {

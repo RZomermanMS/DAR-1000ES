@@ -12,6 +12,8 @@ Review files, relative to routing/experiment-silk-7/:
   inspection-assembly.png         assembly PDF page, rendered at 150 dpi
   inspection-routing-page-1.png   routing page 1 (red), rendered at 150 dpi
   inspection-routing-page-2.png   routing page 2 (blue), rendered at 150 dpi
+  closeups.txt                   enlarged controller/audio assembly and routing views
+  tht-clearance-notes.txt        measured copper-to-THT-pad clearance and limits
   schematic-v5.pdf                schematic
   drc.json                       native KiCad PCB DRC report
   schematic-parity.json           native KiCad schematic parity report
@@ -31,6 +33,8 @@ This is not a finished electrical or physical design. C7 is about 70 mm
 from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
 35 mm from U11. Actual decoupling loops, return paths, RF antenna clearance,
 complete module/USB and connector plug/cable envelopes, screwhead/chassis
-fit, and unrelated track/via to solder-pad clearances remain unverified.
+fit and solder-mask/iron access remain unverified. The measured minimum
+unrelated track-to-plated-THT-pad gap is 0.201657 mm; see the clearance
+notes for locations, scope and the many pairs below the 0.30 mm target.
 Sony/local supply sequencing, back-powering, inrush and actual mute/relay
 behavior require bench validation. Do not fabricate, assemble, or power it.
