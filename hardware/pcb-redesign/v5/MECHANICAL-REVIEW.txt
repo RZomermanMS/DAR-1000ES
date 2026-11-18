@@ -1,0 +1,48 @@
+v5 checkpoint mechanical review — NOT A FIT OR RF SIGN-OFF
+=========================================================
+
+Scope: routing/experiment-silk-7/result.kicad_pcb, SHA-256
+44374a3e5e529bad2d6c6b86dc479dcf3c501c83625bc69086c49c34836ce98d.
+The following comparisons are nominal and are not measurements of fitted
+parts. The manufacturer PDFs/pages were not directly accessible during this
+review; quoted dimensions were obtained from indexed text and must be
+checked against the drawings and the exact purchased parts before release.
+
+* ESP32-S3-DevKitC-1: the carrier models two socket rows 22.86 mm apart,
+  with 22 pins at 2.54 mm pitch. The indexed Espressif v1.1 drawing gives a
+  25.40 x 62.74 mm PCB, not including the module antenna overhang. Its
+  centered nominal width would be x=63.73..89.13 mm. The footprints do not
+  model the complete installed board, socket height, module or USB plugs.
+  https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-DevKitC-1_V1.1_20220429.pdf
+  https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
+  Confirm the actual board revision and USB connector: different boards or
+  revisions may have different dimensions and mating envelopes.
+* Antennas: the provisional rule rectangles x=62..90, y=5..27 and
+  y=165..187 mm remove neither the carrier substrate below the antenna nor
+  nearby chassis metal. Indexed Espressif guidance recommends placing the
+  antenna beyond the base-board edge or cutting away material beneath it,
+  and allowing 15 mm clearance inside the housing in all directions.
+  Neither rule rectangle demonstrates this. Check the actual module,
+  orientation, substrate, enclosure and mounting hardware; RF performance
+  must be measured.
+  https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/esp-hardware-design-guidelines-en-master-esp32s3.pdf
+* Adafruit U5: modeled outline approximately 17.78 x 35.56 mm, versus
+  indexed product dimensions 17.7 x 35.5 x 4.6 mm. Socket/header height and
+  any STEMMA plug are not included in the footprint.
+  https://www.adafruit.com/product/4918
+* JST-XH: the modeled four-way header body is 12.4 mm wide; compare with the
+  manufacturer's S4B-XH-A drawing. J3–J11 face the left edge, with their
+  modeled mating faces about 0.6 mm inside it; J2/J12 face the top, about
+  0.5 mm inside. Mating housings, fingers, wires and bend radii extend beyond
+  the PCB. Their envelopes and adjacent connector access are not modeled.
+  https://www.jst-connector.com/datasheet/jst-connector/S4B-XH-A.pdf
+* H1–H6 are 3.4 mm holes with assumed 7.5 mm-diameter courtyards, not
+  specified hardware. At H6 (95,200), the centered nominal ESP board edge
+  is about 5.87 mm from the hole center, leaving 2.12 mm to the assumed
+  head radius. Actual heads, washers, drivers and standoffs are unverified.
+
+Before any manufacture or power-up, obtain and compare the actual
+manufacturer drawings, then measure the enclosure, bosses and available
+height and trial-fit the selected modules, sockets, plugs, cables and
+hardware. DRC and these nominal comparisons cannot certify mechanical fit,
+RF operation, antenna clearance, soldering access or electrical safety.

@@ -1,11 +1,11 @@
 DAR-1000ES v5 SCHEMATIC — NOT FOR FABRICATION
 ================================================
 
-This is a schematic/netlist revision only. No synchronized v5 PCB is
-provided here; the v3 PCB does not implement these changes. Do not fabricate,
-assemble or connect to a Sony unit until a corresponding PCB is created,
-checked against this netlist, independently electrically reviewed, and
-tested through all power-up, brownout, shutdown and fault conditions.
+Experimental synchronized and routed v5 boards are available for inspection;
+see INSPECTION.txt. The v3 PCB does not implement these changes. None is
+fabrication-ready. Do not fabricate, assemble or connect to a Sony unit until
+the PCB is independently electrically and physically reviewed and tested
+through all power-up, brownout, shutdown and fault conditions.
 
 Connection and firmware delta from v3
 -------------------------------------
@@ -155,6 +155,7 @@ Check MCU-to-AHCT and inter-ESP UART back-powering with either ESP unpowered;
 neither supply ORing nor isolation is provided. Confirm no damaging current
 or partially powered operation via USB, GPIO, sense or protection diodes.
 Check relay/mute polarity and startup state against the real equipment.
-PCB pin/footprint synchronization, power decoupling placement, clearances,
+The experimental routed candidates have native schematic-parity reports,
+but fitted part/footprint correctness, power decoupling loops, clearances,
 ground returns, EMC, inrush, RF/antenna and mechanical fit are not validated.
 Independent schematic review and measured testing are mandatory before use.

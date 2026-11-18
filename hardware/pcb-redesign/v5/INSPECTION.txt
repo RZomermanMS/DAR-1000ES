@@ -28,6 +28,8 @@ connections and zero schematic-parity issues. Four inherited checks were
 ignored: track centering on vias, tuning-profile geometry, footprint filters,
 and footprint type. See routing/README.txt for the attempt and limitations.
 The schematic ERC has 59 findings and inherited ignored checks.
+MECHANICAL-REVIEW.txt records nominal checkpoint envelope comparisons,
+source-access limitations and the inboard antenna/substrate concern.
 
 This is not a finished electrical or physical design. C7 is about 70 mm
 from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
