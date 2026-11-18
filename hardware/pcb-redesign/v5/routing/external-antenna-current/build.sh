@@ -1,0 +1,100 @@
+#!/bin/bash
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+R=hardware/pcb-redesign/v5/routing
+S=$R/placement-current
+P=$R/external-antenna-current
+NAME=${1:?usage: build.sh external-antenna-REPLAY PATH-TO-FREEROUTING-JAR}
+JAR=${2:?usage: build.sh external-antenna-REPLAY PATH-TO-FREEROUTING-JAR}
+[[ "$NAME" =~ ^external-antenna-[a-zA-Z0-9_-]+$ && "$NAME" != external-antenna-current ]] || { echo "Invalid replay name" >&2; exit 1; }
+O=$R/$NAME
+[ ! -e "$O" ] || { echo "Output already exists" >&2; exit 1; }
+if [ -n "${JAVA_HOME:-}" ]; then
+  JAVA="$JAVA_HOME/bin/java"
+else
+  JAVA=$(command -v java) || { echo "Java 25 not found; set JAVA_HOME or add Java 25 to PATH" >&2; exit 1; }
+fi
+if [ ! -x "$JAVA" ] || ! JAVA_VERSION_OUTPUT=$("$JAVA" -version 2>&1); then
+  echo "Cannot execute Java at $JAVA; set JAVA_HOME or PATH to Java 25" >&2
+  exit 1
+fi
+JAVA_VERSION=$(printf '%s\n' "$JAVA_VERSION_OUTPUT" | sed -n '1s/^[^"]*"\([^"]*\)".*/\1/p')
+case "$JAVA_VERSION" in
+  25|25.*|25+*|25-*) printf 'Using Java %s (%s)\n' "$JAVA_VERSION" "$JAVA" ;;
+  *) echo "Java 25 required; $JAVA reports ${JAVA_VERSION:-an unrecognized version}" >&2; exit 1 ;;
+esac
+IMAGE=kicad/kicad@sha256:165c81785b2df23a09892f4cc53bc0095a83b469bfbbe07989670d64049677a7
+sha256sum --check <<EOF
+1639ae39478dff811224cf6ff1e299ec685bb6e8568631e4d861dfafcb36eafa  $S/result.kicad_pcb
+c86217ae0f5bfc47f1a15b5cc06b149c8b6f91ff1359970723f73f63fbff52f5  $S/result.kicad_pro
+c6d424b06f11b597e3b0e87ac63e1d30de1104816e0750a6b74f89be3b16abec  hardware/pcb-redesign/v5/DAR-1000ES-v5.net.xml
+f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7  $JAR
+EOF
+mkdir -p "$O/.work" "$O/preview"
+trap 'rm -rf "$O/.work"; rm -f "$O/"*.kicad_prl "$O/input.kicad_pcb" "$O/input.kicad_pro" "$O/route.dsn" "$O/route.ses"' EXIT
+cp "$P/edge.py" "$P/audit.py" "$P/render.py" "$O/"
+cp "$S/result.kicad_pro" "$S/"*.kicad_sch "$S/fp-lib-table" "$S/sym-lib-table" "$O/"
+run() {
+  docker run --rm --network none --user "$(id -u):$(id -g)" \
+    -e HOME="/work/$O/.work" -e TMPDIR="/work/$O/.work" -e PYTHONDONTWRITEBYTECODE=1 \
+    -v "$PWD:/work:ro" -v "$PWD/$O:/work/$O:rw" -w /work --entrypoint "$1" "$IMAGE" "${@:2}"
+}
+run /usr/bin/python3 "$O/edge.py" prepare
+cp "$S/result.kicad_pro" "$O/input.kicad_pro"
+FREEROUTING__USAGE_AND_DIAGNOSTIC_DATA__DISABLE_ANALYTICS=true \
+FREEROUTING__API_SERVER__ENABLED=false FREEROUTING__GUI__ENABLED=false \
+FREEROUTING__MCP_SERVER__ENABLED=false \
+timeout 900 "$JAVA" -Djava.io.tmpdir="$PWD/$O/.work" \
+  -Xmx2g -jar "$JAR" -de "$O/route.dsn" -do "$O/route.ses" \
+  --router.autorouter.max_passes=30 --router.max_threads=2 --router.optimizer.max_threads=2 \
+  --router.automatic_neckdown=false --router.fanout.enabled=false --router.optimizer.enabled=false \
+  --router.copper_to_edge_clearance_um=500 > "$O/router.log" 2>&1
+run /usr/bin/python3 "$O/edge.py" finish
+run /usr/bin/python3 "$O/edge.py" tidy
+cp "$S/result.kicad_pro" "$O/result.kicad_pro"
+run /usr/bin/kicad-cli pcb drc --refill-zones --save-board --format json --severity-all \
+  --exit-code-violations -o "$O/drc.json" "$O/result.kicad_pcb"
+run /usr/bin/kicad-cli pcb drc --schematic-parity --format json --severity-all \
+  --exit-code-violations -o "$O/parity.json" "$O/result.kicad_pcb"
+python3 - "$O/drc.json" "$O/parity.json" <<'PY'
+import json, sys
+expected = {"track_not_centered_on_via", "tuning_profile_track_geometries",
+            "footprint_filters_mismatch", "footprint_type_mismatch"}
+for name in sys.argv[1:]:
+    report = json.load(open(name))
+    assert {item["key"] for item in report["ignored_checks"]} == expected
+    assert not report["violations"] and not report["unconnected_items"]
+    assert not report["schematic_parity"]
+PY
+run /usr/bin/python3 "$O/audit.py"
+run /usr/bin/python3 "$R/measure_tht_clearance.py" "$O/result.kicad_pcb" --threshold-mm 0.5 > "$O/clearance.json"
+python3 - "$R/placement-current/clearance.json" "$O/clearance.json" <<'PY'
+import json, sys
+old, new = (json.load(open(p)) for p in sys.argv[1:])
+assert new["minimum"]["clearance_mm"] >= .30
+for threshold in (.25, .30):
+    count = lambda report: sum(x["clearance_mm"] < threshold for x in report["within_threshold"])
+    assert count(new) <= count(old), f"clearance count regressed below {threshold} mm"
+PY
+run /usr/bin/python3 "$R/decoupling-trial/crossings.py" "$O/result.kicad_pcb" > "$O/crossings.json"
+for plot in assembly mechanical-hypothesis front-copper back-copper; do
+  case "$plot" in
+    assembly) layers=F.SilkS,F.CrtYd,Edge.Cuts ;;
+    mechanical-hypothesis) layers=F.SilkS,Dwgs.User,Edge.Cuts ;;
+    front-copper) layers=F.Cu,Edge.Cuts ;;
+    back-copper) layers=B.Cu,Edge.Cuts ;;
+  esac
+  if [ "$plot" = assembly ]; then
+    run /usr/bin/kicad-cli pcb export pdf --mode-single --scale 0 --black-and-white --layers "$layers" \
+      -o "$O/preview/$plot.pdf" "$O/result.kicad_pcb"
+  else
+    run /usr/bin/kicad-cli pcb export pdf --mode-single --scale 0 --layers "$layers" \
+      -o "$O/preview/$plot.pdf" "$O/result.kicad_pcb"
+  fi
+done
+run /usr/bin/python3 "$O/render.py" "$O"
+sha256sum "$O/result.kicad_pcb" > "$O/board.sha256"
+run /usr/bin/kicad-cli pcb drc --format json --severity-all --exit-code-violations \
+  -o "$O/verification-drc.json" "$O/result.kicad_pcb"
+sha256sum --check "$O/board.sha256"
+cmp "$S/result.kicad_pro" "$O/result.kicad_pro"

@@ -1,5 +1,16 @@
 DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
 
+Current external-whip review candidate (not fabrication/power approval):
+  routing/external-antenna-current/result.kicad_pcb
+Open with its adjacent project, schematic sheets and library tables.
+Its README, reports and preview/ document the fresh 0.30 mm route,
+native refill DRC/parity and read-only recheck, bypass-path regressions,
+conditional body/USB boxes, clearance scope and unresolved IPEX/selector,
+mechanical, RF and electrical blockers. The external whip is intended to
+connect to the dev board's own IPEX, with no motherboard antenna circuit
+or cutout. Neither the connector/selector nor the fitted geometry is
+verified. Previous inspection checkpoints remain available below.
+
 Installed-board identification update: the user identifies a dual-USB-C
 DevKitC-1 N16R8 board with an XH-S3E module. The Espressif v1.1 carrier
 outline in the geometry-only alternate is a reference assumption, not a

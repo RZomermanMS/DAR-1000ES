@@ -1,6 +1,21 @@
 ESP BOARD QUALIFICATION — BLOCKED, NOT FOR FABRICATION OR POWER
 =============================================================
 
+Current external-whip decision
+------------------------------
+The current review candidate is routing/external-antenna-current/. It
+assumes a whip connected to each dev board's own IPEX connector; the host
+board adds no antenna circuitry or cutout. Its fresh routing and placement
+choice are documented there. The paragraph below saying no placement or
+routing was changed describes the earlier qualification checkpoint, not
+this current candidate.
+
+The fitted board's actual RF selector setting, connector compatibility
+and selected path remain unknown. Carrier and socket dimensions, both USB-C
+plug/cable envelopes, IPEX/pigtail access and bend, chassis and nearby
+metal, pinout and physical fit still require verification. The external
+choice does not itself establish RF or assembly clearance.
+
 Target and evidence
 -------------------
 The user identifies the fitted board as an ESP32-S3 DevKitC-1 N16R8
@@ -47,8 +62,9 @@ carrier drawing, schematic or RF switch detail was found in this search.
 Presence of both antenna features does not establish simultaneous operation,
 the selected path, matching network or approved external antenna.
 
-No placement, copper, zones or antenna keepouts were changed on the basis
-of these incomplete sources. The edge candidate lacks antenna rule areas;
+At that historical checkpoint, no placement, copper, zones or antenna
+keepouts were changed on the basis of these incomplete sources. The edge
+candidate lacks antenna rule areas;
 the inboard provisional areas on placement-current are not validated.
 Neither establishes substrate, copper, metal, chassis or RF compliance.
 Keep both candidates as experimental checkpoints, not manufacturing inputs.
