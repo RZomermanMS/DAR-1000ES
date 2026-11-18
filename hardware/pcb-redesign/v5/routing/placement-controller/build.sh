@@ -17,6 +17,8 @@ for f in "$P/$STEM.kicad_pcb" "$P/$STEM.kicad_pro" "$P/$STEM.kicad_sch" \
 done
 mkdir "$P/.kicad-home"
 trap 'rm -rf "$P/.kicad-home" "$P/org.kicad.kicad"; rm -f "$P/"*.kicad_prl' EXIT
+cp hardware/pcb-redesign/v5/routing/placement-c6/sym-lib-table "$P/sym-lib-table"
+test -r "$P/../../DAR1000ES.kicad_sym"
 IMAGE=kicad/kicad@sha256:165c81785b2df23a09892f4cc53bc0095a83b469bfbbe07989670d64049677a7
 docker run --rm --network none --user "$(id -u):$(id -g)" \
   -e HOME="/work/$P/.kicad-home" -e TMPDIR="/work/$P" -e PYTHONDONTWRITEBYTECODE=1 \

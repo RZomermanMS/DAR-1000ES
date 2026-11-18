@@ -12,6 +12,8 @@ if [ -e "$P/result.kicad_pcb" ]; then
 fi
 cp "$S/result.kicad_sch" "$P/result.kicad_sch"
 cp "$S"/DAR-1000ES-v5-*.kicad_sch "$P/"
+cp "$R/placement-c6/sym-lib-table" "$P/sym-lib-table"
+test -r "$P/../../DAR1000ES.kicad_sym"
 docker run --rm --network none --user "$(id -u):$(id -g)" \
   -e HOME="/work/$P" -e TMPDIR="/work/$P" -e PYTHONDONTWRITEBYTECODE=1 \
   -v "$ROOT:/work:ro" -v "$ROOT/$P:/work/$P:rw" -w /work \

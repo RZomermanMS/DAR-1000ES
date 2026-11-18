@@ -1,6 +1,10 @@
 Controller bypass placement experiment — NOT FOR FABRICATION OR POWER-UP
 ========================================================================
 
+The project-local sym-lib-table resolves DAR1000ES symbols through
+${KIPRJMOD}/../../DAR1000ES.kicad_sym, the shared v5 library. Keep the v5
+directory layout; the build copies the table from placement-c6.
+
 This independent candidate starts from integrated-review/clearance-first-
 corrected/result.kicad_pcb. It moves C1 from (25,44,90°) to (30,24,180°),
 and C2 from (25,69,90°) to (30,49,180°). Their supply pads now lie at

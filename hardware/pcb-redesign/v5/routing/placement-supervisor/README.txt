@@ -1,6 +1,10 @@
 C8/U10 bypass relocation — experimental, NOT FOR FABRICATION OR POWER
 =====================================================================
 
+The project-local sym-lib-table resolves DAR1000ES symbols through
+${KIPRJMOD}/../../DAR1000ES.kicad_sym, the shared v5 library. Keep the v5
+directory layout; the build copies the table from placement-c6.
+
 This independent derivative starts from clearance-first-corrected, SHA-256
 c63fa89924e244bbf6bfd92f2c72e6c9d34117106b4bd87cf46f7971078920c5.
 C8 moves from (48,124) to (45,96) mm, rotated 270 degrees. Its pad 1 is

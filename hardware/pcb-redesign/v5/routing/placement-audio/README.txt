@@ -1,6 +1,10 @@
 Audio bypass placement trial — NOT FOR FABRICATION OR POWER-UP
 =============================================================
 
+The project-local sym-lib-table resolves DAR1000ES symbols through
+${KIPRJMOD}/../../DAR1000ES.kicad_sym, the shared v5 library. Keep the v5
+directory layout; the build copies the table from placement-c6.
+
 This is an independent copy of integrated-review/clearance-first-corrected,
 not a combined board with other placement trials. Source SHA-256 is
 c63fa89924e244bbf6bfd92f2c72e6c9d34117106b4bd87cf46f7971078920c5.
