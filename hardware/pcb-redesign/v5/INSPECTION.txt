@@ -29,6 +29,10 @@ The separate routing/clearance-trial-c/ contains a small, locally rerouted
 derivative of placement-trial B, not the board shown in these plots. Its
 minimum measured unrelated track-to-PTH-pad gap remains 0.201657 mm;
 see its README for the modest local improvements and limitations.
+The separate routing/decoupling-trial/ adds local C7/C14 ground routing
+and U11 clearance changes to trial B; its README identifies its exact
+board, reports and unresolved bypass loops. It is not a finished or
+fabrication-ready replacement for the inspection checkpoint.
 
 The candidate's KiCad 10 reports zero DRC violations, zero missing
 connections and zero schematic-parity issues. Four inherited checks were
