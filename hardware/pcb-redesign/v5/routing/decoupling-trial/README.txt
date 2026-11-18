@@ -4,8 +4,9 @@ Decoupling trial — incomplete; NOT for fabrication or power-up
 This is a derivative of placement-trial B, not the canonical completed PCB.
 It preserves that checkpoint and all footprint positions. result.kicad_pcb,
 result.kicad_pro, the byte-identical copied v5 schematic hierarchy and
-fp-lib-table are the candidate. No new preview has been generated: the
-published inspection-readable views depict silk-7, NOT this candidate.
+fp-lib-table are the candidate. The preview/ directory contains labeled
+assembly and copper plots and closeups for this candidate; the separate
+inspection-readable views depict silk-7, NOT this candidate.
 
 The only board changes are four 0.30 mm F.Cu GND segments from C7.2 to
 U9.7 (independently found by another agent), one 0.30 mm B.Cu GND segment
@@ -116,9 +117,10 @@ all footprint references visible on a silk layer, but no board-level silk
 text and no connector-specific silk text beyond references: section names
 and connector pin/function labels are not established. This inventory does
 not check label overlap, readability, orientation, polarity or assembly
-access; native DRC alone is not assembly-silk signoff. No new closeups were
-produced. Physical fit, component insertion, soldering, connector mating,
-RF clearance, chassis and actual bench behavior remain unverified.
+access; native DRC alone is not assembly-silk signoff. The preview/ closeups
+are inspection aids, not signoff. Physical fit, component insertion,
+soldering, connector mating, RF clearance, chassis and actual bench behavior
+remain unverified.
 
 Reproduction
 ------------
