@@ -1,0 +1,20 @@
+(sym_lib_table
+	(version 7)
+	(lib
+		(name "DAR1000ES")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/DAR1000ES.kicad_sym")
+		(options "")
+		(descr "DAR-1000ES socket carrier symbols")
+	)
+	(lib (name "Device") (type "KiCad") (uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym") (options "") (descr ""))
+	(lib
+		(name "Connector_Generic")
+		(type "KiCad")
+		(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
+		(options "")
+		(descr "")
+	)
+	(lib (name "Jumper") (type "KiCad") (uri "${KICAD10_SYMBOL_DIR}/Jumper.kicad_sym") (options "") (descr ""))
+	(lib (name "power") (type "KiCad") (uri "${KICAD10_SYMBOL_DIR}/power.kicad_sym") (options "") (descr ""))
+)
