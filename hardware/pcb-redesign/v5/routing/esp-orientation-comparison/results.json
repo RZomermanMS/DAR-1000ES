@@ -1,6 +1,19 @@
 {
   "board_sha256": "1639ae39478dff811224cf6ff1e299ec685bb6e8568631e4d861dfafcb36eafa",
   "grid_step_mm": 2,
+  "carrier_local_mm": [
+    -1.27,
+    -1.4,
+    24.13,
+    61.34
+  ],
+  "usb_access_hypothesis_local_mm": [
+    5.43,
+    61.34,
+    17.43,
+    76.34
+  ],
+  "radio_geometry": "unknown",
   "orientations": {
     "U1-CONTROLLER1": {
       "baseline": {
@@ -8,29 +21,24 @@
           65.0,
           30.0
         ],
-        "body_mm": [
+        "angle": 0,
+        "carrier_mm": [
           63.73,
-          25.0,
+          28.6,
           89.13,
-          87.74000000000001
+          91.34
         ],
-        "antenna_mm": [
-          63.73,
-          20.0,
-          89.13,
-          25.0
-        ],
-        "usb_mm": [
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
           70.43,
-          87.74000000000001,
+          91.34,
           82.43,
-          102.74
+          106.34
         ],
-        "body_courtyard_overlaps": [],
-        "antenna_courtyard_overlaps": [],
-        "usb_courtyard_overlaps": [],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
         "assumed_connector_envelope_overlaps": [],
-        "usb_outside_board_area_mm2": 0.0,
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
         "pad_edge_min_mm": 11.29,
         "pad_to_other_pad_bbox_lower_bound_mm": 4.792,
         "nearest_pad_pair": [
@@ -38,12 +46,9 @@
           "C10",
           "2"
         ],
-        "body_to_hole_courtyard_bbox_gap_mm": 2.427,
+        "carrier_to_hole_courtyard_bbox_gap_mm": 5.26,
         "nearest_hole_courtyard": "H2",
-        "antenna_substrate_overlap_mm2": 127.0,
-        "hypothetical_edge_notch_mm": null,
-        "notch_track_via_bbox_overlaps": null,
-        "notch_other_pad_bbox_overlaps": null,
+        "radio_end_edge_distance_mm": 28.6,
         "links": 20,
         "signal_links": 18,
         "all_link_euclidean_mm": 1154.51,
@@ -52,36 +57,29 @@
         "signal_grid_peak": 5,
         "signal_grid_cells_ge_3": 33
       },
-      "edge_flush_off_grid": {
-        "angle": 0,
-        "body_inside_domain": true,
+      "existing_edge_candidate": {
         "origin_mm": [
           66,
           5
         ],
-        "body_mm": [
+        "angle": 0,
+        "carrier_mm": [
           64.73,
-          0,
+          3.6,
           90.13,
-          62.74
+          66.34
         ],
-        "antenna_mm": [
-          64.73,
-          -5,
-          90.13,
-          0
-        ],
-        "usb_mm": [
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
           71.43,
-          62.74,
+          66.34,
           83.43,
-          77.74
+          81.34
         ],
-        "body_courtyard_overlaps": [],
-        "antenna_courtyard_overlaps": [],
-        "usb_courtyard_overlaps": [],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
         "assumed_connector_envelope_overlaps": [],
-        "usb_outside_board_area_mm2": 0.0,
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
         "pad_edge_min_mm": 4.15,
         "pad_to_other_pad_bbox_lower_bound_mm": 3.59,
         "nearest_pad_pair": [
@@ -89,12 +87,9 @@
           "H2",
           ""
         ],
-        "body_to_hole_courtyard_bbox_gap_mm": 1.095,
+        "carrier_to_hole_courtyard_bbox_gap_mm": 1.095,
         "nearest_hole_courtyard": "H2",
-        "antenna_substrate_overlap_mm2": 0.0,
-        "hypothetical_edge_notch_mm": null,
-        "notch_track_via_bbox_overlaps": null,
-        "notch_other_pad_bbox_overlaps": null,
+        "radio_end_edge_distance_mm": 3.6,
         "links": 20,
         "signal_links": 18,
         "all_link_euclidean_mm": 1440.821,
@@ -103,91 +98,114 @@
         "signal_grid_peak": 7,
         "signal_grid_cells_ge_3": 41
       },
+      "exact_carrier_edge_flush_illustration": {
+        "origin_mm": [
+          66,
+          1.4
+        ],
+        "angle": 0,
+        "carrier_mm": [
+          64.73,
+          0.0,
+          90.13,
+          62.74
+        ],
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
+          71.43,
+          62.74,
+          83.43,
+          77.74000000000001
+        ],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
+        "assumed_connector_envelope_overlaps": [],
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+        "pad_edge_min_mm": 0.55,
+        "pad_to_other_pad_bbox_lower_bound_mm": 3.59,
+        "nearest_pad_pair": [
+          "J3.8",
+          "H2",
+          ""
+        ],
+        "carrier_to_hole_courtyard_bbox_gap_mm": 1.095,
+        "nearest_hole_courtyard": "H2",
+        "radio_end_edge_distance_mm": 0.0,
+        "links": 20,
+        "signal_links": 18,
+        "all_link_euclidean_mm": 1488.302,
+        "signal_link_euclidean_mm": 1444.659,
+        "signal_link_manhattan_mm": 1823.7,
+        "signal_grid_peak": 8,
+        "signal_grid_cells_ge_3": 43
+      },
       "0": {
         "considered": 1628,
-        "collision_free_and_pad_edge_ge_0_25": 123,
+        "collision_free_and_pad_edge_ge_0_25": 131,
         "edge_first": {
           "origin_mm": [
-            66,
-            6
+            62,
+            2
           ],
-          "body_mm": [
-            64.73,
-            1,
-            90.13,
-            63.74
+          "angle": 0,
+          "carrier_mm": [
+            60.73,
+            0.6000000000000001,
+            86.13,
+            63.34
           ],
-          "antenna_mm": [
-            64.73,
-            -4,
-            90.13,
-            1
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            67.43,
+            63.34,
+            79.43,
+            78.34
           ],
-          "usb_mm": [
-            71.43,
-            63.74,
-            83.43,
-            78.74
-          ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 5.15,
-          "pad_to_other_pad_bbox_lower_bound_mm": 3.59,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 1.15,
+          "pad_to_other_pad_bbox_lower_bound_mm": 2.35,
           "nearest_pad_pair": [
-            "J3.6",
-            "H2",
-            ""
+            "J1.17",
+            "C6",
+            "1"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 1.095,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 5.095,
           "nearest_hole_courtyard": "H2",
-          "antenna_substrate_overlap_mm2": 25.4,
-          "hypothetical_edge_notch_mm": [
-            64.73,
-            0,
-            90.13,
-            1
-          ],
-          "notch_track_via_bbox_overlaps": 0,
-          "notch_other_pad_bbox_overlaps": 0,
+          "radio_end_edge_distance_mm": 0.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1428.097,
-          "signal_link_euclidean_mm": 1382.659,
+          "all_link_euclidean_mm": 1436.191,
+          "signal_link_euclidean_mm": 1398.819,
           "signal_link_manhattan_mm": 1740.9,
-          "signal_grid_peak": 7,
-          "signal_grid_cells_ge_3": 41
+          "signal_grid_peak": 8,
+          "signal_grid_cells_ge_3": 37
         },
         "signal_first_feasible": {
           "origin_mm": [
             64,
             56
           ],
-          "body_mm": [
+          "angle": 0,
+          "carrier_mm": [
             62.73,
-            51,
+            54.6,
             88.13,
-            113.74000000000001
+            117.34
           ],
-          "antenna_mm": [
-            62.73,
-            46,
-            88.13,
-            51
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
             69.43,
-            113.74000000000001,
+            117.34,
             81.43,
-            128.74
+            132.34
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
           "pad_edge_min_mm": 12.29,
           "pad_to_other_pad_bbox_lower_bound_mm": 3.3,
           "nearest_pad_pair": [
@@ -195,12 +213,9 @@
             "JP1",
             "1"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 3.095,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 3.095,
           "nearest_hole_courtyard": "H4",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 54.6,
           "links": 20,
           "signal_links": 18,
           "all_link_euclidean_mm": 1056.666,
@@ -215,137 +230,119 @@
         "collision_free_and_pad_edge_ge_0_25": 0,
         "edge_first": {
           "origin_mm": [
-            24,
+            16,
             144
           ],
-          "body_mm": [
-            19,
+          "angle": 90,
+          "carrier_mm": [
+            14.6,
             119.87,
-            81.74000000000001,
+            77.34,
             145.27
           ],
-          "antenna_mm": [
-            14,
-            119.87,
-            19,
-            145.27
-          ],
-          "usb_mm": [
-            81.74000000000001,
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            77.34,
             126.57,
-            96.74,
+            92.34,
             138.57
           ],
-          "body_courtyard_overlaps": [
+          "carrier_courtyard_overlaps": [
             "U5"
           ],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
-          "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 21.81,
+          "usb_access_hypothesis_courtyard_overlaps": [],
+          "assumed_connector_envelope_overlaps": [
+            "J7",
+            "J8"
+          ],
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 15.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 0.0,
           "nearest_pad_pair": [
-            "J3.1",
+            "J3.3",
             "U5",
             "JP1.7"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 11.274,
-          "nearest_hole_courtyard": "H4",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 8.431,
+          "nearest_hole_courtyard": "H3",
+          "radio_end_edge_distance_mm": 14.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1320.814,
-          "signal_link_euclidean_mm": 1271.563,
-          "signal_link_manhattan_mm": 1393.98,
+          "all_link_euclidean_mm": 1299.11,
+          "signal_link_euclidean_mm": 1253.133,
+          "signal_link_manhattan_mm": 1388.66,
           "signal_grid_peak": 9,
-          "signal_grid_cells_ge_3": 27
+          "signal_grid_cells_ge_3": 29
         },
         "signal_first_feasible": null
       },
       "180": {
         "considered": 1628,
-        "collision_free_and_pad_edge_ge_0_25": 120,
+        "collision_free_and_pad_edge_ge_0_25": 132,
         "edge_first": {
           "origin_mm": [
             86,
-            108
+            148
           ],
-          "body_mm": [
+          "angle": 180,
+          "carrier_mm": [
             61.870000000000005,
-            50.26,
+            86.66,
             87.27,
-            113
+            149.4
           ],
-          "antenna_mm": [
-            61.870000000000005,
-            113,
-            87.27,
-            118
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
             68.57,
-            35.260000000000005,
+            71.66,
             80.57,
-            50.26
+            86.66
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
           "pad_edge_min_mm": 13.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 2.44,
           "nearest_pad_pair": [
-            "J3.5",
+            "J3.21",
             "JP1",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 3.955,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 3.955,
           "nearest_hole_courtyard": "H4",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 150.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1375.12,
-          "signal_link_euclidean_mm": 1334.161,
-          "signal_link_manhattan_mm": 1691.96,
-          "signal_grid_peak": 9,
-          "signal_grid_cells_ge_3": 35
+          "all_link_euclidean_mm": 1520.432,
+          "signal_link_euclidean_mm": 1460.217,
+          "signal_link_manhattan_mm": 1835.02,
+          "signal_grid_peak": 8,
+          "signal_grid_cells_ge_3": 40
         },
         "signal_first_feasible": {
           "origin_mm": [
             86,
             108
           ],
-          "body_mm": [
+          "angle": 180,
+          "carrier_mm": [
             61.870000000000005,
-            50.26,
+            46.66,
             87.27,
-            113
+            109.4
           ],
-          "antenna_mm": [
-            61.870000000000005,
-            113,
-            87.27,
-            118
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
             68.57,
-            35.260000000000005,
+            31.659999999999997,
             80.57,
-            50.26
+            46.66
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
           "pad_edge_min_mm": 13.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 2.44,
           "nearest_pad_pair": [
@@ -353,12 +350,9 @@
             "JP1",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 3.955,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 3.955,
           "nearest_hole_courtyard": "H4",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 190.6,
           "links": 20,
           "signal_links": 18,
           "all_link_euclidean_mm": 1375.12,
@@ -373,61 +367,48 @@
         "collision_free_and_pad_edge_ge_0_25": 0,
         "edge_first": {
           "origin_mm": [
-            94,
+            98,
             120
           ],
-          "body_mm": [
-            36.26,
+          "angle": 270,
+          "carrier_mm": [
+            36.66,
             118.73,
-            99,
+            99.4,
             144.13
           ],
-          "antenna_mm": [
-            99,
-            118.73,
-            104,
-            144.13
-          ],
-          "usb_mm": [
-            21.260000000000005,
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            21.659999999999997,
             125.43,
-            36.26,
+            36.66,
             137.43
           ],
-          "body_courtyard_overlaps": [
+          "carrier_courtyard_overlaps": [
             "U5"
           ],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [
+          "usb_access_hypothesis_courtyard_overlaps": [
             "U5"
           ],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 5.15,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 1.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 1.35,
           "nearest_pad_pair": [
-            "J1.16",
+            "J1.18",
             "R13",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 4.955,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 4.955,
           "nearest_hole_courtyard": "H4",
-          "antenna_substrate_overlap_mm2": 25.4,
-          "hypothetical_edge_notch_mm": [
-            99,
-            118.73,
-            100,
-            144.13
-          ],
-          "notch_track_via_bbox_overlaps": 0,
-          "notch_other_pad_bbox_overlaps": 0,
+          "radio_end_edge_distance_mm": 0.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1335.489,
-          "signal_link_euclidean_mm": 1276.956,
-          "signal_link_manhattan_mm": 1677.14,
+          "all_link_euclidean_mm": 1372.375,
+          "signal_link_euclidean_mm": 1313.755,
+          "signal_link_manhattan_mm": 1725.14,
           "signal_grid_peak": 11,
-          "signal_grid_cells_ge_3": 38
+          "signal_grid_cells_ge_3": 40
         },
         "signal_first_feasible": null
       }
@@ -438,29 +419,24 @@
           65.0,
           190.0
         ],
-        "body_mm": [
+        "angle": 0,
+        "carrier_mm": [
           63.73,
-          185.0,
+          188.6,
           89.13,
-          247.74
+          251.34
         ],
-        "antenna_mm": [
-          63.73,
-          180.0,
-          89.13,
-          185.0
-        ],
-        "usb_mm": [
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
           70.43,
-          247.74,
+          251.34,
           82.43,
-          262.74
+          266.34000000000003
         ],
-        "body_courtyard_overlaps": [],
-        "antenna_courtyard_overlaps": [],
-        "usb_courtyard_overlaps": [],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
         "assumed_connector_envelope_overlaps": [],
-        "usb_outside_board_area_mm2": 0.0,
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
         "pad_edge_min_mm": 11.29,
         "pad_to_other_pad_bbox_lower_bound_mm": 4.59,
         "nearest_pad_pair": [
@@ -468,12 +444,9 @@
           "H6",
           ""
         ],
-        "body_to_hole_courtyard_bbox_gap_mm": 2.095,
+        "carrier_to_hole_courtyard_bbox_gap_mm": 2.095,
         "nearest_hole_courtyard": "H6",
-        "antenna_substrate_overlap_mm2": 127.0,
-        "hypothetical_edge_notch_mm": null,
-        "notch_track_via_bbox_overlaps": null,
-        "notch_other_pad_bbox_overlaps": null,
+        "radio_end_edge_distance_mm": 188.6,
         "links": 20,
         "signal_links": 18,
         "all_link_euclidean_mm": 1035.309,
@@ -482,36 +455,29 @@
         "signal_grid_peak": 6,
         "signal_grid_cells_ge_3": 26
       },
-      "edge_flush_off_grid": {
-        "angle": 180,
-        "body_inside_domain": true,
+      "existing_edge_candidate": {
         "origin_mm": [
           86,
           295
         ],
-        "body_mm": [
+        "angle": 180,
+        "carrier_mm": [
           61.870000000000005,
-          237.26,
+          233.66,
           87.27,
-          300
+          296.4
         ],
-        "antenna_mm": [
-          61.870000000000005,
-          300,
-          87.27,
-          305
-        ],
-        "usb_mm": [
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
           68.57,
-          222.26,
+          218.66,
           80.57,
-          237.26
+          233.66
         ],
-        "body_courtyard_overlaps": [],
-        "antenna_courtyard_overlaps": [],
-        "usb_courtyard_overlaps": [],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
         "assumed_connector_envelope_overlaps": [],
-        "usb_outside_board_area_mm2": 0.0,
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
         "pad_edge_min_mm": 4.15,
         "pad_to_other_pad_bbox_lower_bound_mm": 2.44,
         "nearest_pad_pair": [
@@ -519,12 +485,9 @@
           "JP2",
           "2"
         ],
-        "body_to_hole_courtyard_bbox_gap_mm": 33.718,
+        "carrier_to_hole_courtyard_bbox_gap_mm": 30.146,
         "nearest_hole_courtyard": "H6",
-        "antenna_substrate_overlap_mm2": 0.0,
-        "hypothetical_edge_notch_mm": null,
-        "notch_track_via_bbox_overlaps": null,
-        "notch_other_pad_bbox_overlaps": null,
+        "radio_end_edge_distance_mm": 3.6,
         "links": 20,
         "signal_links": 18,
         "all_link_euclidean_mm": 1439.492,
@@ -533,106 +496,131 @@
         "signal_grid_peak": 7,
         "signal_grid_cells_ge_3": 42
       },
+      "exact_carrier_edge_flush_illustration": {
+        "origin_mm": [
+          86,
+          298.6
+        ],
+        "angle": 180,
+        "carrier_mm": [
+          61.870000000000005,
+          237.26000000000002,
+          87.27,
+          300.0
+        ],
+        "carrier_inside_domain": true,
+        "usb_access_hypothesis_mm": [
+          68.57,
+          222.26000000000002,
+          80.57,
+          237.26000000000002
+        ],
+        "carrier_courtyard_overlaps": [],
+        "usb_access_hypothesis_courtyard_overlaps": [],
+        "assumed_connector_envelope_overlaps": [],
+        "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+        "pad_edge_min_mm": 0.55,
+        "pad_to_other_pad_bbox_lower_bound_mm": 2.44,
+        "nearest_pad_pair": [
+          "J3.17",
+          "JP2",
+          "2"
+        ],
+        "carrier_to_hole_courtyard_bbox_gap_mm": 33.718,
+        "nearest_hole_courtyard": "H6",
+        "radio_end_edge_distance_mm": 0.0,
+        "links": 20,
+        "signal_links": 18,
+        "all_link_euclidean_mm": 1484.408,
+        "signal_link_euclidean_mm": 1438.906,
+        "signal_link_manhattan_mm": 1768.68,
+        "signal_grid_peak": 7,
+        "signal_grid_cells_ge_3": 45
+      },
       "0": {
         "considered": 1628,
-        "collision_free_and_pad_edge_ge_0_25": 197,
+        "collision_free_and_pad_edge_ge_0_25": 205,
         "edge_first": {
           "origin_mm": [
-            66,
-            180
+            54,
+            152
           ],
-          "body_mm": [
-            64.73,
-            175,
-            90.13,
-            237.74
+          "angle": 0,
+          "carrier_mm": [
+            52.73,
+            150.6,
+            78.13,
+            213.34
           ],
-          "antenna_mm": [
-            64.73,
-            170,
-            90.13,
-            175
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            59.43,
+            213.34,
             71.43,
-            237.74,
-            83.43,
-            252.74
+            228.34
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 10.29,
-          "pad_to_other_pad_bbox_lower_bound_mm": 3.59,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 22.29,
+          "pad_to_other_pad_bbox_lower_bound_mm": 2.11,
           "nearest_pad_pair": [
-            "J3.8",
-            "H6",
-            ""
+            "J1.11",
+            "U2",
+            "8"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 1.095,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 13.095,
           "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 150.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1034.952,
-          "signal_link_euclidean_mm": 986.858,
-          "signal_link_manhattan_mm": 1266.02,
-          "signal_grid_peak": 6,
-          "signal_grid_cells_ge_3": 26
+          "all_link_euclidean_mm": 1064.954,
+          "signal_link_euclidean_mm": 1017.498,
+          "signal_link_manhattan_mm": 1319.2,
+          "signal_grid_peak": 5,
+          "signal_grid_cells_ge_3": 21
         },
         "signal_first_feasible": {
           "origin_mm": [
             58,
-            176
+            172
           ],
-          "body_mm": [
+          "angle": 0,
+          "carrier_mm": [
             56.73,
-            171,
+            170.6,
             82.13,
-            233.74
+            233.34
           ],
-          "antenna_mm": [
-            56.73,
-            166,
-            82.13,
-            171
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
             63.43,
-            233.74,
+            233.34,
             75.43,
-            248.74
+            248.34
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
           "pad_edge_min_mm": 18.29,
           "pad_to_other_pad_bbox_lower_bound_mm": 1.73,
           "nearest_pad_pair": [
-            "J1.18",
+            "J1.20",
             "R7",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 9.095,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 9.095,
           "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 170.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 935.381,
-          "signal_link_euclidean_mm": 897.718,
-          "signal_link_manhattan_mm": 1146.02,
+          "all_link_euclidean_mm": 945.961,
+          "signal_link_euclidean_mm": 906.376,
+          "signal_link_manhattan_mm": 1148.58,
           "signal_grid_peak": 6,
-          "signal_grid_cells_ge_3": 15
+          "signal_grid_cells_ge_3": 17
         }
       },
       "90": {
@@ -640,163 +628,136 @@
         "collision_free_and_pad_edge_ge_0_25": 0,
         "edge_first": {
           "origin_mm": [
-            24,
+            16,
             200
           ],
-          "body_mm": [
-            19,
+          "angle": 90,
+          "carrier_mm": [
+            14.6,
             175.87,
-            81.74000000000001,
+            77.34,
             201.27
           ],
-          "antenna_mm": [
-            14,
-            175.87,
-            19,
-            201.27
-          ],
-          "usb_mm": [
-            81.74000000000001,
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            77.34,
             182.57,
-            96.74,
+            92.34,
             194.57
           ],
-          "body_courtyard_overlaps": [
+          "carrier_courtyard_overlaps": [
             "C4",
             "U2"
           ],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
-          "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 21.81,
+          "usb_access_hypothesis_courtyard_overlaps": [],
+          "assumed_connector_envelope_overlaps": [
+            "J9"
+          ],
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 15.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 0.0,
           "nearest_pad_pair": [
-            "J1.5",
+            "J1.10",
             "C4",
-            "1"
+            "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 9.485,
-          "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 5.825,
+          "nearest_hole_courtyard": "H5",
+          "radio_end_edge_distance_mm": 14.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 958.793,
-          "signal_link_euclidean_mm": 915.422,
-          "signal_link_manhattan_mm": 1090.0,
+          "all_link_euclidean_mm": 933.787,
+          "signal_link_euclidean_mm": 905.399,
+          "signal_link_manhattan_mm": 1112.12,
           "signal_grid_peak": 9,
-          "signal_grid_cells_ge_3": 20
+          "signal_grid_cells_ge_3": 24
         },
         "signal_first_feasible": null
       },
       "180": {
         "considered": 1628,
-        "collision_free_and_pad_edge_ge_0_25": 197,
+        "collision_free_and_pad_edge_ge_0_25": 209,
         "edge_first": {
           "origin_mm": [
             86,
-            294
+            298
           ],
-          "body_mm": [
+          "angle": 180,
+          "carrier_mm": [
             61.870000000000005,
-            236.26,
+            236.66,
             87.27,
-            299
+            299.4
           ],
-          "antenna_mm": [
-            61.870000000000005,
-            299,
-            87.27,
-            304
-          ],
-          "usb_mm": [
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
             68.57,
-            221.26,
+            221.66,
             80.57,
-            236.26
+            236.66
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 5.15,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 1.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 2.44,
           "nearest_pad_pair": [
-            "J3.15",
+            "J3.17",
             "JP2",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 32.725,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 33.122,
           "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 25.4,
-          "hypothetical_edge_notch_mm": [
-            61.870000000000005,
-            299,
-            87.27,
-            300
-          ],
-          "notch_track_via_bbox_overlaps": 0,
-          "notch_other_pad_bbox_overlaps": 0,
+          "radio_end_edge_distance_mm": 0.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1427.356,
-          "signal_link_euclidean_mm": 1385.498,
-          "signal_link_manhattan_mm": 1708.82,
-          "signal_grid_peak": 7,
-          "signal_grid_cells_ge_3": 42
+          "all_link_euclidean_mm": 1476.896,
+          "signal_link_euclidean_mm": 1431.922,
+          "signal_link_manhattan_mm": 1761.48,
+          "signal_grid_peak": 6,
+          "signal_grid_cells_ge_3": 45
         },
         "signal_first_feasible": {
           "origin_mm": [
             80,
-            222
-          ],
-          "body_mm": [
-            55.870000000000005,
-            164.26,
-            81.27,
-            227
-          ],
-          "antenna_mm": [
-            55.870000000000005,
-            227,
-            81.27,
             232
           ],
-          "usb_mm": [
-            62.57,
-            149.26,
-            74.57,
-            164.26
+          "angle": 180,
+          "carrier_mm": [
+            55.870000000000005,
+            170.66,
+            81.27,
+            233.4
           ],
-          "body_courtyard_overlaps": [],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            62.57,
+            155.66,
+            74.57,
+            170.66
+          ],
+          "carrier_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
           "pad_edge_min_mm": 19.15,
           "pad_to_other_pad_bbox_lower_bound_mm": 0.87,
           "nearest_pad_pair": [
-            "J3.2",
+            "J3.6",
             "R7",
             "2"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 9.955,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 9.955,
           "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 127.0,
-          "hypothetical_edge_notch_mm": null,
-          "notch_track_via_bbox_overlaps": null,
-          "notch_other_pad_bbox_overlaps": null,
+          "radio_end_edge_distance_mm": 66.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 978.419,
-          "signal_link_euclidean_mm": 941.251,
-          "signal_link_manhattan_mm": 1220.56,
-          "signal_grid_peak": 8,
-          "signal_grid_cells_ge_3": 20
+          "all_link_euclidean_mm": 939.159,
+          "signal_link_euclidean_mm": 905.728,
+          "signal_link_manhattan_mm": 1160.56,
+          "signal_grid_peak": 7,
+          "signal_grid_cells_ge_3": 16
         }
       },
       "270": {
@@ -804,60 +765,47 @@
         "collision_free_and_pad_edge_ge_0_25": 0,
         "edge_first": {
           "origin_mm": [
-            94,
+            98,
             152
           ],
-          "body_mm": [
-            36.26,
+          "angle": 270,
+          "carrier_mm": [
+            36.66,
             150.73,
-            99,
+            99.4,
             176.13
           ],
-          "antenna_mm": [
-            99,
-            150.73,
-            104,
-            176.13
-          ],
-          "usb_mm": [
-            21.260000000000005,
+          "carrier_inside_domain": true,
+          "usb_access_hypothesis_mm": [
+            21.659999999999997,
             157.43,
-            36.26,
+            36.66,
             169.43
           ],
-          "body_courtyard_overlaps": [
+          "carrier_courtyard_overlaps": [
             "C3",
             "R1"
           ],
-          "antenna_courtyard_overlaps": [],
-          "usb_courtyard_overlaps": [],
+          "usb_access_hypothesis_courtyard_overlaps": [],
           "assumed_connector_envelope_overlaps": [],
-          "usb_outside_board_area_mm2": 0.0,
-          "pad_edge_min_mm": 5.15,
-          "pad_to_other_pad_bbox_lower_bound_mm": 0.0,
+          "usb_access_hypothesis_outside_board_area_mm2": 0.0,
+          "pad_edge_min_mm": 1.15,
+          "pad_to_other_pad_bbox_lower_bound_mm": 0.87,
           "nearest_pad_pair": [
-            "J3.22",
-            "C3",
-            "2"
+            "J3.20",
+            "U2",
+            "8"
           ],
-          "body_to_hole_courtyard_bbox_gap_mm": 20.095,
+          "carrier_to_hole_courtyard_bbox_gap_mm": 20.095,
           "nearest_hole_courtyard": "H6",
-          "antenna_substrate_overlap_mm2": 25.4,
-          "hypothetical_edge_notch_mm": [
-            99,
-            150.73,
-            100,
-            176.13
-          ],
-          "notch_track_via_bbox_overlaps": 0,
-          "notch_other_pad_bbox_overlaps": 0,
+          "radio_end_edge_distance_mm": 0.6,
           "links": 20,
           "signal_links": 18,
-          "all_link_euclidean_mm": 1279.207,
-          "signal_link_euclidean_mm": 1212.778,
-          "signal_link_manhattan_mm": 1594.76,
+          "all_link_euclidean_mm": 1310.917,
+          "signal_link_euclidean_mm": 1240.093,
+          "signal_link_manhattan_mm": 1627.14,
           "signal_grid_peak": 11,
-          "signal_grid_cells_ge_3": 37
+          "signal_grid_cells_ge_3": 38
         },
         "signal_first_feasible": null
       }

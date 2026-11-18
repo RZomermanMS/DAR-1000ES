@@ -158,7 +158,7 @@ from `experiment-silk-7` alongside that board; their retained library was
 byte-identical to the two-layer trial's library.
 
 For further physical review, Espressif publishes the DevKitC-1 v1.1 mechanical
-drawing at https://dl.espressif.com/dl/schematics/PCB_ESP32-S3-DevKitC-1_V1.1_20220429.pdf
+drawing at https://dl.espressif.com/dl/schematics/esp_idf/DXF_ESP32-S3-DevKitC-1_V1.1_20220429.pdf
 and its module datasheet at
 https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.html .
 JST publishes the horizontal XH series dimensions at

@@ -24,16 +24,42 @@ class GeometryTest(unittest.TestCase):
                     self.assertAlmostEqual(actual[0], 66 + dx, places=5)
                     self.assertAlmostEqual(actual[1], 170 + dy, places=5)
 
-    def test_projection_and_boundaries(self):
-        body = (-1.27, -5, 24.13, 57.74)
-        antenna = (-1.27, -10, 24.13, -5)
-        for x, y, angle, domain in ((66, 5, 0, (0, 0, 100, 150)),
-                                     (86, 295, 180, (0, 150, 100, 300))):
-            self.assertTrue(compare.inside(compare.transformed(body, x, y, angle), domain))
-            self.assertEqual(compare.overlap(compare.transformed(antenna, x, y, angle),
-                                             (0, 0, 100, 300)), 0)
-        self.assertAlmostEqual(compare.overlap(compare.transformed(antenna, 66, 6, 0),
-                                               (0, 0, 100, 300)), 25.4)
+    def assert_box_almost_equal(self, actual, expected):
+        for a, b in zip(actual, expected):
+            self.assertAlmostEqual(a, b, places=6)
+
+    def test_carrier_rotations(self):
+        expected = ((64.73, 3.6, 90.13, 66.34),
+                    (64.6, -19.13, 127.34, 6.27),
+                    (41.87, -56.34, 67.27, 6.4),
+                    (4.66, 3.73, 67.4, 29.13))
+        for angle, box in zip((0, 90, 180, 270), expected):
+            self.assert_box_almost_equal(compare.transformed(compare.CARRIER, 66, 5, angle), box)
+
+    def test_existing_candidates_and_exact_flush(self):
+        for x, y, angle, domain, box in (
+                (66, 5, 0, (0, 0, 100, 150), (64.73, 3.6, 90.13, 66.34)),
+                (86, 295, 180, (0, 150, 100, 300), (61.87, 233.66, 87.27, 296.4))):
+            actual = compare.transformed(compare.CARRIER, x, y, angle)
+            self.assert_box_almost_equal(actual, box)
+            self.assertTrue(compare.inside(actual, domain))
+            self.assertAlmostEqual(compare.radio_end_edge_distance(actual, angle), 3.6)
+        for x, y, angle in ((66, 1.4, 0), (86, 298.6, 180)):
+            self.assertAlmostEqual(compare.radio_end_edge_distance(
+                compare.transformed(compare.CARRIER, x, y, angle), angle), 0)
+
+    def test_usb_access_is_opposite_pin_one_end(self):
+        for angle in (0, 90, 180, 270):
+            body = compare.transformed(compare.CARRIER, 66, 170, angle)
+            usb = compare.transformed(compare.USB_ACCESS, 66, 170, angle)
+            self.assertAlmostEqual(compare.overlap(body, usb), 0)
+        self.assert_box_almost_equal(compare.transformed(compare.USB_ACCESS, 66, 5, 0),
+                                     (71.43, 66.34, 83.43, 81.34))
+
+    def test_radio_end_edge_distance_all_rotations(self):
+        body = (10, 20, 70, 90)
+        for angle, expected in ((0, 20), (90, 10), (180, 210), (270, 30)):
+            self.assertEqual(compare.radio_end_edge_distance(body, angle), expected)
 
     def test_box_gap(self):
         self.assertEqual(compare.box_gap((0, 0, 1, 1), (2, 1, 3, 2)), 1)

@@ -15,6 +15,10 @@ ESPS = ("U1-CONTROLLER1", "U6-AUDIO1")
 POWER = {"GND", "LOCAL_5V", "SONY_5V_SENSE"}
 STEP = 2
 GRID = 5
+CARRIER = (-1.27, -1.40, 24.13, 61.34)
+# Sensitivity envelope only, not a measured connector, plug or cable.
+USB_ACCESS = (5.43, 61.34, 17.43, 76.34)
+BOARD_BOUNDS = (0, 0, 100, 300)
 
 
 def mm(v):
@@ -38,12 +42,6 @@ def overlap(a, b):
     return max(0, min(a[2], b[2]) - max(a[0], b[0])) * max(0, min(a[3], b[3]) - max(a[1], b[1]))
 
 
-def intersection(a, b):
-    if not overlap(a, b):
-        return None
-    return (max(a[0], b[0]), max(a[1], b[1]), min(a[2], b[2]), min(a[3], b[3]))
-
-
 def rotate(x, y, angle):
     # KiCad angles are counterclockwise in a y-down coordinate system.
     return ((x, y), (y, -x), (-x, -y), (-y, x))[angle // 90]
@@ -62,6 +60,11 @@ def inside(a, b):
 
 def boundary_clearance(box):
     return min(box[0], box[1], 100 - box[2], 300 - box[3])
+
+
+def radio_end_edge_distance(box, angle):
+    """Distance from the carrier's pin-1 end to the edge in its outward direction."""
+    return (box[1], box[0], 300 - box[3], 100 - box[2])[angle // 90]
 
 
 def box_gap(a, b):
@@ -119,13 +122,9 @@ def main():
         raise ValueError(f"Unexpected board SHA-256: {actual}")
     board = pcb.LoadBoard(str(BOARD))
     fps = {f.GetReference(): f for f in board.GetFootprints()}
-    copper_boxes = [bbox(t.GetBoundingBox()) for t in board.GetTracks()]
-    # Pin 1 is at antenna end. Assumed fitted dev-board x=-1.27..24.13,
-    # y=-5..57.74; antenna projection y=-10..-5; USB plug beyond y=57.74.
-    body = (-1.27, -5, 24.13, 57.74)
-    antenna = (-1.27, -10, 24.13, -5)
-    usb = (5.43, 57.74, 17.43, 72.74)
-    result = {"board_sha256": actual, "grid_step_mm": STEP, "orientations": {}}
+    result = {"board_sha256": actual, "grid_step_mm": STEP,
+              "carrier_local_mm": CARRIER, "usb_access_hypothesis_local_mm": USB_ACCESS,
+              "radio_geometry": "unknown", "orientations": {}}
     for ref, ymin, ymax in ((ESPS[0], 0, 150), (ESPS[1], 150, 300)):
         fp = fps[ref]
         assert fp.GetOrientationDegrees() % 360 == 0
@@ -149,15 +148,14 @@ def main():
         # The other ESP is an installed assembly, not merely two courtyards.
         other = ESPS[1] if ref == ESPS[0] else ESPS[0]
         f = fps[other]
-        obstacles[other] = transformed(body, *xy(f.GetPosition()), int(f.GetOrientationDegrees()) % 360)
+        obstacles[other] = transformed(CARRIER, *xy(f.GetPosition()), int(f.GetOrientationDegrees()) % 360)
         connector_boxes = {k: expand(v, 5) for k, v in obstacles.items()
                            if k.startswith("J") and k[1:].isdigit()}
         domain = (0, ymin, 100, ymax)
 
         def summarize(x, y, angle):
-            b, a, u = (transformed(rect, x, y, angle) for rect in (body, antenna, usb))
+            b, u = (transformed(rect, x, y, angle) for rect in (CARRIER, USB_ACCESS))
             bh = sorted(k for k, ob in obstacles.items() if overlap(b, ob) > 1e-8)
-            ah = sorted(k for k, ob in obstacles.items() if overlap(a, ob) > 1e-8)
             uh = sorted(k for k, ob in obstacles.items() if overlap(u, ob) > 1e-8)
             connector_hits = sorted(k for k, ob in connector_boxes.items()
                                     if overlap(b, ob) > 1e-8 or overlap(u, ob) > 1e-8)
@@ -166,36 +164,30 @@ def main():
                           for i, pbox in enumerate(padboxes) for ref2, n, ob in other_pads)
             nearest_hole = min((box_gap(b, ob), ref2) for ref2, ob in obstacles.items()
                                if ref2.startswith("H"))
-            cut = intersection(a, (0, 0, 100, 300))
-            edge_cut = cut if cut and (cut[0] == 0 or cut[1] == 0 or cut[2] == 100 or cut[3] == 300) else None
             return {
-                "origin_mm": [x, y], "body_mm": b, "antenna_mm": a, "usb_mm": u,
-                "body_courtyard_overlaps": bh, "antenna_courtyard_overlaps": ah,
-                "usb_courtyard_overlaps": uh, "assumed_connector_envelope_overlaps": connector_hits,
-                "usb_outside_board_area_mm2": round((u[2]-u[0])*(u[3]-u[1])-overlap(u, (0, 0, 100, 300)), 3),
+                "origin_mm": [x, y], "angle": angle, "carrier_mm": b,
+                "carrier_inside_domain": inside(b, domain),
+                "usb_access_hypothesis_mm": u,
+                "carrier_courtyard_overlaps": bh,
+                "usb_access_hypothesis_courtyard_overlaps": uh,
+                "assumed_connector_envelope_overlaps": connector_hits,
+                "usb_access_hypothesis_outside_board_area_mm2": round((u[2]-u[0])*(u[3]-u[1])-overlap(u, BOARD_BOUNDS), 3),
                 "pad_edge_min_mm": round(min(edges), 3),
                 "pad_to_other_pad_bbox_lower_bound_mm": round(nearest[0], 3),
                 "nearest_pad_pair": [nearest[1], nearest[2], nearest[3]],
-                "body_to_hole_courtyard_bbox_gap_mm": round(nearest_hole[0], 3),
+                "carrier_to_hole_courtyard_bbox_gap_mm": round(nearest_hole[0], 3),
                 "nearest_hole_courtyard": nearest_hole[1],
-                "antenna_substrate_overlap_mm2": round(overlap(a, (0, 0, 100, 300)), 3),
-                "hypothetical_edge_notch_mm": edge_cut,
-                "notch_track_via_bbox_overlaps": (sum(overlap(edge_cut, t) > 0 for t in copper_boxes)
-                                                   if edge_cut else None),
-                "notch_other_pad_bbox_overlaps": (sum(overlap(edge_cut, p[2]) > 0 for p in other_pads)
-                                                   if edge_cut else None),
+                "radio_end_edge_distance_mm": round(radio_end_edge_distance(b, angle), 3),
                 **metrics(links(pads, external, x, y, angle)),
             }
 
         per_angle = {}
         offgrid = (66, 5, 0) if ref == ESPS[0] else (86, 295, 180)
+        flush = (66, 1.4, 0) if ref == ESPS[0] else (86, 298.6, 180)
         result["orientations"][ref] = {
             "baseline": summarize(ox, oy, 0),
-            "edge_flush_off_grid": {
-                "angle": offgrid[2],
-                "body_inside_domain": inside(transformed(body, *offgrid), domain),
-                **summarize(*offgrid),
-            },
+            "existing_edge_candidate": summarize(*offgrid),
+            "exact_carrier_edge_flush_illustration": summarize(*flush),
         }
         for angle in (0, 90, 180, 270):
             candidates = []
@@ -203,22 +195,19 @@ def main():
             collision_free = 0
             for x in range(0, 101, STEP):
                 for y in range(ymin, ymax + 1, STEP):
-                    b = transformed(body, x, y, angle)
+                    b = transformed(CARRIER, x, y, angle)
                     if not inside(b, domain):
                         continue
                     considered += 1
-                    u = transformed(usb, x, y, angle)
-                    a = transformed(antenna, x, y, angle)
+                    u = transformed(USB_ACCESS, x, y, angle)
                     body_hits = sorted(k for k, ob in obstacles.items() if overlap(b, ob) > 1e-8)
-                    antenna_hits = sorted(k for k, ob in obstacles.items() if overlap(a, ob) > 1e-8)
                     usb_hits = sorted(k for k, ob in obstacles.items() if overlap(u, ob) > 1e-8)
                     edge = min(boundary_clearance(transformed(p, x, y, angle)) for p in padboxes)
-                    if not body_hits and not antenna_hits and not usb_hits and edge >= 0.25:
+                    if not body_hits and not usb_hits and edge >= 0.25:
                         collision_free += 1
-                    antenna_on_board = overlap(a, (0, 0, 100, 300))
-                    # Rank feasibility first, then substrate under antenna, then signal estimate.
-                    rank_prefix = (len(body_hits) + len(antenna_hits) + len(usb_hits),
-                                   edge < 0.25, antenna_on_board)
+                    # This edge preference does not model RF geometry or clearance.
+                    rank_prefix = (len(body_hits) + len(usb_hits),
+                                   edge < 0.25, round(radio_end_edge_distance(b, angle), 6))
                     candidates.append((rank_prefix, x, y))
             if not candidates:
                 per_angle[str(angle)] = {"considered": 0}
