@@ -1,0 +1,636 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-18T06:35:35",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.2",
+    "schematic_parity": [],
+    "source": "DAR-1000ES-v4.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [U2_OE_N] of U8",
+                    "pos": {
+                        "x": 41.08,
+                        "y": 125.0
+                    },
+                    "uuid": "61996e85-475d-4cef-8801-8ea9f3615db6"
+                },
+                {
+                    "description": "Track [U2_OE_N] on B.Cu, length 2.8284 mm",
+                    "pos": {
+                        "x": 39.5,
+                        "y": 216.75
+                    },
+                    "uuid": "763f793c-4579-4c54-b590-665d2df7e2c1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [Net-(U1-CONTROLLER1-IO11)] of U2",
+                    "pos": {
+                        "x": 44.0,
+                        "y": 227.84
+                    },
+                    "uuid": "2fcfdcee-5925-43e3-98e4-1d388e09459b"
+                },
+                {
+                    "description": "PTH pad J1.17 [Net-(U1-CONTROLLER1-IO11)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 50.64,
+                        "y": 93.0
+                    },
+                    "uuid": "fde0de51-afd6-4f80-8d27-169fb9ff1a26"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [Net-(U1-CONTROLLER1-IO9)] of U2",
+                    "pos": {
+                        "x": 36.38,
+                        "y": 225.3
+                    },
+                    "uuid": "51fda1b7-e0dc-47ab-b0f2-ddc713b531da"
+                },
+                {
+                    "description": "PTH pad J1.15 [Net-(U1-CONTROLLER1-IO9)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 45.56,
+                        "y": 93.0
+                    },
+                    "uuid": "a5a739ea-879c-4ae1-ae4b-7f66b60e6b09"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [Net-(U1-CONTROLLER1-IO10)] of U2",
+                    "pos": {
+                        "x": 36.38,
+                        "y": 232.92
+                    },
+                    "uuid": "88715bc0-7d74-4fad-ab4a-c1a827b6b58a"
+                },
+                {
+                    "description": "PTH pad J1.16 [Net-(U1-CONTROLLER1-IO10)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 48.1,
+                        "y": 93.0
+                    },
+                    "uuid": "98dccadf-6790-4fd4-bdae-ca708217322a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 0.5590 mm",
+                    "pos": {
+                        "x": 46.25,
+                        "y": 207.5
+                    },
+                    "uuid": "c1ae2b90-9a7c-48d5-bb9d-3a71e2ca29ee"
+                },
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 199.25
+                    },
+                    "uuid": "140041d3-1d3a-4bbb-8569-0fcc8314ac45"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [U6_OE_N] on B.Cu, length 1.3780 mm",
+                    "pos": {
+                        "x": 70.08,
+                        "y": 234.0
+                    },
+                    "uuid": "de94333a-f5b1-4331-ad4e-3b8463446faa"
+                },
+                {
+                    "description": "Track [U6_OE_N] on B.Cu, length 0.7603 mm",
+                    "pos": {
+                        "x": 72.5,
+                        "y": 220.0
+                    },
+                    "uuid": "d9914287-445b-4c69-b229-e8cf53205a8e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/DATA] of U7",
+                    "pos": {
+                        "x": 63.92,
+                        "y": 192.0
+                    },
+                    "uuid": "3f632f0a-66c1-4ec2-b147-c3facf3ada23"
+                },
+                {
+                    "description": "PTH pad 3 [/DATA] of J11",
+                    "pos": {
+                        "x": 90.3,
+                        "y": 224.0
+                    },
+                    "uuid": "62fb4ab4-8b39-4668-bfd9-ee3469eb6adf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J1.15 [Net-(U6-AUDIO1-IO9)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 54.44,
+                        "y": 163.0
+                    },
+                    "uuid": "ce2c9aef-1993-4cf5-b7c3-a874b002c5a0"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(U6-AUDIO1-IO9)] of U6",
+                    "pos": {
+                        "x": 73.46,
+                        "y": 213.0
+                    },
+                    "uuid": "d6747c74-c7b7-40b1-acc1-5ae79fa3a915"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J1.17 [Net-(U6-AUDIO1-IO11)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 49.36,
+                        "y": 163.0
+                    },
+                    "uuid": "b5ea511d-97fa-4940-af43-224e6d025b9e"
+                },
+                {
+                    "description": "PTH pad 12 [Net-(U6-AUDIO1-IO11)] of U6",
+                    "pos": {
+                        "x": 70.92,
+                        "y": 220.62
+                    },
+                    "uuid": "73b0de8e-b25d-4291-b215-66983d1cc022"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J1.20 [Net-(U1-CONTROLLER1-IO47)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 41.74,
+                        "y": 163.0
+                    },
+                    "uuid": "d6dbeaf4-3d3d-491e-9b0f-6de32d42b79c"
+                },
+                {
+                    "description": "PTH pad J3.17 [Net-(U1-CONTROLLER1-IO47)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 50.64,
+                        "y": 70.14
+                    },
+                    "uuid": "32258e17-0912-465b-9167-e3e3b30f5d14"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.1 [Net-(U1-CONTROLLER1-GND-PadJ3.1)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 10.0,
+                        "y": 70.14
+                    },
+                    "uuid": "b3067bb6-e0b2-405f-b289-dc2484861805"
+                },
+                {
+                    "description": "PTH pad J3.1 [Net-(U1-CONTROLLER1-GND-PadJ3.1)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 90.0,
+                        "y": 185.86
+                    },
+                    "uuid": "cf1ab6a4-7454-4295-b6a0-8a046ae00d82"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [ENABLE_U7] on B.Cu, length 0.6382 mm",
+                    "pos": {
+                        "x": 75.5,
+                        "y": 185.25
+                    },
+                    "uuid": "850115c2-6a22-467a-911d-a00a31d982f6"
+                },
+                {
+                    "description": "Track [ENABLE_U7] on B.Cu, length 8.2500 mm",
+                    "pos": {
+                        "x": 67.25,
+                        "y": 232.0
+                    },
+                    "uuid": "fe6d4b50-dafc-459a-b533-62fea707d0ef"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.18 [ENABLE_U6] of U6-AUDIO1",
+                    "pos": {
+                        "x": 46.82,
+                        "y": 185.86
+                    },
+                    "uuid": "fd62dcac-6ec7-44aa-b181-4cdfb18e112e"
+                },
+                {
+                    "description": "PTH pad 1 [ENABLE_U6] of R10",
+                    "pos": {
+                        "x": 55.0,
+                        "y": 216.0
+                    },
+                    "uuid": "dd889c2a-ca7c-4cae-8c93-23ded241040d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/FLCLEAR] of R4",
+                    "pos": {
+                        "x": 21.0,
+                        "y": 214.0
+                    },
+                    "uuid": "340a3c08-d0a7-42d2-8c0b-8f0a281b3c97"
+                },
+                {
+                    "description": "PTH pad 3 [/FLCLEAR] of U3",
+                    "pos": {
+                        "x": 15.0,
+                        "y": 191.08
+                    },
+                    "uuid": "402fa286-9036-431d-a554-a8f9295a30c3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 11 [/ATT] of U6",
+                    "pos": {
+                        "x": 68.38,
+                        "y": 220.62
+                    },
+                    "uuid": "30107ead-fb05-426b-aace-141ae5b13d96"
+                },
+                {
+                    "description": "Track [/ATT] on B.Cu, length 0.5579 mm",
+                    "pos": {
+                        "x": 89.7475,
+                        "y": 245.5
+                    },
+                    "uuid": "7e500335-4273-406b-b8b5-e88c9ced10c7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [U7_OE_N] of R6",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 205.0
+                    },
+                    "uuid": "9191d19b-8516-485e-9cc1-9d5fce77dc07"
+                },
+                {
+                    "description": "PTH pad 6 [U7_OE_N] of U9",
+                    "pos": {
+                        "x": 77.7,
+                        "y": 234.0
+                    },
+                    "uuid": "3b7d08d7-2389-461f-adae-ca50f27b6589"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-CONTROLLER1-IO1)] on B.Cu, length 0.4205 mm",
+                    "pos": {
+                        "x": 23.0,
+                        "y": 198.0
+                    },
+                    "uuid": "44890a19-bcc4-4510-a67b-4c3d62b34f5f"
+                },
+                {
+                    "description": "PTH pad J3.4 [Net-(U1-CONTROLLER1-IO1)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 17.62,
+                        "y": 70.14
+                    },
+                    "uuid": "2fc57059-c2b8-4e7a-8467-25ac8e341114"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.5 [Net-(U1-CONTROLLER1-IO2)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 20.16,
+                        "y": 70.14
+                    },
+                    "uuid": "95045a7b-05d9-424b-9033-571764facf49"
+                },
+                {
+                    "description": "PTH pad 12 [Net-(U1-CONTROLLER1-IO2)] of U3",
+                    "pos": {
+                        "x": 22.62,
+                        "y": 191.08
+                    },
+                    "uuid": "e4178114-db59-4448-afb6-98e678c29a48"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.9 [Net-(U1-CONTROLLER1-IO39)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 30.32,
+                        "y": 70.14
+                    },
+                    "uuid": "5e4c2288-8509-4f4b-96ad-2f1ca38cb8da"
+                },
+                {
+                    "description": "PTH pad JP4.4 [Net-(U1-CONTROLLER1-IO39)] of U5",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 273.38
+                    },
+                    "uuid": "3d2908c5-20ad-4d36-b831-2b479abe7e02"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.5 [Net-(U1-CONTROLLER1-IO14)] of U5",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 270.84
+                    },
+                    "uuid": "f70036a9-a2e4-4173-accb-71858d3deca9"
+                },
+                {
+                    "description": "PTH pad J1.20 [Net-(U1-CONTROLLER1-IO14)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 58.26,
+                        "y": 93.0
+                    },
+                    "uuid": "766b2ec9-a836-4c39-bcfd-3be36f4bc0c1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.6 [Net-(U1-CONTROLLER1-IO13)] of U5",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 268.3
+                    },
+                    "uuid": "bf88b263-4dab-40b2-8a96-e97d27509fbf"
+                },
+                {
+                    "description": "PTH pad J1.19 [Net-(U1-CONTROLLER1-IO13)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 55.72,
+                        "y": 93.0
+                    },
+                    "uuid": "ce49cfa8-626a-4615-9250-6da63cdfbe15"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.8 [Net-(U1-CONTROLLER1-IO40)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 27.78,
+                        "y": 70.14
+                    },
+                    "uuid": "548d9e24-2753-4abe-b313-e031a47cf133"
+                },
+                {
+                    "description": "PTH pad JP4.7 [Net-(U1-CONTROLLER1-IO40)] of U5",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 265.76
+                    },
+                    "uuid": "a2e616ac-c648-4ca6-9bbb-cac9b755904e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(U1-CONTROLLER1-IO8)] of U4",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 197.54
+                    },
+                    "uuid": "9335f234-f62f-4367-ac54-26dee65d7bfd"
+                },
+                {
+                    "description": "PTH pad J1.12 [Net-(U1-CONTROLLER1-IO8)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 37.94,
+                        "y": 93.0
+                    },
+                    "uuid": "46122148-7a95-4dff-9dd1-f66cc2c14a04"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [Net-(U1-CONTROLLER1-IO18)] of U4",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 205.16
+                    },
+                    "uuid": "4310eba4-ca34-4de3-9c89-f6fb13baf9d8"
+                },
+                {
+                    "description": "PTH pad J1.11 [Net-(U1-CONTROLLER1-IO18)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 35.4,
+                        "y": 93.0
+                    },
+                    "uuid": "6d4bc0cd-d4d8-4069-a871-c43dad9ac839"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J1.7 [Net-(U1-CONTROLLER1-IO7)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 25.24,
+                        "y": 93.0
+                    },
+                    "uuid": "20c24e7b-c60d-4059-a216-c490ae123d85"
+                },
+                {
+                    "description": "PTH pad 9 [Net-(U1-CONTROLLER1-IO7)] of U4",
+                    "pos": {
+                        "x": 37.62,
+                        "y": 207.7
+                    },
+                    "uuid": "be8b6396-ad8e-4675-aab1-f6c932a9f086"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J1.5 [Net-(U1-CONTROLLER1-IO5)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 20.16,
+                        "y": 93.0
+                    },
+                    "uuid": "6ea8f7ec-0790-4ba8-bf40-ad7ffce132f0"
+                },
+                {
+                    "description": "PTH pad 12 [Net-(U1-CONTROLLER1-IO5)] of U4",
+                    "pos": {
+                        "x": 37.62,
+                        "y": 200.08
+                    },
+                    "uuid": "3de86ecc-885a-46f9-8093-62443133627d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}
