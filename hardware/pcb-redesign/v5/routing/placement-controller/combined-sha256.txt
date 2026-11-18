@@ -1,0 +1,2 @@
+source fb1f06735ecc218e2946121efeb44f91a6d88a2804b6029a4e8973fffa8e859e  hardware/pcb-redesign/v5/routing/placement-c6/result.kicad_pcb
+saved-board-before-and-after-read-only-drc 00b475a1c17ff370fffc5db9908c3599576b6aebd4c7a811cf5e1fad64c8e76b

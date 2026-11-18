@@ -14,6 +14,9 @@ mkdir "$P/.work"
 trap 'rm -rf "$P/.work" "$P/org.kicad.kicad"; rm -f "$P/"*.kicad_prl' EXIT
 cp "$S/"*.kicad_sch "$S/result.kicad_pro" "$P/"
 sed 's@../../../DAR1000ES.pretty@../../DAR1000ES.pretty@' "$S/fp-lib-table" > "$P/fp-lib-table"
+sed 's@${KIPRJMOD}/DAR1000ES.kicad_sym@${KIPRJMOD}/../../DAR1000ES.kicad_sym@' \
+  hardware/pcb-redesign/v5/sym-lib-table > "$P/sym-lib-table"
+test -r "$P/../../DAR1000ES.kicad_sym"
 docker run --rm --network none --user "$(id -u):$(id -g)" \
   -e HOME="/work/$P/.work" -e TMPDIR="/work/$P/.work" -e PYTHONDONTWRITEBYTECODE=1 \
   -v "$ROOT:/work:ro" -v "$ROOT/$P:/work/$P:rw" -w /work \

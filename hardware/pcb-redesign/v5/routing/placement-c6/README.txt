@@ -9,6 +9,13 @@ The source is unchanged. board.sha256 is checked after a separate read-only
 native DRC; audit.json, clearance.json and comparison.json also identify the
 saved board by hash.
 
+Open the adjacent result.kicad_pro and schematic sheets with both project
+library tables. sym-lib-table resolves the custom DAR1000ES symbols through
+${KIPRJMOD}/../../DAR1000ES.kicad_sym, the shared v5 library; fp-lib-table
+similarly references ../../DAR1000ES.pretty. Keep the directory layout when
+moving the project. Standard symbols use the KiCad 10 symbol directory.
+The build regenerates the symbol table from v5/sym-lib-table.
+
 C6 moved from (45,68) to (55.5,41.5) mm, orientation 0 degrees. Its
 LOCAL_5V pad 1 moved from (45,68) to (55.5,41.5); GND pad 2 moved from
 (50,68) to (60.5,41.5). U8's true VCC is pad 14 at (52.62,45), not a

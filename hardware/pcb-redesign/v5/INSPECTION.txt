@@ -1,14 +1,22 @@
 DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
 
 Latest combined review candidate (still incomplete):
-  routing/integrated-review/clearance-first-corrected/result.kicad_pcb
+  routing/placement-integrated/result.kicad_pcb
 Open with its adjacent result.kicad_pro, schematic sheets and fp-lib-table.
-Its README and preview/ identify the saved-board reports and inspection
-plots. The copper fill, partial power reroute, silkscreen and clearance
-changes are combined; capacitor placement and physical/electrical review
+Its README, audit.json and preview/ identify the saved-board reports, exact
+placements and inspection plots. This combines the published C6 placement
+with controller C1/C2, audio C3/C4/C5 and supervisor C8 edits. C6 ground-pad
+to U8.7 center distance increased from 9.231 to 24.319 mm; a short supply
+route and sampled ground fill do not prove a compact or continuous return
+loop. C8 supply track is 10.166 mm. Physical, electrical and RF review
 remain unresolved. This is not a fabrication or power-up approval.
 
-The reviewable routed board is routing/experiment-silk-7/result.kicad_pcb,
+The earlier combined review is preserved at
+  routing/integrated-review/clearance-first-corrected/result.kicad_pcb
+and the separate published C6 milestone at
+  routing/placement-c6/result.kicad_pcb.
+
+The historical inspection checkpoint is routing/experiment-silk-7/result.kicad_pcb,
 not routing/synchronized.kicad_pcb or an experiment's input.kicad_pcb.
 Open it with routing/experiment-silk-7/result.kicad_pro and its adjacent
 fp-lib-table and DAR1000ES.pretty. The matching schematic is
@@ -53,7 +61,7 @@ The schematic ERC has 59 findings and inherited ignored checks.
 MECHANICAL-REVIEW.txt records nominal checkpoint envelope comparisons,
 source-access limitations and the inboard antenna/substrate concern.
 
-This is not a finished electrical or physical design. C7 is about 70 mm
+The historical experiment-silk-7 board is not a finished electrical or physical design. C7 is about 70 mm
 from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
 35 mm from U11. The nearest grounded pad need not be the IC ground supply
 pin; these distances do not establish bypass loop lengths. Actual decoupling

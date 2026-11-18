@@ -1,0 +1,38 @@
+{
+  "board_sha256": "ecb68db85598d475af1b20ec5be40f3d330991a4b8ae8eb20d879b0d009dd67b",
+  "unchanged_other_placements_and_pad_nets": true,
+  "netlist_uart_section_and_envelopes_passed": true,
+  "antenna_rule_areas_unchanged": true,
+  "c8_u10": {
+    "SONY_5V_SENSE": {
+      "c8_pad": "1",
+      "u10_pin": "2",
+      "pad_centers_mm": 7.364,
+      "track_only_mm": 10.166
+    },
+    "GND": {
+      "c8_pad": "2",
+      "u10_pin": "3",
+      "pad_centers_mm": 5.63,
+      "track_only_mm": null
+    }
+  },
+  "thermal_gap_sample_hits": {
+    "C8.2 F.Cu": 60,
+    "C8.2 B.Cu": 60,
+    "U10.3 F.Cu": 55,
+    "U10.3 B.Cu": 38
+  },
+  "zones": [
+    {
+      "layer": "F.Cu",
+      "net": "GND",
+      "filled_polygons": 3
+    },
+    {
+      "layer": "B.Cu",
+      "net": "GND",
+      "filled_polygons": 12
+    }
+  ]
+}
