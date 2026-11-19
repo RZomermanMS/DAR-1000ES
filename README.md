@@ -55,6 +55,7 @@ digits, punctuation, a music note and seven level bars.
 15. [Split-setup Architecture and Travel Demo](15-split-setup-architecture.md)
 16. [Internet-radio Menu Program Guide (proposed)](16-internet-radio-menu-program-guide.md)
 17. [Internet-radio Menu User Instruction Manual (planned)](17-internet-radio-menu-user-manual.md)
+18. [Controller ESP Implementation Specification and Agent Handoff](18-controller-esp-implementation-specification.md)
 
 Chapters 16–17 describe a proposed directory/menu design, **not installed
 firmware behavior**. For implemented controls and safety requirements, continue

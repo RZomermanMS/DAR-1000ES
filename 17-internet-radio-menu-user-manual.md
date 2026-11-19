@@ -2,12 +2,13 @@
 
 > **Not available in current firmware.** This manual describes the proposed
 > menu, not controls you can use on the installed 0.3.48 front panel.
-> The PROGRAM switch, DIRECT and FINE +/− still need verified controller mappings.
+> The owner has confirmed all physical buttons; missing controller input
+> bindings and the target actions still need implementation.
 > Directory browsing, country selection, Top 10 and holding MEMORY to save
 > are not implemented. Recording the last station and restoring brightness and
 > display mode from a status file are target requirements, not installed features.
-> See the [program guide](16-internet-radio-menu-program-guide.md)
-> for recommendations and unresolved decisions.
+> See the [controller implementation specification](18-controller-esp-implementation-specification.md)
+> and [program guide](16-internet-radio-menu-program-guide.md) for the target.
 
 For controls that work now, use the
 [screen-driver operating guide](13-screen-driver-operating-guide.md) and
@@ -20,7 +21,9 @@ The target is operation on the original Sony front panel: no web interface,
 phone app or IR remote should be required to operate the receiver. AirPlay
 must still be **initiated on the sending device**. Receiver status, disconnect
 and source policy are intended to be available on the Sony. This is a
-proposal, not approval of any new key mapping or evidence that it works today.
+target design, not evidence that these functions work today. The owner
+confirmed all physical buttons on 2026-11-19; that does not supply missing
+numeric input codes or turn historical firmware behavior into target behavior.
 
 Today preset **assignments** and bench setup still use web configuration;
 these are gaps, not instructions for the target experience. Physical
@@ -35,7 +38,7 @@ front-panel method for these functions is promised here.
 With the network and directory already set up, and the display safely running:
 
 1. Press a numbered **1–16** key to recall a preset; an unassigned slot leaves
-   playback alone. This recall exists today, subject to keypad reliability.
+   playback alone. This recall exists today.
 2. To find something else, press **UNDEFINED** to open the proposed country
    selector, then use **FINE +/−** and short **MEMORY** to choose a
    country and genre, or a category key to open its Top 10.
@@ -65,27 +68,27 @@ memory, block, presets, MHz clear, mono mode and fine tuning.](media/internet-ra
 The drawing follows the group layout in the
 [reference photograph](media/image1.jpeg), but is simplified and not a
 dimensioned facsimile. The numbers are **callouts**, not preset numbers.
-Descriptions below distinguish current actions from proposals; see the
-evidence table immediately after them for individual-key reliability.
+Descriptions below distinguish current actions from target behavior; see the
+evidence table immediately after them for the historical observations.
 
 | No. | Control | Explanation |
 | --- | --- | --- |
-| 1 | POWER | Original power control. Its physical mapping to the new controller is unverified; do not assume it provides a new software standby function. |
-| 2 | PROGRAM OFF / SET / ON | Switch: proposed ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded; SET enables programming the startup station with CHECK. Controller mapping remains unverified. Not a country-menu button. |
+| 1 | POWER | Confirmed original power control; do not assume it provides a new software standby function. |
+| 2 | PROGRAM OFF / SET / ON | Confirmed switch: target ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded; SET enables programming the startup station with CHECK. Not a country-menu button. |
 | 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; in PROGRAM SET, hold for two seconds to store the startup station. |
 | 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
 | 5 | Display | Single row of 22 character cells with separate indicators. Menu messages and AirPlay status in this manual are proposals. |
-| 6 | DIRECT | Proposed to request playback of the displayed station candidate; physical mapping is unverified. |
-| 7 | LNC / LINK | The photo appears to say LNC; other documentation says LINK. Key identity and any occupied function need verification. A Source menu is only a possible future use. |
+| 6 | DIRECT | Confirmed control; target action requests playback of the displayed station candidate. |
+| 7 | LNC / LINK | Confirmed physical control. The photo appears to say LNC; other documentation says LINK. Its occupied function, if any, still needs to be established before assigning a Source menu. |
 | 8 | PHONES | Original headphone socket, not a keypad button. |
 | 9 | LEVEL | Original headphone-level knob, not a keypad button. Other volume or mute support has not been established. |
 | 10 | Category and MUSIC / SPEECH keys; UNDEFINED | Proposed category shortcuts open a country-filtered Top 10 without tuning. UNDEFINED is instead proposed to open the country selector. All physical labels are shown in the drawing and listed in the evidence table below; their mappings have differing confidence. |
 | 11 | MEMORY | Raw events only today. Proposed: short press confirms or advances; hold with a valid station candidate enters preset storage. |
 | 12 | BLOCK − / + | Raw events only today. Proposed: jump six countries or six alphabet positions, depending on context. |
-| 13 | Presets 1–16 | Current numbered recall; unassigned slots leave playback unchanged. Proposed: select the destination during preset storage. Keys 8 and 16 need continued reliability observation. |
+| 13 | Presets 1–16 | Current numbered recall; unassigned slots leave playback unchanged. Target: select the destination during preset storage. Earlier 8 and 16 observations remain in the keypad history. |
 | 14 | MHz/CLEAR | Raw event only today; proposed back or cancel, including cancelling a pending preset replacement. |
-| 15 | MONO MODE | Raw mapping has been intermittent; no current action. Reserved as a possible future real mono/stereo option, not assigned here. |
-| 16 | FINE TUNING − / + | Proposed to move through choices or edit the active letter; physical mappings remain unverified. |
+| 15 | MONO MODE | Confirmed control; no current action. Reserved as a possible future real mono/stereo option, not assigned here. |
+| 16 | FINE TUNING − / + | Confirmed controls; target action moves through choices or edits the active letter. |
 
 ### Mapping evidence by key
 
@@ -100,38 +103,38 @@ display, MEMORY/BLOCK centrally, numbered keys, and right-hand controls.
 It appears to label the right-hand key **LNC**; the virtual-panel guide calls
 it **LINK**. The LNC display annunciator is separately documented in
 [bus observations](05-bus-capture-findings.md); neither that annunciator nor
-the spelling proves the physical key's matrix identity. Confirm the label and
-mapping on the actual unit before relying on either name.
+the spelling determines a numeric input code or an unoccupied function.
+All physical buttons are owner-confirmed; preserve the label uncertainty.
 
-In the table, **current** means implemented action, not proof every switch
-is reliable; **raw** means a captured matrix event without an implemented
-action; **proposed** means only the chapter 16 menu design. The
-[keypad retests](14-keypad-mapping.md) are the authority for raw evidence.
-An ordered run alone can misassociate keys if an event is lost.
+In the table, **current** means implemented action; **raw** means a captured
+matrix event without an implemented action; **target** is not yet implemented.
+The [keypad retests](14-keypad-mapping.md) preserve earlier raw evidence,
+including historical intermittent events and ordered-run uncertainty. The
+owner has since confirmed all buttons; no new numeric codes were supplied.
 
 | Map | Physical label(s) | Evidence and action |
 | --- | --- | --- |
-| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM controller mappings are unverified. PROGRAM is a switch with the proposed startup behavior above, not a country-selector button. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. Proposed replacement actions are described under [Check connections](#check-connections-proposed). |
+| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | All are owner-confirmed. PROGRAM is the startup switch, not a country-selector button. CHECK currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. Target replacement actions are described under [Check connections](#check-connections-proposed). |
 | 2 | DISPLAY MODE | Current: short press starts Now Playing when stopped or cycles modes to OFF; hold cycles DIM once while a radio scan runs, without a second short action on release. Starting requires hardware readiness. |
 | 3 | NEWS, VARIED | Raw events individually retested clean; proposed category shortcuts. No current category action. |
 | 3 | DRAMA, CULTURE, CLASSICS, OTHER M | Raw events individually retested clean; proposed category shortcuts. No current category action. |
-| 3 | AFFAIRS, INFO, SPORT, EDUCATE, POP M, ROCK M, M.O.R. M, LIGHT M | Raw associations from an ordered run only; individually verify before use. Proposed category shortcuts, not current actions. ROCK M is also recorded as ROCKM. |
-| 3 | SCIENCE, UNDEFINED | Raw shared-column mappings are intermittent: latest complete retest was clean, but earlier tests produced whole-row events. SCIENCE is a proposed category shortcut; UNDEFINED is now proposed for country selection instead of its earlier category role. Neither action exists today. |
+| 3 | AFFAIRS, INFO, SPORT, EDUCATE, POP M, ROCK M, M.O.R. M, LIGHT M | Historical raw associations came from an ordered run; all buttons are now owner-confirmed. Target category shortcuts are not current actions. ROCK M is also recorded as ROCKM. |
+| 3 | SCIENCE, UNDEFINED | Earlier shared-column tests included whole-row events, followed by a clean complete retest; the owner now confirms all buttons. SCIENCE is a target category shortcut; UNDEFINED opens country selection instead of its earlier category role. Neither action exists today. |
 | 3 | MUSIC, SPEECH | Raw events clean in later individual checks; proposed category shortcuts, not current actions. The BALANCE marking over these keys does not establish additional separate buttons or a current balance function. |
-| 4 | MEMORY; BLOCK +; BLOCK − | Raw only today. MEMORY and BLOCK+ were individually observed, including rapid repeat pairs; BLOCK− shares the intermittent column. Proposed short MEMORY confirms, hold stores a candidate; BLOCK jumps six countries or six letters, depending on context. |
-| 5 | 1–16 | Current immediate preset recall; proposed destination selection only during storage. The latest shared-column test was clean for 8 and 16, but both previously produced row-wide events and 8 also produced simultaneous columns; continued observation is needed. Other tested keys were clean, but not every key was individually retested in the latest checks. |
-| 5 | MHz/CLEAR; MONO MODE | MHz/CLEAR: raw event retested clean; proposed back/cancel. MONO MODE: raw only, shared-column intermittent despite latest clean pair; no current action. |
-| 6 | DIRECT; LNC/LINK; FINE −, FINE + | Physical mappings unverified; virtual controls are disabled. DIRECT and FINE have proposed tuning/navigation roles. LNC/LINK has no approved menu assignment; its physical identity and lack of an occupied function must be verified. |
+| 4 | MEMORY; BLOCK +; BLOCK − | Raw only today. Earlier tests included rapid repeat pairs and shared-column events; the owner now confirms all buttons. Target short MEMORY confirms, hold stores a candidate; BLOCK jumps six countries or six letters, depending on context. |
+| 5 | 1–16 | Current immediate preset recall; target destination selection only during storage. Historical shared-column tests included row-wide and simultaneous events; all buttons are now owner-confirmed. |
+| 5 | MHz/CLEAR; MONO MODE | Owner-confirmed. MHz/CLEAR has raw events and a target back/cancel role. MONO MODE has no current action; earlier shared-column observations remain historical evidence. |
+| 6 | DIRECT; LNC/LINK; FINE −, FINE + | Owner-confirmed physical controls; virtual controls are disabled in the installed baseline. DIRECT and FINE have target tuning/navigation roles. LNC/LINK has no approved Source-menu assignment, and its occupied function remains to be established. |
 
 The currently **unallocated** controls in the chapter 16 menu design are
-LNC/LINK and MONO MODE; this is a design inventory, **not** a claim of clean
-physical mappings. Earlier notes also mention BALANCE MUSIC/SPEECH, but the
+LNC/LINK and MONO MODE; this is a design inventory, not evidence that LNC/LINK
+has no occupied function. Earlier notes also mention BALANCE MUSIC/SPEECH, but the
 photo does not establish separate balance keys; MUSIC and SPEECH are already
 proposed category controls. POWER is not a spare menu key, and UNDEFINED is
 now proposed for country selection. Do not repurpose
 presets, DIM, or country/back/commit gestures. The separately requested CHECK
-change below replaces its existing function only in the proposal. If verified and truly
-unoccupied, LNC/LINK is a restrained candidate for a Source menu; MONO MODE
+change below replaces its existing function only in the target. If its function
+is truly unoccupied, LNC/LINK is a restrained candidate for a Source menu; MONO MODE
 can remain reserved for a future real mono/stereo option. Leave ambiguous
 controls reserved rather than assigning last-station, sleep-timer or other
 features merely because a key appears free.
@@ -232,7 +235,7 @@ Country-filter persistence is separately
 
 Planned sequence:
 
-1. Press **UNDEFINED** to open countries. Its mapping is intermittent and
+1. Press **UNDEFINED** to open countries. All buttons are owner-confirmed;
    this entry action is not implemented. The proposed country indicator blinks while you choose;
    the previous applied country remains in force until confirmation.
 2. Use **FINE +/−** to move one country, or **BLOCK +/−** to move six entries.
@@ -365,8 +368,8 @@ All menu meanings below are planned unless explicitly marked existing.
 
 | Control or indicator | Meaning |
 | --- | --- |
-| PROGRAM switch | Proposed ON: start NPO Radio 2 or the programmed station; OFF: start without a loaded preset; SET: hold CHECK to store the startup station. Controller mapping remains unverified |
-| UNDEFINED | Proposed country-selector entry; shared-column mapping remains intermittent |
+| PROGRAM switch | Target ON: start NPO Radio 2 or the programmed station; OFF: start without a loaded preset; SET: hold CHECK to store the startup station |
+| UNDEFINED | Owner-confirmed control; target country-selector entry |
 | FINE +/− | Country list: one entry; genre list: one genre; Top 10: candidate; station editor: active letter |
 | BLOCK +/− | Countries: six entries; station editor: six alphabet positions |
 | Short MEMORY | Confirm country/genre, lock a letter, open BROWSE ALL, or confirm preset replacement |
@@ -421,7 +424,7 @@ it within the 22 cells if necessary; if unavailable show `UNKNOWN DEVICE`.
 That is different from `NO AIRPLAY SESSION`: do not invent a device name
 or confuse an unknown sender with no session.
 
-If LNC/LINK is verified and has no occupied function, propose it as the
+If LNC/LINK has no occupied function, propose it as the
 entry to a local Source menu. Within that menu only, use FINE +/− to choose
 an item and short MEMORY to select/confirm; MHz/CLEAR backs out or cancels.
 These contextual roles do not alter the country, browser or preset gestures.

@@ -1,11 +1,13 @@
-# Internet-radio menu: program guide (proposed)
+# Internet-radio menu: program guide (target design)
 
 ## Status and scope
 
-**Design specification only; not installed or implemented.** This chapter
-records the requested navigation and separates recommendations from decisions
-still needed. The companion [user manual](17-internet-radio-menu-user-manual.md)
-describes the intended experience, not operating instructions for current firmware.
+**Target design; not installed or implemented.** The owner confirmed all
+buttons on 2026-11-19. The [controller implementation specification and
+handoff](18-controller-esp-implementation-specification.md) consolidates the
+requirements and takes precedence over older conflicting proposals here.
+The companion [user manual](17-internet-radio-menu-user-manual.md) describes
+the intended experience, not operating instructions for current firmware.
 
 Baseline inspected: main commit `7d45cab`, firmware 0.3.48, on 2026-11-16.
 See the [operating guide](13-screen-driver-operating-guide.md),
@@ -17,15 +19,15 @@ See the [operating guide](13-screen-driver-operating-guide.md),
 | Presets 1–16, DISPLAY MODE | Work as documented in chapters 13–15; retain their behavior |
 | CHECK | Currently starts Stereo VU as documented in chapters 13–15; proposed short press checks connections and a two-second hold in PROGRAM SET stores the selected startup station; see the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Mapped raw events only; the menu actions below are new |
-| PROGRAM switch, DIRECT, FINE +/− | Switch startup behavior and menu controls are proposed; controller mappings remain unverified and virtual controls disabled. UNDEFINED is proposed as country-menu entry, subject to its intermittent mapping |
+| PROGRAM switch, DIRECT, FINE +/− | Physical controls confirmed by owner; target actions and any missing controller input bindings remain to be implemented. UNDEFINED is the country-menu entry in the target |
 | Directory, filters, Top 10, prefix editor, MEMORY storage | Proposed, not a feature of the current front panel |
 | Startup status file | Record last-used station, brightness and display mode; restore logical display settings, with station startup governed by PROGRAM; not implemented |
 | PROGRAM label | Mapped fixed display element; proposed country-state ownership/blinking not implemented |
 | Split audio | Controller still decodes locally; UART is diagnostic, not a station-command transport |
 
-The latest complete shared-column keypad check was clean, but earlier
-intermittent failures remain relevant; this is not blanket hardware validation.
-No firmware, configuration, deployment or hardware changes accompany this guide.
+Earlier intermittent observations remain in chapter 14 as historical evidence.
+Owner confirmation does not supply missing codes or implement actions. No
+firmware, configuration, deployment or hardware changes accompany this guide.
 
 ## Safety and display invariants
 
@@ -157,8 +159,8 @@ mode; a tune failure must be explicit, not disguised as another station.
 
 The physical PROGRAM control is a switch reserved for the startup behavior
 above, not the country-menu entry. UNDEFINED is now proposed as the physical
-entry, replacing its earlier proposed category role. Its shared-column mapping
-has been intermittent and must be validated before relying on it. Once
+entry, replacing its earlier proposed category role. Earlier shared-column
+observations remain in the keypad history; all buttons are now owner-confirmed. Once
 opened, the country selector has a pending copy of the applied filter. When
 backing from genres, opening the country selector must not clear the applied
 country. Cancelling there restores the preceding genre screen and applied
@@ -367,9 +369,9 @@ that future command layer already exists.
 
 Before implementation, resolve:
 
-- Physical PROGRAM, DIRECT and FINE mappings, UNDEFINED reliability and
-  continued matrix reliability; startup while PROGRAM remains in SET and
-  startup-station write/confirmation details.
+- Any actual input codes or switch interface missing from the repository;
+  startup while PROGRAM remains in SET and startup-station write/confirmation
+  details. All physical buttons are owner-confirmed.
 - Country-filter persistence/default after reboot.
 - Status-file path/format/versioning and missing/corrupt-file first-boot/recovery
   policy; recording last-used station, brightness and display mode is required,

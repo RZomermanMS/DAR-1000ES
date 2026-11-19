@@ -2,6 +2,13 @@
 
 ## Scope and current status
 
+The owner confirmed all physical buttons on 2026-11-19. The
+[controller implementation specification](18-controller-esp-implementation-specification.md)
+defines the target, including CHECK and the PROGRAM switch; it does not imply
+that these target behaviors or the audio transport are already installed.
+The portable-demo table below describes the **current firmware**, not the
+physical-control confirmation.
+
 The target is two ESP32-S3 N16R8 development boards: a front-panel controller
 and an audio receiver. The controller must also support portable interface
 development without the Sony, keypad or audio ESP.
@@ -203,7 +210,7 @@ Real bench controls are hidden while this page owns an armed virtual session.
 | CHECK | Start Stereo VU only from OFF |
 | Presets 1-16 | Select real saved presets using the same announcement/loading rules as physical keys |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Log mapped raw events; no firmware action is implemented yet |
-| POWER, PROGRAM, DIRECT, LINK, FINE +/- | Disabled until physical mappings are verified |
+| POWER, PROGRAM, DIRECT, LINK, FINE +/- | Disabled in this firmware baseline; the owner has since confirmed all buttons, but the firmware bindings and actions have not thereby been implemented |
 
 Buttons resolve their TCA8418 codes from firmware `/api/keypad` bindings;
 tooltips show the code and matrix row/column. Each switch sends a raw press

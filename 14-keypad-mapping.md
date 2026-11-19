@@ -1,5 +1,13 @@
 # Keypad mapping observations
 
+**Owner update, 2026-11-19: all buttons are confirmed.** The measurements
+below remain a historical record, including the earlier intermittent results;
+they are not amended or recast as new captures. Owner confirmation does not
+provide additional numeric codes or mean target actions are implemented. The
+[controller specification](18-controller-esp-implementation-specification.md)
+is the target action contract; obtain any missing actual input mapping rather
+than guessing it.
+
 2026-11-14: The isolated passive matrix was scanned with a TCA8418 configured
 for rows R0-R5 and columns C0-C7. Row and column numbers are zero-based.
 In the latest full run, buttons were pressed individually in the order shown.
