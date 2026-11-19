@@ -210,7 +210,8 @@ Real bench controls are hidden while this page owns an armed virtual session.
 | CHECK | Start Stereo VU only from OFF |
 | Presets 1-16 | Select real saved presets using the same announcement/loading rules as physical keys |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Log mapped raw events; no firmware action is implemented yet |
-| POWER, PROGRAM, DIRECT, LINK, FINE +/- | Disabled in this firmware baseline; the owner has since confirmed all buttons, but the firmware bindings and actions have not thereby been implemented |
+| POWER | Virtual control is disabled in this firmware baseline. The physical POWER control is a 230 V mains switch and does not send an ESP button-grid event; it is not a firmware keypad binding. |
+| PROGRAM, DIRECT, LINK, FINE +/- | Virtual controls are disabled in this firmware baseline; the owner has since confirmed all buttons, but the firmware bindings and actions have not thereby been implemented |
 
 Buttons resolve their TCA8418 codes from firmware `/api/keypad` bindings;
 tooltips show the code and matrix row/column. Each switch sends a raw press

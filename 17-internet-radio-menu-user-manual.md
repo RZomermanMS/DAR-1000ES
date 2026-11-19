@@ -73,7 +73,7 @@ evidence table immediately after them for the historical observations.
 
 | No. | Control | Explanation |
 | --- | --- | --- |
-| 1 | POWER | Confirmed original power control; do not assume it provides a new software standby function. |
+| 1 | POWER | Original 230 V mains switch; it does not send an event to the ESP button grid and is not a software standby control. |
 | 2 | PROGRAM OFF / SET / ON | Confirmed switch: target ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded; SET enables programming the startup station with CHECK. Not a country-menu button. |
 | 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; in PROGRAM SET, hold for two seconds to store the startup station. |
 | 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
@@ -116,7 +116,7 @@ tentative code associations and test the previously intermittent column.
 
 | Map | Physical label(s) | Evidence and action |
 | --- | --- | --- |
-| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | All are owner-confirmed. PROGRAM is the startup switch, not a country-selector button. CHECK currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. Target replacement actions are described under [Check connections](#check-connections-proposed). |
+| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | All are owner-confirmed. POWER is a 230 V mains switch, not an ESP grid input. PROGRAM is the startup switch, not a country-selector button. CHECK currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. Target replacement actions are described under [Check connections](#check-connections-proposed). |
 | 2 | DISPLAY MODE | Current: short press starts Now Playing when stopped or cycles modes to OFF; hold cycles DIM once while a radio scan runs, without a second short action on release. Starting requires hardware readiness. |
 | 3 | NEWS, VARIED | Raw events individually retested clean; proposed category shortcuts. No current category action. |
 | 3 | DRAMA, CULTURE, CLASSICS, OTHER M | Raw events individually retested clean; proposed category shortcuts. No current category action. |

@@ -8,6 +8,9 @@ provide additional numeric codes or mean target actions are implemented. The
 is the target action contract; obtain any missing actual input mapping rather
 than guessing it.
 
+The owner also confirms POWER is a 230 V mains switch, not an input received
+by the ESP button grid; it has no keypad code or software button action.
+
 2026-11-14: The isolated passive matrix was scanned with a TCA8418 configured
 for rows R0-R5 and columns C0-C7. Row and column numbers are zero-based.
 In the latest full run, buttons were pressed individually in the order shown.

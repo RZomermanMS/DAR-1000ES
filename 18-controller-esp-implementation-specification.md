@@ -66,7 +66,8 @@ do not imply the current firmware dispatches the target actions.
 | Category keys | NEWS, AFFAIRS, INFO, SPORT, EDUCATE, DRAMA, CULTURE, SCIENCE, VARIED, POP M, ROCK M, M.O.R. M, MUSIC, SPEECH, LIGHT M, CLASSICS, OTHER M open that category's Top 10 under the applied country; do not tune. |
 | LNC/LINK | Candidate Source-menu entry only if the confirmed physical control has no occupied function. Confirmation of buttons alone does not approve an unallocated function or resolve the label spelling. If this condition is not established, do not claim a command entry exists; use the fallback below and ask the owner. |
 | MONO MODE | Reserved for a future real mono/stereo option; do not invent an action. |
-| POWER, PHONES, LEVEL | Preserve actual Sony hardware behavior. Do not infer a software standby, mute or volume mapping. |
+| POWER | Original 230 V mains switch, not an ESP button-grid input. Do not create a keypad binding, event, software standby action or power-sensing assumption for it. |
+| PHONES, LEVEL | Preserve actual Sony hardware behavior. Do not infer a software mute or volume mapping. |
 
 Debounce, contamination handling and release/cancel behavior must dispatch
 exactly one short or long action for a valid, uncontaminated press, and no
@@ -167,8 +168,9 @@ unsafe workaround; the documented controller application slot is almost full.
 
 ## Acceptance before reporting completion
 
-- Test every confirmed control and all three PROGRAM positions using the
-  actual mapped input data; resolve tentative ordered-run code associations
+- Test every confirmed ESP-input control and all three PROGRAM positions using
+  the actual mapped input data; POWER is a mains switch, not a keypad input.
+  Resolve tentative ordered-run code associations
   and exercise the historically intermittent shared column without treating
   one clean event as conclusive. Confirm short/hold exclusivity, bounce and
   contamination cancellation. Do not fabricate missing code/input evidence.
