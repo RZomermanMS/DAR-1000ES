@@ -52,6 +52,42 @@ exact presentation and several mappings remain open.
 
 ## Front-panel control map and evidence
 
+### Front panel: numbered controls
+
+![Simplified front-panel drawing with numbered callouts for power, program,
+check, display mode, display, direct, LNC, phones, level, category keys,
+memory, block, presets, MHz clear, mono mode and fine tuning.](media/internet-radio-front-panel.svg)
+
+[Editable drawing source](media/internet-radio-front-panel.excalidraw) ·
+[View full-size drawing](media/internet-radio-front-panel.svg)
+
+The drawing follows the group layout in the
+[reference photograph](media/image1.jpeg), but is simplified and not a
+dimensioned facsimile. The numbers are **callouts**, not preset numbers.
+Descriptions below distinguish current actions from proposals; see the
+evidence table immediately after them for individual-key reliability.
+
+| No. | Control | Explanation |
+| --- | --- | --- |
+| 1 | POWER | Original power control. Its physical mapping to the new controller is unverified; do not assume it provides a new software standby function. |
+| 2 | PROGRAM OFF / SET / ON | Original selector. The proposed country-selector action requires its physical behavior and mapping to be verified; it is not implemented. |
+| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. |
+| 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
+| 5 | Display | Single row of 22 character cells with separate indicators. Menu messages and AirPlay status in this manual are proposals. |
+| 6 | DIRECT | Proposed to request playback of the displayed station candidate; physical mapping is unverified. |
+| 7 | LNC / LINK | The photo appears to say LNC; other documentation says LINK. Key identity and any occupied function need verification. A Source menu is only a possible future use. |
+| 8 | PHONES | Original headphone socket, not a keypad button. |
+| 9 | LEVEL | Original headphone-level knob, not a keypad button. Other volume or mute support has not been established. |
+| 10 | Category and MUSIC / SPEECH keys | Proposed category shortcuts open a country-filtered Top 10 without tuning. All physical labels are shown in the drawing and listed in the evidence table below; their mappings have differing confidence. |
+| 11 | MEMORY | Raw events only today. Proposed: short press confirms or advances; hold with a valid station candidate enters preset storage. |
+| 12 | BLOCK − / + | Raw events only today. Proposed: jump six countries or six alphabet positions, depending on context. |
+| 13 | Presets 1–16 | Current numbered recall; unassigned slots leave playback unchanged. Proposed: select the destination during preset storage. Keys 8 and 16 need continued reliability observation. |
+| 14 | MHz/CLEAR | Raw event only today; proposed back or cancel, including cancelling a pending preset replacement. |
+| 15 | MONO MODE | Raw mapping has been intermittent; no current action. Reserved as a possible future real mono/stereo option, not assigned here. |
+| 16 | FINE TUNING − / + | Proposed to move through choices or edit the active letter; physical mappings remain unverified. |
+
+### Mapping evidence by key
+
 ![Functional control map: numbered groups identify power, program and check, display mode, categories, memory and block, presets and clear, and direct, LNC or LINK and fine tuning.](media/internet-radio-control-map.svg)
 
 [Editable control map source](media/internet-radio-control-map.excalidraw)
