@@ -15,7 +15,7 @@ See the [operating guide](13-screen-driver-operating-guide.md),
 | Area | Implemented baseline versus this proposal |
 | --- | --- |
 | Presets 1–16, DISPLAY MODE | Work as documented in chapters 13–15; retain their behavior |
-| CHECK | Currently starts Stereo VU as documented in chapters 13–15; proposed short press checks connections and a two-second hold relates to the programmed startup station; see the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
+| CHECK | Currently starts Stereo VU as documented in chapters 13–15; proposed short press checks connections and a two-second hold in PROGRAM SET stores the selected startup station; see the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Mapped raw events only; the menu actions below are new |
 | PROGRAM switch, DIRECT, FINE +/− | Switch startup behavior and menu controls are proposed; controller mappings remain unverified and virtual controls disabled. UNDEFINED is proposed as country-menu entry, subject to its intermittent mapping |
 | Directory, filters, Top 10, prefix editor, MEMORY storage | Proposed, not a feature of the current front panel |
@@ -78,10 +78,12 @@ The user requires a **persistent status file**, not merely generic NVS settings,
 containing the last-used station, brightness and display mode. On startup,
 read and validate that file and restore the saved logical mode/brightness.
 The later PROGRAM switch requirement supersedes automatic resumption of the
-last-used station: ON starts NPO Radio 2 or the programmed station; OFF starts
-the tuner without a preset loaded. A two-second CHECK hold relates to the
-programmed station, but the exact programming workflow is unresolved. A
-programmed station is not assumed to be the last-used station. Retain station
+last-used station: ON starts the programmed station, or NPO Radio 2 if none
+has been programmed; OFF starts the tuner without a preset loaded. With
+PROGRAM in SET, a two-second CHECK hold stores the selected radio station as
+the startup station; the hold must not also trigger the short connection
+check. Failed writes preserve the previous programmed station. Startup while
+left in SET remains undecided. A programmed station is not assumed to be the last-used station. Retain station
 UUID/name and last-known playable URL where available; custom-URL stations
 must remain identifiable without a directory UUID. This is a target design;
 current firmware starts NPO Radio 2 and does not restore mode/DIM across reboot.
@@ -366,7 +368,8 @@ that future command layer already exists.
 Before implementation, resolve:
 
 - Physical PROGRAM, DIRECT and FINE mappings, UNDEFINED reliability and
-  continued matrix reliability; PROGRAM SET behavior and CHECK hold workflow.
+  continued matrix reliability; startup while PROGRAM remains in SET and
+  startup-station write/confirmation details.
 - Country-filter persistence/default after reboot.
 - Status-file path/format/versioning and missing/corrupt-file first-boot/recovery
   policy; recording last-used station, brightness and display mode is required,
@@ -386,7 +389,8 @@ restoration; ALL COUNTRIES; genre versus letter semantics; B→H jumps; partial/
 caches; stale asynchronous replies; offline preset recall; storage
 replace/cancel/failure and single short-or-long dispatch; mode/DIM preservation;
 status-file recording of station and restoration of brightness/mode, including
-OFF; PROGRAM ON and OFF startup choices; intentional
+OFF; PROGRAM ON and OFF startup choices, SET plus a two-second CHECK hold,
+short/hold separation and failed startup-station writes; intentional
 changes only, overlay exclusion and failed writes; startup-station failure
 without fallback; and stopped output remaining stopped. These are implementation
 acceptance goals, not claims of executed firmware tests.

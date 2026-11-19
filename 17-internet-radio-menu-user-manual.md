@@ -71,8 +71,8 @@ evidence table immediately after them for individual-key reliability.
 | No. | Control | Explanation |
 | --- | --- | --- |
 | 1 | POWER | Original power control. Its physical mapping to the new controller is unverified; do not assume it provides a new software standby function. |
-| 2 | PROGRAM OFF / SET / ON | Switch: proposed ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded. SET and controller mapping remain to be designed/verified. Not a country-menu button. |
-| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; a two-second hold relates to the programmed startup station. |
+| 2 | PROGRAM OFF / SET / ON | Switch: proposed ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded; SET enables programming the startup station with CHECK. Controller mapping remains unverified. Not a country-menu button. |
+| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; in PROGRAM SET, hold for two seconds to store the startup station. |
 | 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
 | 5 | Display | Single row of 22 character cells with separate indicators. Menu messages and AirPlay status in this manual are proposals. |
 | 6 | DIRECT | Proposed to request playback of the displayed station candidate; physical mapping is unverified. |
@@ -190,14 +190,20 @@ flow.
 
 ### PROGRAM switch and CHECK hold (proposed)
 
-At startup with PROGRAM **ON**, start **NPO Radio 2** or the programmed
-station. With PROGRAM **OFF**, start the tuner without loading a preset or
-automatically selecting a station. A **two-second CHECK hold** is requested
-for the programmed station; whether that hold saves the currently playing
-station, selects a previously programmed station, or uses another workflow
-needs clarification before implementation. Do not invent a confirmation,
-storage method or SET-position behavior. The two-second hold must not also
-dispatch the short-press connection check on release. This startup behavior
+1. Select the radio station you want to hear after power-up.
+2. Move PROGRAM to **SET** and hold **CHECK for two seconds** to store that
+   station as the programmed startup station. This is separate from saving a
+   numbered preset and must not itself retune playback. A short CHECK press
+   remains the proposed connection check; a completed hold must not also
+   dispatch that short action on release.
+3. Move PROGRAM to **ON**. At the next power-up, start the programmed station
+   or, if none has been programmed, **NPO Radio 2**. With PROGRAM **OFF**,
+   start the tuner without loading a preset.
+
+The storage implementation and exact success/error prompts remain to be
+designed. A failed write must be reported and must preserve any previously
+programmed station; do not claim a save succeeded prematurely. Behavior at
+power-up while the switch is left in SET is undecided. This startup behavior
 and the CHECK hold are proposals, not installed features.
 
 ## What startup must remember (planned)
@@ -359,7 +365,7 @@ All menu meanings below are planned unless explicitly marked existing.
 
 | Control or indicator | Meaning |
 | --- | --- |
-| PROGRAM switch | Proposed ON: start NPO Radio 2 or the programmed station; OFF: start without a loaded preset. SET behavior and controller mapping remain undecided |
+| PROGRAM switch | Proposed ON: start NPO Radio 2 or the programmed station; OFF: start without a loaded preset; SET: hold CHECK to store the startup station. Controller mapping remains unverified |
 | UNDEFINED | Proposed country-selector entry; shared-column mapping remains intermittent |
 | FINE +/− | Country list: one entry; genre list: one genre; Top 10: candidate; station editor: active letter |
 | BLOCK +/− | Countries: six entries; station editor: six alphabet positions |
@@ -369,7 +375,7 @@ All menu meanings below are planned unless explicitly marked existing.
 | MHz/CLEAR | Cancel/back; does not implicitly clear the applied country |
 | 1–16 | Existing immediate recall, except planned slot selection while storing |
 | DISPLAY MODE | Existing mode cycle including OFF; hold changes DIM |
-| CHECK | Current: start Stereo VU only when stopped and hardware ready. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; hold two seconds relates to the programmed startup station |
+| CHECK | Current: start Stereo VU only when stopped and hardware ready. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; in PROGRAM SET, hold two seconds to store the startup station |
 
 The earlier proposed PROGRAM country light is the **display label**, not the
 physical switch or separate PROGRAM 1/2/3 digits; its suitability needs
