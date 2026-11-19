@@ -14,6 +14,101 @@ For controls that work now, use the
 [current front-panel status](15-split-setup-architecture.md#portable-controller--travel-demo).
 The controller still plays radio locally; split-audio station control is a target.
 
+## What this manual promises
+
+The target is operation on the original Sony front panel: no web interface,
+phone app or IR remote should be required to operate the receiver. AirPlay
+must still be **initiated on the sending device**. Receiver status, disconnect
+and source policy are intended to be available on the Sony. This is a
+proposal, not approval of any new key mapping or evidence that it works today.
+
+Today preset **assignments** and bench setup still use web configuration;
+these are gaps, not instructions for the target experience. Physical
+onboarding and recovery for network credentials, and adding a station outside
+the directory, remain undesigned. The original headphone LEVEL control is
+visible on the panel; whether any other volume, mute or standby function is
+already supported by the actual Sony hardware must be verified. No new
+front-panel method for these functions is promised here.
+
+## Quick start (target)
+
+With the network and directory already set up, and the display safely running:
+
+1. Press a numbered **1–16** key to recall a preset; an unassigned slot leaves
+   playback alone. This recall exists today, subject to keypad reliability.
+2. To find something else, use **PROGRAM**, **FINE +/−** and short **MEMORY**
+   to choose a country and genre, or a category key to open its Top 10.
+   In Top 10, FINE moves between candidates; to search by name, move to
+   **BROWSE ALL** and short press MEMORY. Browsing does not tune.
+3. Use **FINE +/−** and short **MEMORY** to narrow a station name, then
+   **DIRECT** to request playback of the displayed candidate. Use
+   **MHz/CLEAR** to back out. These menu actions are not implemented yet.
+4. To save a candidate instead, hold **MEMORY**, choose a number and confirm
+   replacement if needed. Saving does not tune it.
+
+Each example below is a separate single-row display, at most **22 characters**,
+not several lines shown simultaneously. Names and messages are illustrative;
+exact presentation and several mappings remain open.
+
+## Front-panel control map and evidence
+
+![Functional control map: numbered groups identify power, program and check, display mode, categories, memory and block, presets and clear, and direct, LNC or LINK and fine tuning.](media/internet-radio-control-map.svg)
+
+[Editable control map source](media/internet-radio-control-map.excalidraw)
+
+This is a **functional diagram**, not a physical facsimile. The
+[reference photograph](media/image1.jpeg) shows the groups around the display,
+including the left POWER and PROGRAM controls, category block below the
+display, MEMORY/BLOCK centrally, numbered keys, and right-hand controls.
+It appears to label the right-hand key **LNC**; the virtual-panel guide calls
+it **LINK**. The LNC display annunciator is separately documented in
+[bus observations](05-bus-capture-findings.md); neither that annunciator nor
+the spelling proves the physical key's matrix identity. Confirm the label and
+mapping on the actual unit before relying on either name.
+
+In the table, **current** means implemented action, not proof every switch
+is reliable; **raw** means a captured matrix event without an implemented
+action; **proposed** means only the chapter 16 menu design. The
+[keypad retests](14-keypad-mapping.md) are the authority for raw evidence.
+An ordered run alone can misassociate keys if an event is lost.
+
+| Map | Physical label(s) | Evidence and action |
+| --- | --- | --- |
+| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM physical mappings are unverified; the photo shows PROGRAM as a switch, so the proposed PROGRAM country-selector gesture needs hardware validation. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. |
+| 2 | DISPLAY MODE | Current: short press starts Now Playing when stopped or cycles modes to OFF; hold cycles DIM once while a radio scan runs, without a second short action on release. Starting requires hardware readiness. |
+| 3 | NEWS, VARIED | Raw events individually retested clean; proposed category shortcuts. No current category action. |
+| 3 | DRAMA, CULTURE, CLASSICS, OTHER M | Raw events individually retested clean; proposed category shortcuts. No current category action. |
+| 3 | AFFAIRS, INFO, SPORT, EDUCATE, POP M, ROCK M, M.O.R. M, LIGHT M | Raw associations from an ordered run only; individually verify before use. Proposed category shortcuts, not current actions. ROCK M is also recorded as ROCKM. |
+| 3 | SCIENCE, UNDEFINED | Raw shared-column mappings are intermittent: latest complete retest was clean, but earlier tests produced whole-row events. Chapter 16 proposes category shortcuts including UNDEFINED; an older baseline suggested UNDEFINED for country selection instead. Neither is an approved current action. |
+| 3 | MUSIC, SPEECH | Raw events clean in later individual checks; proposed category shortcuts, not current actions. The BALANCE marking over these keys does not establish additional separate buttons or a current balance function. |
+| 4 | MEMORY; BLOCK +; BLOCK − | Raw only today. MEMORY and BLOCK+ were individually observed, including rapid repeat pairs; BLOCK− shares the intermittent column. Proposed short MEMORY confirms, hold stores a candidate; BLOCK jumps six countries or six letters, depending on context. |
+| 5 | 1–16 | Current immediate preset recall; proposed destination selection only during storage. The latest shared-column test was clean for 8 and 16, but both previously produced row-wide events and 8 also produced simultaneous columns; continued observation is needed. Other tested keys were clean, but not every key was individually retested in the latest checks. |
+| 5 | MHz/CLEAR; MONO MODE | MHz/CLEAR: raw event retested clean; proposed back/cancel. MONO MODE: raw only, shared-column intermittent despite latest clean pair; no current action. |
+| 6 | DIRECT; LNC/LINK; FINE −, FINE + | Physical mappings unverified; virtual controls are disabled. DIRECT and FINE have proposed tuning/navigation roles. LNC/LINK has no approved menu assignment; its physical identity and lack of an occupied function must be verified. |
+
+The currently **unallocated** controls in the chapter 16 menu design are
+LNC/LINK and MONO MODE; this is a design inventory, **not** a claim of clean
+physical mappings. Earlier notes also mention BALANCE MUSIC/SPEECH, but the
+photo does not establish separate balance keys; MUSIC and SPEECH are already
+proposed category controls. POWER is not a spare menu key, and UNDEFINED is
+already included in chapter 16's proposed category list. Do not repurpose
+presets, DIM, CHECK, or country/back/commit gestures. If verified and truly
+unoccupied, LNC/LINK is a restrained candidate for a Source menu; MONO MODE
+can remain reserved for a future real mono/stereo option. Leave ambiguous
+controls reserved rather than assigning last-station, sleep-timer or other
+features merely because a key appears free.
+
+## Tuning at a glance (proposed)
+
+![Tuning flow: PROGRAM, FINE, short MEMORY for country and genre; FINE and short MEMORY to edit a prefix; DIRECT tunes the shown candidate; MHz CLEAR backs out.](media/internet-radio-tuning-flow.svg)
+
+[Editable tuning flow source](media/internet-radio-tuning-flow.excalidraw)
+
+In words: PROGRAM → FINE +/− → short MEMORY for country → FINE +/− →
+short MEMORY for genre → FINE +/− and short MEMORY to edit the prefix →
+DIRECT on the candidate. At each step MHz/CLEAR backs out as described below.
+Only DIRECT requests a tune; all preceding steps leave playback unchanged.
+
 ## Before using the planned menu
 
 These walkthroughs assume a future implementation and an already safely
@@ -60,6 +155,11 @@ Planned sequence:
 5. Press **MHz/CLEAR** to go back one level. Returning from genres or stations
    does not clear Netherlands.
 
+For example, the consecutive screens may read `NETHERLANDS`, `ALL GENRES`,
+then an alphabetical candidate. To narrow by genre instead, select the
+desired genre with FINE and short MEMORY. The country is not applied until
+the first short MEMORY; neither choice changes playback.
+
 “Country” here means station location, not the Country music genre.
 The selected country applies to browsing and category shortcuts even while
 a station plays. Whether it survives reboot is **not decided**.
@@ -82,6 +182,10 @@ the previous genre criterion; this replacement rule still needs approval.
 
 Recommended ranking is directory-recorded clicks in the last 24 hours,
 **not audience ratings**. Final ranking is not yet decided.
+For example, `TOP10 ROCK M` → candidate → `BROWSE ALL` → short MEMORY
+opens the full filtered browser without changing playback. MHz/CLEAR returns
+to the prior browse/playback screen from Top 10, or to Top 10 from an empty
+prefix in the full browser.
 
 ## Find SLAM without spelling the entire name
 
@@ -140,6 +244,11 @@ Numbered preset recall already exists; the planned menu must preserve it:
   number is in cells 11–12.
 - Recall never starts stopped physical display output.
 
+For example, short press **7** outside storage: `Preset 7` → loading →
+station name after connection. An empty slot shows `Unassigned` and does not
+change playback; a connection failure is reported rather than silently
+tuning another station.
+
 The proposal stores a directory station's UUID, name and last-known playable
 URL so a saved preset can play without a working directory service. The stream
 itself still needs network access. The recommended rule lets you recall a
@@ -189,7 +298,58 @@ retry/refresh control (its exact gesture remains undecided); you can back out
 with MHz/CLEAR. A partially loaded list is not proof there are no other matches.
 Directory problems must not erase presets or interrupt the current station.
 
+For example, `LOADING` may be followed by `NO MATCHES` or `DIRECTORY ERROR`;
+a stale or incomplete cache must be identified as such. Back out with
+MHz/CLEAR and retry/refresh once its physical gesture is designed; there is
+no specified retry key today. For `SAVE ERROR`, the old slot remains intact:
+cancel with MHz/CLEAR or retry the save when the eventual implementation
+allows it. On a stream connection error, explicitly choose another station or
+retry when a physical retry control is specified. Network setup/recovery
+itself has no designed physical flow yet. None of these failures selects a
+fallback station or authorizes a stopped display.
+
 Only supported direct **HTTP/HTTPS MP3/AAC** streams are in scope.
 A directory page/API address or station website is not a playable stream.
 This design adds no HLS or playlist support. A directory listing is not a
 guarantee that a station can connect or decode.
+
+## AirPlay and source control (proposal only)
+
+The [radio profile](firmware/README-RADIO.md) explicitly says the DAR profile
+does **not** start AirPlay or Sony mute/relay/PCM-I2S controls. Inherited
+standalone behavior is not confirmation of support on the DAR target. Actual
+sender discovery, session release and playback require implementation and
+physical testing. Initiate AirPlay on the sender; the following is the
+proposed local receiver experience, not a current control.
+
+On the Sony, show the active playback owner and state, for example
+`RADIO PLAYING`, `AIRPLAY PLAYING` or `AIRPLAY PAUSED`. A paused AirPlay
+session still owns playback. Show the sender-reported device name, scrolling
+it within the 22 cells if necessary; if unavailable show `UNKNOWN DEVICE`.
+That is different from `NO AIRPLAY SESSION`: do not invent a device name
+or confuse an unknown sender with no session.
+
+If LNC/LINK is verified and has no occupied function, propose it as the
+entry to a local Source menu. Within that menu only, use FINE +/− to choose
+an item and short MEMORY to select/confirm; MHz/CLEAR backs out or cancels.
+These contextual roles do not alter the country, browser or preset gestures.
+
+1. Select `DISCONNECT` and short MEMORY; show `DISCONNECT?`.
+2. Short MEMORY again explicitly confirms; MHz/CLEAR cancels without changing
+   the session. A confirmed disconnect releases the **actual receiver session**,
+   not merely mute or pause, and returns to the selected radio station. A
+   queued selection during AirPlay is the selected radio station. If connection
+   fails, show the error, not another station.
+3. Disconnect alone does not prevent the sender immediately retaking playback.
+   Separately choose `RADIO ONLY` and confirm with short MEMORY to block
+   AirPlay retake. Choose `AUTO` / `AIRPLAY ALLOWED` and confirm to permit it
+   again. MHz/CLEAR cancels either pending policy change.
+
+Changing source policy must not change the saved station, erase presets, or
+start a stopped display. The policy's persistence across reboot remains an
+open decision. If no spare key is verified, a read-only AirPlay status item
+in the existing DISPLAY MODE cycle is a possible physical fallback; it must
+preserve the existing short cycle and DIM hold. It does **not** provide
+disconnect or policy commands: a safe, verified physical entry for those
+commands still needs design and hardware validation. No currently unused
+gesture is claimed safe.
