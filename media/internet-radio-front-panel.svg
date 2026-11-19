@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="510" viewBox="0 0 1500 510" role="img" aria-labelledby="title description">
+  <title id="title">DAR-1000ES front panel, numbered control locations</title>
+  <desc id="description">Simplified line drawing based on the repository photograph. Numbered callouts correspond to the descriptions beneath the figure in the manual. The drawing is not a dimensioned facsimile.</desc>
+  <rect width="1500" height="510" fill="#ffffff"/>
+  <g fill="none" stroke="#111111" stroke-width="2">
+    <rect x="35" y="115" width="1430" height="270" rx="5"/>
+    <rect x="70" y="150" width="88" height="40" rx="3"/>
+    <rect x="70" y="224" width="74" height="22" rx="3"/>
+    <circle cx="181" cy="235" r="8"/>
+    <circle cx="267" cy="167" r="8"/>
+    <rect x="328" y="140" width="790" height="66" rx="4"/>
+    <circle cx="1176" cy="167" r="8"/>
+    <circle cx="1270" cy="167" r="8"/>
+    <circle cx="100" cy="319" r="12"/>
+    <circle cx="180" cy="319" r="17"/>
+    <rect x="250" y="258" width="438" height="96" rx="3"/>
+    <path d="M250 290h438 M250 322h438 M323 258v96 M396 258v96 M469 258v96 M542 258v96 M615 258v96"/>
+    <circle cx="750" cy="263" r="8"/>
+    <rect x="708" y="301" width="84" height="36" rx="3"/>
+    <path d="M750 301v36"/>
+    <rect x="830" y="255" width="456" height="99" rx="3"/>
+    <path d="M830 288h456 M830 321h456 M906 255v99 M982 255v99 M1058 255v99 M1134 255v99 M1210 255v99"/>
+    <rect x="1320" y="303" width="100" height="32" rx="3"/>
+    <path d="M1370 303v32"/>
+  </g>
+  <g fill="#000000" font-family="sans-serif" text-anchor="middle">
+    <g font-size="13">
+      <text x="114" y="175">POWER</text>
+      <text x="107" y="216">PROGRAM</text><text x="107" y="241" font-size="10">OFF / SET / ON</text>
+      <text x="181" y="218">CHECK</text><text x="267" y="148">DISPLAY MODE</text>
+      <text x="723" y="177" font-size="20">22-CHARACTER DISPLAY</text>
+      <text x="1176" y="148">DIRECT</text><text x="1270" y="148">LNC*</text>
+      <text x="100" y="290">PHONES</text><text x="180" y="290">LEVEL</text>
+      <text x="750" y="246">MEMORY</text><text x="750" y="294">BLOCK</text>
+      <text x="729" y="325">−</text><text x="771" y="325">+</text>
+      <text x="1370" y="294">FINE TUNING</text><text x="1345" y="325">−</text><text x="1395" y="325">+</text>
+    </g>
+    <g font-size="11">
+      <text x="286" y="278">NEWS</text><text x="359" y="278">AFFAIRS</text><text x="432" y="278">INFO</text><text x="505" y="278">SPORT</text><text x="578" y="278">EDUCATE</text><text x="651" y="278">DRAMA</text>
+      <text x="286" y="310">CULTURE</text><text x="359" y="310">SCIENCE</text><text x="432" y="310">VARIED</text><text x="505" y="310">POP M</text><text x="578" y="310">ROCK M</text><text x="651" y="310">M.O.R. M</text>
+      <text x="286" y="342">MUSIC</text><text x="359" y="342">SPEECH</text><text x="432" y="342">LIGHT M</text><text x="505" y="342">CLASSICS</text><text x="578" y="342">OTHER M</text><text x="651" y="342">UNDEFINED</text>
+    </g>
+    <g font-size="14">
+      <text x="868" y="277">1</text><text x="944" y="277">2</text><text x="1020" y="277">3</text><text x="1096" y="277">4</text><text x="1172" y="277">5</text><text x="1248" y="277">6</text>
+      <text x="868" y="310">7</text><text x="944" y="310">8</text><text x="1020" y="310">9</text><text x="1096" y="310">10</text><text x="1172" y="310">11</text><text x="1248" y="310">12</text>
+      <text x="868" y="343">13</text><text x="944" y="343">14</text><text x="1020" y="343">15</text><text x="1096" y="343">16</text><text x="1172" y="343" font-size="10">MHz/CLEAR</text><text x="1248" y="343" font-size="10">MONO MODE</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#1b4965" stroke-width="2">
+    <path d="M114 80v65 M181 80v20H60v135h8 M267 80l-52 20v135h-24 M370 80v20h-70v67h-24 M724 80v55 M1176 80v77 M1270 80v77"/>
+    <path d="M100 432v-99 M180 432v-95 M470 432v-74 M688 432V275h54 M760 432v-91 M970 432v-74 M1126 432l46-74 M1238 432v-74 M1370 432v-93"/>
+  </g>
+  <g fill="#ffffff" stroke="#1b4965" stroke-width="2">
+    <circle cx="114" cy="65" r="15"/><circle cx="181" cy="65" r="15"/><circle cx="267" cy="65" r="15"/><circle cx="370" cy="65" r="15"/><circle cx="724" cy="65" r="15"/><circle cx="1176" cy="65" r="15"/><circle cx="1270" cy="65" r="15"/>
+    <circle cx="100" cy="447" r="15"/><circle cx="180" cy="447" r="15"/><circle cx="470" cy="447" r="15"/><circle cx="688" cy="447" r="15"/><circle cx="760" cy="447" r="15"/><circle cx="970" cy="447" r="15"/><circle cx="1126" cy="447" r="15"/><circle cx="1238" cy="447" r="15"/><circle cx="1370" cy="447" r="15"/>
+  </g>
+  <g fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle">
+    <text x="114" y="70">1</text><text x="181" y="70">2</text><text x="267" y="70">3</text><text x="370" y="70">4</text><text x="724" y="70">5</text><text x="1176" y="70">6</text><text x="1270" y="70">7</text>
+    <text x="100" y="452">8</text><text x="180" y="452">9</text><text x="470" y="452">10</text><text x="688" y="452">11</text><text x="760" y="452">12</text><text x="970" y="452">13</text><text x="1126" y="452">14</text><text x="1238" y="452">15</text><text x="1370" y="452">16</text>
+  </g>
+  <text x="35" y="493" fill="#000000" font-family="sans-serif" font-size="16">Simplified drawing, not to scale. *LNC / LINK label and occupied function need clarification. See explanations below.</text>
+</svg>

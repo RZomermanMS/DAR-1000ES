@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="390" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+  <title id="title">Proposed button-by-button tuning flow</title>
+  <desc id="desc">Choose a country and genre, edit a prefix, and tune the displayed candidate; use MHz CLEAR to go back.</desc>
+  <rect x="1" y="1" width="898" height="388" fill="#fff" stroke="#1b4965" stroke-width="2"/>
+  <g fill="none" stroke="#1b4965" stroke-width="2">
+    <rect x="20" y="55" width="860" height="65" rx="8"/>
+    <rect x="20" y="135" width="860" height="65" rx="8"/>
+    <rect x="20" y="215" width="860" height="65" rx="8"/>
+    <rect x="20" y="295" width="860" height="65" rx="8"/>
+  </g>
+  <g fill="#000" font-family="sans-serif" font-size="18">
+    <text x="20" y="32" font-weight="bold">PROPOSED TUNING — ONE STEP AT A TIME</text>
+    <text x="35" y="83">1  UNDEFINED → FINE +/− country → short MEMORY</text>
+    <text x="35" y="105">Example: NETHERLANDS (no tune)</text>
+    <text x="35" y="163">2  FINE +/− genre → short MEMORY</text>
+    <text x="35" y="185">Example: ALL GENRES (no tune)</text>
+    <text x="35" y="243">3  FINE +/− letter → short MEMORY locks → repeat</text>
+    <text x="35" y="265">Example: S, then L, then A if needed (no tune)</text>
+    <text x="35" y="323">4  DIRECT plays displayed candidate; MHz/CLEAR backs or cancels</text>
+    <text x="35" y="345">Example: SL:AM → DIRECT (requests tune)</text>
+  </g>
+</svg>

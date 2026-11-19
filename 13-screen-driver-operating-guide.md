@@ -1,5 +1,11 @@
 # Sony DAR-1000ES screen driver: wiring, operation and radio integration
 
+The owner has confirmed all physical buttons. For the **target**, including
+the requested change to CHECK, see the [controller implementation
+specification](18-controller-esp-implementation-specification.md). This
+chapter remains the version-specific guide to what the installed firmware
+actually does; button confirmation does not implement the target actions.
+
 For the **unimplemented** country/genre directory menu proposal, see the
 [program guide](16-internet-radio-menu-program-guide.md) and
 [planned user manual](17-internet-radio-menu-user-manual.md).
