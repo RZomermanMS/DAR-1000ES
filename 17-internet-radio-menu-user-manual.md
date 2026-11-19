@@ -110,7 +110,9 @@ In the table, **current** means implemented action; **raw** means a captured
 matrix event without an implemented action; **target** is not yet implemented.
 The [keypad retests](14-keypad-mapping.md) preserve earlier raw evidence,
 including historical intermittent events and ordered-run uncertainty. The
-owner has since confirmed all buttons; no new numeric codes were supplied.
+owner has since confirmed all buttons; no new numeric codes or reliability
+test results were supplied. Implementation must establish missing or
+tentative code associations and test the previously intermittent column.
 
 | Map | Physical label(s) | Evidence and action |
 | --- | --- | --- |

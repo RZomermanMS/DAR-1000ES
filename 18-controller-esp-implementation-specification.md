@@ -68,8 +68,9 @@ do not imply the current firmware dispatches the target actions.
 | MONO MODE | Reserved for a future real mono/stereo option; do not invent an action. |
 | POWER, PHONES, LEVEL | Preserve actual Sony hardware behavior. Do not infer a software standby, mute or volume mapping. |
 
-Debounce, contamination handling and release/cancel behavior must preserve
-exactly one short or long action per press. Preserve the existing preset
+Debounce, contamination handling and release/cancel behavior must dispatch
+exactly one short or long action for a valid, uncontaminated press, and no
+action for a cancelled or contaminated press. Preserve the existing preset
 announcement: `Preset X` for one second, loading until connected, station
 identity for about two seconds, then the selected display mode. Unassigned
 presets report `Unassigned` and do not change playback.
@@ -167,7 +168,9 @@ unsafe workaround; the documented controller application slot is almost full.
 ## Acceptance before reporting completion
 
 - Test every confirmed control and all three PROGRAM positions using the
-  actual mapped input data; confirm short/hold exclusivity, bounce and
+  actual mapped input data; resolve tentative ordered-run code associations
+  and exercise the historically intermittent shared column without treating
+  one clean event as conclusive. Confirm short/hold exclusivity, bounce and
   contamination cancellation. Do not fabricate missing code/input evidence.
 - Exercise Netherlands + genre and ALL GENRES, category Top 10/BROWSE ALL,
   SLAM prefix via FINE/MEMORY/DIRECT, BLOCK six-position jumps, country
