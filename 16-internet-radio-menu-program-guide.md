@@ -14,7 +14,8 @@ See the [operating guide](13-screen-driver-operating-guide.md),
 
 | Area | Implemented baseline versus this proposal |
 | --- | --- |
-| Presets 1–16, DISPLAY MODE, CHECK | Work as documented in chapters 13–15; retain their behavior |
+| Presets 1–16, DISPLAY MODE | Work as documented in chapters 13–15; retain their behavior |
+| CHECK | Currently starts Stereo VU as documented in chapters 13–15; a later proposal would replace that action with connection checks, as described in the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Mapped raw events only; the menu actions below are new |
 | PROGRAM, DIRECT, FINE +/− | Proposed assignments; physical mappings remain unverified and virtual controls disabled |
 | Directory, filters, Top 10, prefix editor, MEMORY storage | Proposed, not a feature of the current front panel |
@@ -33,8 +34,10 @@ No firmware, configuration, deployment or hardware changes accompany this guide.
 - Preserve the selected display mode and brightness under overlays, returning
   to that mode afterward. Do not take over manual/held/pair scans.
 - DISPLAY MODE retains its information/VU/equalizer/OFF cycle; holding it
-  changes DIM. CHECK starts Stereo VU only from stopped output, with existing
-  AHCT-profile and hardware-readiness constraints, and does not change a running scan.
+  changes DIM. In current firmware CHECK starts Stereo VU only from stopped
+  output, with existing AHCT-profile and hardware-readiness constraints, and
+  does not change a running scan. The later CHECK proposal does not implement
+  or authorize any change to that current behavior.
 - Sony OFF is not isolation. Existing powered-Sony, original-driver isolation,
   buffer-enable and safe connection requirements in chapter 13 remain mandatory.
   Software cannot detect all those conditions. This menu grants no new permission

@@ -71,7 +71,7 @@ evidence table immediately after them for individual-key reliability.
 | --- | --- | --- |
 | 1 | POWER | Original power control. Its physical mapping to the new controller is unverified; do not assume it provides a new software standby function. |
 | 2 | PROGRAM OFF / SET / ON | Original selector. The proposed country-selector action requires its physical behavior and mapping to be verified; it is not implemented. |
-| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. |
+| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed instead: force Wi-Fi reconnect and check cross-ESP communications. |
 | 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
 | 5 | Display | Single row of 22 character cells with separate indicators. Menu messages and AirPlay status in this manual are proposals. |
 | 6 | DIRECT | Proposed to request playback of the displayed station candidate; physical mapping is unverified. |
@@ -110,7 +110,7 @@ An ordered run alone can misassociate keys if an event is lost.
 
 | Map | Physical label(s) | Evidence and action |
 | --- | --- | --- |
-| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM physical mappings are unverified; the photo shows PROGRAM as a switch, so the proposed PROGRAM country-selector gesture needs hardware validation. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. |
+| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM physical mappings are unverified; the photo shows PROGRAM as a switch, so the proposed PROGRAM country-selector gesture needs hardware validation. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. A proposed replacement is described under [Check connections](#check-connections-proposed). |
 | 2 | DISPLAY MODE | Current: short press starts Now Playing when stopped or cycles modes to OFF; hold cycles DIM once while a radio scan runs, without a second short action on release. Starting requires hardware readiness. |
 | 3 | NEWS, VARIED | Raw events individually retested clean; proposed category shortcuts. No current category action. |
 | 3 | DRAMA, CULTURE, CLASSICS, OTHER M | Raw events individually retested clean; proposed category shortcuts. No current category action. |
@@ -128,7 +128,8 @@ physical mappings. Earlier notes also mention BALANCE MUSIC/SPEECH, but the
 photo does not establish separate balance keys; MUSIC and SPEECH are already
 proposed category controls. POWER is not a spare menu key, and UNDEFINED is
 already included in chapter 16's proposed category list. Do not repurpose
-presets, DIM, CHECK, or country/back/commit gestures. If verified and truly
+presets, DIM, or country/back/commit gestures. The separately requested CHECK
+change below replaces its existing function only in the proposal. If verified and truly
 unoccupied, LNC/LINK is a restrained candidate for a Source menu; MONO MODE
 can remain reserved for a future real mono/stereo option. Leave ambiguous
 controls reserved rather than assigning last-station, sleep-timer or other
@@ -157,6 +158,34 @@ Browsing does not interrupt the current station. Only DIRECT on a station
 candidate or an explicit numbered preset recall requests a new station.
 Menu screens temporarily cover, then return to, your chosen display mode
 without changing DIM brightness or safety authorization.
+
+## Check connections (proposed)
+
+The requested target action for **CHECK** is a forced Wi-Fi reconnect and
+validation of communications between the controller ESP and audio ESP.
+This would **replace** CHECK's current short-press Stereo VU start action;
+there is no approved replacement gesture for that VU start yet. It is not
+implemented in the installed firmware, where CHECK still works as described
+in chapter 13. DISPLAY MODE remains unchanged.
+
+After a future short CHECK press, the receiver should reconnect the relevant
+Wi-Fi connection or connections using the existing saved settings, then
+perform a bounded, matched request/reply check of the cross-ESP link.
+Show separate results such as `WIFI RECONNECT`, `WIFI OK`, `WIFI ERROR`,
+`ESP LINK OK`, or `ESP LINK ERROR`, followed by the prior display mode.
+An unavailable or timed-out audio ESP must not be reported as a successful
+link, and a link response alone does not prove audio playback or Internet
+service. The split design needs to decide how to initiate and report a
+reconnect on each ESP, including when the inter-ESP link is unavailable.
+The existing diagnostic PING/PONG is not a complete verified exchange;
+do not use the isolated-bench MAP command for this check.
+
+Forcing reconnection can interrupt current streaming or AirPlay. A failed
+check must report the affected connection and allow a later CHECK retry; it
+must not erase credentials, presets or the saved station, choose a fallback
+station, or implicitly authorize/start a stopped physical display. Network
+credential setup and recovery still require a separately designed physical
+flow.
 
 ## What startup must remember (planned)
 
@@ -320,7 +349,7 @@ All menu meanings below are planned unless explicitly marked existing.
 | MHz/CLEAR | Cancel/back; does not implicitly clear the applied country |
 | 1–16 | Existing immediate recall, except planned slot selection while storing |
 | DISPLAY MODE | Existing mode cycle including OFF; hold changes DIM |
-| CHECK | Existing start of Stereo VU only when stopped and hardware ready; no change to a running scan |
+| CHECK | Current: start Stereo VU only when stopped and hardware ready. Proposed replacement: force Wi-Fi reconnect and check cross-ESP communications |
 
 The PROGRAM country light is the **label**, not the separate PROGRAM 1/2/3
 digits; current VU modes may use digits for level warnings.
