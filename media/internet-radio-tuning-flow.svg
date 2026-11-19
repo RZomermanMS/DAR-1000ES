@@ -10,7 +10,7 @@
   </g>
   <g fill="#000" font-family="sans-serif" font-size="18">
     <text x="20" y="32" font-weight="bold">PROPOSED TUNING — ONE STEP AT A TIME</text>
-    <text x="35" y="83">1  PROGRAM → FINE +/− country → short MEMORY</text>
+    <text x="35" y="83">1  UNDEFINED → FINE +/− country → short MEMORY</text>
     <text x="35" y="105">Example: NETHERLANDS (no tune)</text>
     <text x="35" y="163">2  FINE +/− genre → short MEMORY</text>
     <text x="35" y="185">Example: ALL GENRES (no tune)</text>

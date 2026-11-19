@@ -2,10 +2,10 @@
 
 > **Not available in current firmware.** This manual describes the proposed
 > menu, not controls you can use on the installed 0.3.48 front panel.
-> PROGRAM, DIRECT and FINE +/− still need verified physical mappings.
+> The PROGRAM switch, DIRECT and FINE +/− still need verified controller mappings.
 > Directory browsing, country selection, Top 10 and holding MEMORY to save
-> are not implemented. Restoring station, brightness and display mode from a
-> status file is also a target requirement, not an installed feature.
+> are not implemented. Recording the last station and restoring brightness and
+> display mode from a status file are target requirements, not installed features.
 > See the [program guide](16-internet-radio-menu-program-guide.md)
 > for recommendations and unresolved decisions.
 
@@ -36,8 +36,9 @@ With the network and directory already set up, and the display safely running:
 
 1. Press a numbered **1–16** key to recall a preset; an unassigned slot leaves
    playback alone. This recall exists today, subject to keypad reliability.
-2. To find something else, use **PROGRAM**, **FINE +/−** and short **MEMORY**
-   to choose a country and genre, or a category key to open its Top 10.
+2. To find something else, press **UNDEFINED** to open the proposed country
+   selector, then use **FINE +/−** and short **MEMORY** to choose a
+   country and genre, or a category key to open its Top 10.
    In Top 10, FINE moves between candidates; to search by name, move to
    **BROWSE ALL** and short press MEMORY. Browsing does not tune.
 3. Use **FINE +/−** and short **MEMORY** to narrow a station name, then
@@ -70,15 +71,15 @@ evidence table immediately after them for individual-key reliability.
 | No. | Control | Explanation |
 | --- | --- | --- |
 | 1 | POWER | Original power control. Its physical mapping to the new controller is unverified; do not assume it provides a new software standby function. |
-| 2 | PROGRAM OFF / SET / ON | Original selector. The proposed country-selector action requires its physical behavior and mapping to be verified; it is not implemented. |
-| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed instead: force Wi-Fi reconnect and check cross-ESP communications. |
+| 2 | PROGRAM OFF / SET / ON | Switch: proposed ON starts NPO Radio 2 or the programmed station; OFF starts the tuner without a preset loaded. SET and controller mapping remain to be designed/verified. Not a country-menu button. |
+| 3 | CHECK | Currently starts Stereo VU only from stopped, when hardware is ready; does not change a running scan. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; a two-second hold relates to the programmed startup station. |
 | 4 | DISPLAY MODE | Currently a short press starts or cycles display modes to OFF; a hold changes DIM once while a radio scan runs. Starting requires hardware readiness. |
 | 5 | Display | Single row of 22 character cells with separate indicators. Menu messages and AirPlay status in this manual are proposals. |
 | 6 | DIRECT | Proposed to request playback of the displayed station candidate; physical mapping is unverified. |
 | 7 | LNC / LINK | The photo appears to say LNC; other documentation says LINK. Key identity and any occupied function need verification. A Source menu is only a possible future use. |
 | 8 | PHONES | Original headphone socket, not a keypad button. |
 | 9 | LEVEL | Original headphone-level knob, not a keypad button. Other volume or mute support has not been established. |
-| 10 | Category and MUSIC / SPEECH keys | Proposed category shortcuts open a country-filtered Top 10 without tuning. All physical labels are shown in the drawing and listed in the evidence table below; their mappings have differing confidence. |
+| 10 | Category and MUSIC / SPEECH keys; UNDEFINED | Proposed category shortcuts open a country-filtered Top 10 without tuning. UNDEFINED is instead proposed to open the country selector. All physical labels are shown in the drawing and listed in the evidence table below; their mappings have differing confidence. |
 | 11 | MEMORY | Raw events only today. Proposed: short press confirms or advances; hold with a valid station candidate enters preset storage. |
 | 12 | BLOCK − / + | Raw events only today. Proposed: jump six countries or six alphabet positions, depending on context. |
 | 13 | Presets 1–16 | Current numbered recall; unassigned slots leave playback unchanged. Proposed: select the destination during preset storage. Keys 8 and 16 need continued reliability observation. |
@@ -110,12 +111,12 @@ An ordered run alone can misassociate keys if an event is lost.
 
 | Map | Physical label(s) | Evidence and action |
 | --- | --- | --- |
-| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM physical mappings are unverified; the photo shows PROGRAM as a switch, so the proposed PROGRAM country-selector gesture needs hardware validation. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. A proposed replacement is described under [Check connections](#check-connections-proposed). |
+| 1 | POWER; PROGRAM (OFF/SET/ON); CHECK | POWER and PROGRAM controller mappings are unverified. PROGRAM is a switch with the proposed startup behavior above, not a country-selector button. CHECK is mapped and currently starts Stereo VU only when stopped and hardware ready; it does nothing to a running scan. Proposed replacement actions are described under [Check connections](#check-connections-proposed). |
 | 2 | DISPLAY MODE | Current: short press starts Now Playing when stopped or cycles modes to OFF; hold cycles DIM once while a radio scan runs, without a second short action on release. Starting requires hardware readiness. |
 | 3 | NEWS, VARIED | Raw events individually retested clean; proposed category shortcuts. No current category action. |
 | 3 | DRAMA, CULTURE, CLASSICS, OTHER M | Raw events individually retested clean; proposed category shortcuts. No current category action. |
 | 3 | AFFAIRS, INFO, SPORT, EDUCATE, POP M, ROCK M, M.O.R. M, LIGHT M | Raw associations from an ordered run only; individually verify before use. Proposed category shortcuts, not current actions. ROCK M is also recorded as ROCKM. |
-| 3 | SCIENCE, UNDEFINED | Raw shared-column mappings are intermittent: latest complete retest was clean, but earlier tests produced whole-row events. Chapter 16 proposes category shortcuts including UNDEFINED; an older baseline suggested UNDEFINED for country selection instead. Neither is an approved current action. |
+| 3 | SCIENCE, UNDEFINED | Raw shared-column mappings are intermittent: latest complete retest was clean, but earlier tests produced whole-row events. SCIENCE is a proposed category shortcut; UNDEFINED is now proposed for country selection instead of its earlier category role. Neither action exists today. |
 | 3 | MUSIC, SPEECH | Raw events clean in later individual checks; proposed category shortcuts, not current actions. The BALANCE marking over these keys does not establish additional separate buttons or a current balance function. |
 | 4 | MEMORY; BLOCK +; BLOCK − | Raw only today. MEMORY and BLOCK+ were individually observed, including rapid repeat pairs; BLOCK− shares the intermittent column. Proposed short MEMORY confirms, hold stores a candidate; BLOCK jumps six countries or six letters, depending on context. |
 | 5 | 1–16 | Current immediate preset recall; proposed destination selection only during storage. The latest shared-column test was clean for 8 and 16, but both previously produced row-wide events and 8 also produced simultaneous columns; continued observation is needed. Other tested keys were clean, but not every key was individually retested in the latest checks. |
@@ -127,7 +128,7 @@ LNC/LINK and MONO MODE; this is a design inventory, **not** a claim of clean
 physical mappings. Earlier notes also mention BALANCE MUSIC/SPEECH, but the
 photo does not establish separate balance keys; MUSIC and SPEECH are already
 proposed category controls. POWER is not a spare menu key, and UNDEFINED is
-already included in chapter 16's proposed category list. Do not repurpose
+now proposed for country selection. Do not repurpose
 presets, DIM, or country/back/commit gestures. The separately requested CHECK
 change below replaces its existing function only in the proposal. If verified and truly
 unoccupied, LNC/LINK is a restrained candidate for a Source menu; MONO MODE
@@ -137,11 +138,11 @@ features merely because a key appears free.
 
 ## Tuning at a glance (proposed)
 
-![Tuning flow: PROGRAM, FINE, short MEMORY for country and genre; FINE and short MEMORY to edit a prefix; DIRECT tunes the shown candidate; MHz CLEAR backs out.](media/internet-radio-tuning-flow.svg)
+![Tuning flow: UNDEFINED, FINE and short MEMORY for country and genre; FINE and short MEMORY to edit a prefix; DIRECT tunes the shown candidate; MHz CLEAR backs out.](media/internet-radio-tuning-flow.svg)
 
 [Editable tuning flow source](media/internet-radio-tuning-flow.excalidraw)
 
-In words: PROGRAM → FINE +/− → short MEMORY for country → FINE +/− →
+In words: UNDEFINED → FINE +/− → short MEMORY for country → FINE +/− →
 short MEMORY for genre → FINE +/− and short MEMORY to edit the prefix →
 DIRECT on the candidate. At each step MHz/CLEAR backs out as described below.
 Only DIRECT requests a tune; all preceding steps leave playback unchanged.
@@ -187,12 +188,26 @@ station, or implicitly authorize/start a stopped physical display. Network
 credential setup and recovery still require a separately designed physical
 flow.
 
+### PROGRAM switch and CHECK hold (proposed)
+
+At startup with PROGRAM **ON**, start **NPO Radio 2** or the programmed
+station. With PROGRAM **OFF**, start the tuner without loading a preset or
+automatically selecting a station. A **two-second CHECK hold** is requested
+for the programmed station; whether that hold saves the currently playing
+station, selects a previously programmed station, or uses another workflow
+needs clarification before implementation. Do not invent a confirmation,
+storage method or SET-position behavior. The two-second hold must not also
+dispatch the short-press connection check on release. This startup behavior
+and the CHECK hold are proposals, not installed features.
+
 ## What startup must remember (planned)
 
 The proposed system must keep a **persistent status file** with your last-used
-station, chosen brightness and display mode, then restore those three at startup.
-It must resume that station, **not hardcode NPO Radio 2**. If the saved station
-fails, show the error without silently choosing NPO Radio 2 or another station.
+station, chosen brightness and display mode. Restore the logical brightness
+and display mode, but do not automatically resume the last-used station in
+contradiction to the PROGRAM switch behavior above. The programmed startup
+station is not assumed to be the last-used station. If a selected startup
+station fails, show the error without silently choosing another station.
 You can explicitly select a different station.
 
 Only intentional successful changes are saved: a station you explicitly select
@@ -202,19 +217,22 @@ screens and announcements must not replace those saved settings.
 Restoring settings does not start stopped physical display output or restore
 hardware authorization. OFF retains your brightness for later use.
 
-The policy for a missing/corrupt file or first boot is still undecided; no
-fallback station is specified. Country-filter persistence is separately
+The policy for a missing/corrupt file or first boot is still undecided; NPO
+Radio 2 is the requested ON startup choice, not a fallback after failure.
+Country-filter persistence is separately
 **undecided**, unlike the three required saved settings above.
 
 ## Choose Netherlands, then a genre
 
 Planned sequence:
 
-1. Press **PROGRAM** to open countries. Its light blinks while you choose;
+1. Press **UNDEFINED** to open countries. Its mapping is intermittent and
+   this entry action is not implemented. The proposed country indicator blinks while you choose;
    the previous applied country remains in force until confirmation.
 2. Use **FINE +/−** to move one country, or **BLOCK +/−** to move six entries.
    Find `NETHERLANDS`.
-3. Briefly press **MEMORY** to apply it and open genres. PROGRAM stays lit.
+3. Briefly press **MEMORY** to apply it and open genres. The earlier proposal
+   keeps the PROGRAM display label lit; its suitability now needs confirmation.
 4. Use **FINE +/−** to choose a genre. Choose `ALL GENRES` for no genre limit.
    Briefly press **MEMORY** to open alphabetical station browsing.
 5. Press **MHz/CLEAR** to go back one level. Returning from genres or stations
@@ -322,8 +340,9 @@ filter. A failed station must show an error, never silently play a replacement.
 
 ## Clear or cancel the country filter
 
-To browse worldwide, press **PROGRAM**, select **ALL COUNTRIES** and briefly
-press **MEMORY**. PROGRAM turns off and genre selection opens.
+To browse worldwide, press **UNDEFINED**, select **ALL COUNTRIES** and briefly
+press **MEMORY**. Genre selection opens; the earlier indicator proposal turns
+the PROGRAM display label off, subject to confirmation.
 ALL COUNTRIES removes only the location restriction; ALL GENRES separately
 removes the genre restriction.
 
@@ -340,7 +359,8 @@ All menu meanings below are planned unless explicitly marked existing.
 
 | Control or indicator | Meaning |
 | --- | --- |
-| PROGRAM | Open country choices; OFF = worldwide, BLINKING = choosing, STEADY ON = applied specific country |
+| PROGRAM switch | Proposed ON: start NPO Radio 2 or the programmed station; OFF: start without a loaded preset. SET behavior and controller mapping remain undecided |
+| UNDEFINED | Proposed country-selector entry; shared-column mapping remains intermittent |
 | FINE +/− | Country list: one entry; genre list: one genre; Top 10: candidate; station editor: active letter |
 | BLOCK +/− | Countries: six entries; station editor: six alphabet positions |
 | Short MEMORY | Confirm country/genre, lock a letter, open BROWSE ALL, or confirm preset replacement |
@@ -349,10 +369,11 @@ All menu meanings below are planned unless explicitly marked existing.
 | MHz/CLEAR | Cancel/back; does not implicitly clear the applied country |
 | 1–16 | Existing immediate recall, except planned slot selection while storing |
 | DISPLAY MODE | Existing mode cycle including OFF; hold changes DIM |
-| CHECK | Current: start Stereo VU only when stopped and hardware ready. Proposed replacement: force Wi-Fi reconnect and check cross-ESP communications |
+| CHECK | Current: start Stereo VU only when stopped and hardware ready. Proposed: short press forces Wi-Fi reconnect and checks cross-ESP communications; hold two seconds relates to the programmed startup station |
 
-The PROGRAM country light is the **label**, not the separate PROGRAM 1/2/3
-digits; current VU modes may use digits for level warnings.
+The earlier proposed PROGRAM country light is the **display label**, not the
+physical switch or separate PROGRAM 1/2/3 digits; its suitability needs
+confirmation. Current VU modes may use digits for level warnings.
 The logical country reminder must not turn a stopped display on.
 
 ## Loading and problems

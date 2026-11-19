@@ -15,11 +15,11 @@ See the [operating guide](13-screen-driver-operating-guide.md),
 | Area | Implemented baseline versus this proposal |
 | --- | --- |
 | Presets 1–16, DISPLAY MODE | Work as documented in chapters 13–15; retain their behavior |
-| CHECK | Currently starts Stereo VU as documented in chapters 13–15; a later proposal would replace that action with connection checks, as described in the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
+| CHECK | Currently starts Stereo VU as documented in chapters 13–15; proposed short press checks connections and a two-second hold relates to the programmed startup station; see the [user manual](17-internet-radio-menu-user-manual.md#check-connections-proposed) |
 | Categories, MUSIC/SPEECH, MEMORY, BLOCK, MHz/CLEAR, MONO MODE | Mapped raw events only; the menu actions below are new |
-| PROGRAM, DIRECT, FINE +/− | Proposed assignments; physical mappings remain unverified and virtual controls disabled |
+| PROGRAM switch, DIRECT, FINE +/− | Switch startup behavior and menu controls are proposed; controller mappings remain unverified and virtual controls disabled. UNDEFINED is proposed as country-menu entry, subject to its intermittent mapping |
 | Directory, filters, Top 10, prefix editor, MEMORY storage | Proposed, not a feature of the current front panel |
-| Startup status file | Required target: restore last-used station, brightness and display mode from a persistent file; not implemented |
+| Startup status file | Record last-used station, brightness and display mode; restore logical display settings, with station startup governed by PROGRAM; not implemented |
 | PROGRAM label | Mapped fixed display element; proposed country-state ownership/blinking not implemented |
 | Split audio | Controller still decodes locally; UART is diagnostic, not a station-command transport |
 
@@ -76,13 +76,15 @@ recall of a saved preset outside that country.
 
 The user requires a **persistent status file**, not merely generic NVS settings,
 containing the last-used station, brightness and display mode. On startup,
-read and validate that file, restore the saved logical mode/brightness and
-resume the saved station using its playable URL, without requiring the directory
-to be online. Retain the station UUID/name when available; custom-URL stations
-must remain restorable without a directory UUID. This replaces a hardcoded
-NPO Radio 2 startup station in the target design; it does not describe current
-firmware, which chapter 13 documents as starting NPO Radio 2 and not restoring
-mode/DIM across reboot.
+read and validate that file and restore the saved logical mode/brightness.
+The later PROGRAM switch requirement supersedes automatic resumption of the
+last-used station: ON starts NPO Radio 2 or the programmed station; OFF starts
+the tuner without a preset loaded. A two-second CHECK hold relates to the
+programmed station, but the exact programming workflow is unresolved. A
+programmed station is not assumed to be the last-used station. Retain station
+UUID/name and last-known playable URL where available; custom-URL stations
+must remain identifiable without a directory UUID. This is a target design;
+current firmware starts NPO Radio 2 and does not restore mode/DIM across reboot.
 
 Save only intentional, successfully applied user state changes: an explicitly
 tuned/recalled station once playback succeeds, a chosen display mode (including
@@ -98,23 +100,26 @@ without restarting stopped physical output or persisting hardware authorization;
 the existing explicit display-start and isolation requirements still apply.
 Retaining an OFF selection must not discard the saved brightness.
 
-If the restored station cannot connect, report the failure explicitly and
-preserve its saved identity/URL; **never silently fall back to NPO Radio 2 or
-another station**. A later explicit successful selection may replace it.
+If the selected startup station cannot connect, report the failure explicitly
+and preserve its saved identity/URL; **never silently fall back to NPO Radio 2
+or another station**. A later explicit successful selection may replace it.
 Use failure-safe file updates and expose save failures without claiming the
 new state was persisted. The filename/location, format/versioning and
 missing/corrupt-file first-boot/recovery policy still need decisions; do not
-invent a default station for those cases.
+invent a recovery fallback for those cases. The requested NPO Radio 2 choice
+for PROGRAM ON is a startup choice, not a fallback after a failure.
 
 This is the menu-side contract for the separately developed startup design,
 not an implementation of startup or an authorization to change its files.
 Country-filter persistence remains a **separate unresolved decision**; the
-three required restored fields do not decide whether country survives reboot.
+recorded station and restored display fields do not decide whether country
+survives reboot.
 
 ### PROGRAM indicator truth table
 
-This is the user-approved target behavior for the **PROGRAM label**, not the
-separate numeric indices 1/2/3.
+This is the earlier proposed country-state behavior for the **PROGRAM label**,
+not the separate numeric indices 1/2/3 or the physical PROGRAM switch.
+Its suitability alongside the switch's startup role needs confirmation.
 
 | State | Applied filter | PROGRAM label |
 | --- | --- | --- |
@@ -148,11 +153,14 @@ mode; a tune failure must be explicit, not disguised as another station.
 | STORE PRESET | No assignment | No assignment | No action until a replacement is requested | No tune action | Cancel without a write |
 | REPLACE PRESET | No assignment | No assignment | Confirm persistent replacement | No tune action | Cancel without a write |
 
-PROGRAM opens the country selector with a pending copy of the applied filter.
-Recommendations for deterministic transitions: ignore a repeated PROGRAM
-while already selecting a country; when backing from genres, opening the
-country selector must not clear the applied country. Cancelling there restores
-the preceding genre screen and applied indicator state.
+The physical PROGRAM control is a switch reserved for the startup behavior
+above, not the country-menu entry. UNDEFINED is now proposed as the physical
+entry, replacing its earlier proposed category role. Its shared-column mapping
+has been intermittent and must be validated before relying on it. Once
+opened, the country selector has a pending copy of the applied filter. When
+backing from genres, opening the country selector must not clear the applied
+country. Cancelling there restores the preceding genre screen and applied
+indicator state.
 
 Country and genre movement are list operations; genre +/− is explicitly
 requested. Letter editing happens only in the station browser. Top 10 +/−
@@ -161,7 +169,8 @@ Do not silently assign undefined controls.
 
 Category controls use firmware binding labels:
 NEWS, AFFAIRS, INFO, SPORT, EDUCATE, DRAMA, CULTURE, SCIENCE, VARIED,
-POP M, ROCK M, M.O.R. M, MUSIC, SPEECH, LIGHT M, CLASSICS, OTHER M and UNDEFINED.
+POP M, ROCK M, M.O.R. M, MUSIC, SPEECH, LIGHT M, CLASSICS and OTHER M.
+UNDEFINED is reserved for the proposed country entry, not a category shortcut.
 ROCK M is the binding for the button also recorded as ROCKM in chapter 14.
 MONO MODE is not a new category/navigation command.
 
@@ -356,10 +365,11 @@ that future command layer already exists.
 
 Before implementation, resolve:
 
-- Physical PROGRAM, DIRECT and FINE mappings and continued matrix reliability.
+- Physical PROGRAM, DIRECT and FINE mappings, UNDEFINED reliability and
+  continued matrix reliability; PROGRAM SET behavior and CHECK hold workflow.
 - Country-filter persistence/default after reboot.
 - Status-file path/format/versioning and missing/corrupt-file first-boot/recovery
-  policy; persistence of last-used station, brightness and display mode is required,
+  policy; recording last-used station, brightness and display mode is required,
   not an open decision.
 - Curated categories, shortcut replacement rule approval, popularity ranking
   and ties; no audience-rating claim.
@@ -375,7 +385,8 @@ Future acceptance checks should cover pending-country cancellation and indicator
 restoration; ALL COUNTRIES; genre versus letter semantics; B→H jumps; partial/empty
 caches; stale asynchronous replies; offline preset recall; storage
 replace/cancel/failure and single short-or-long dispatch; mode/DIM preservation;
-status-file restoration of station/brightness/mode, including OFF; intentional
-changes only, overlay exclusion and failed writes; restored-station failure
+status-file recording of station and restoration of brightness/mode, including
+OFF; PROGRAM ON and OFF startup choices; intentional
+changes only, overlay exclusion and failed writes; startup-station failure
 without fallback; and stopped output remaining stopped. These are implementation
 acceptance goals, not claims of executed firmware tests.

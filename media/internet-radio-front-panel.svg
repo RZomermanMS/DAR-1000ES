@@ -47,8 +47,8 @@
     </g>
   </g>
   <g fill="none" stroke="#1b4965" stroke-width="2">
-    <path d="M114 80v65 M181 80v145 M267 80v77 M370 80l-95 78 M724 80v55 M1176 80v77 M1270 80v77"/>
-    <path d="M100 432v-99 M180 432v-95 M470 432v-74 M688 432l62-159 M760 432v-91 M970 432v-74 M1126 432l46-74 M1238 432v-74 M1370 432v-93"/>
+    <path d="M114 80v65 M181 80v20H60v135h8 M267 80l-52 20v135h-24 M370 80v20h-70v67h-24 M724 80v55 M1176 80v77 M1270 80v77"/>
+    <path d="M100 432v-99 M180 432v-95 M470 432v-74 M688 432V275h54 M760 432v-91 M970 432v-74 M1126 432l46-74 M1238 432v-74 M1370 432v-93"/>
   </g>
   <g fill="#ffffff" stroke="#1b4965" stroke-width="2">
     <circle cx="114" cy="65" r="15"/><circle cx="181" cy="65" r="15"/><circle cx="267" cy="65" r="15"/><circle cx="370" cy="65" r="15"/><circle cx="724" cy="65" r="15"/><circle cx="1176" cy="65" r="15"/><circle cx="1270" cy="65" r="15"/>
