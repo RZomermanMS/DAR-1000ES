@@ -1,0 +1,86 @@
+THT copper clearance inspection — experimental board, not fabrication sign-off
+=============================================================================
+
+Board: result.kicad_pcb, SHA-256
+44374a3e5e529bad2d6c6b86dc479dcf3c501c83625bc69086c49c34836ce98d.
+KiCad 10.0.2 reports a minimum unrelated track-to-plated-THT-pad copper gap
+of 0.201657 mm on B.Cu, tied to the nearest 0.000001 mm:
+
+* U1-CONTROLLER1 J3.11 (unconnected IO37/PSRAM), center (87.86, 55.4),
+  vs 0.30 mm Net-(U5-VIN) segment (86.6583, 54.9023)–(87.4306, 54.13).
+* U6-AUDIO1 J3.18 (ENABLE_U6), center (87.86, 233.18), vs 0.30 mm
+  Net-(U6-AUDIO1-IO40) segment (87.3623, 231.9783)–(84.8906, 234.45).
+
+Both have 1.70 mm circular pads. Independently, the first point-to-segment
+distance minus 0.85 mm pad radius and 0.15 mm track radius is 0.201657264 mm.
+The next reported gap is 0.201700 mm, e.g. C3 pad 2 (GND) to a 0.80 mm
+LOCAL_5V track on B.Cu. Full item UUIDs, nets and coordinates are in
+tht-clearance.json. The closest unrelated via is 0.860117 mm from U6-AUDIO1
+J1.5 on B.Cu (via fbd2accc-570a-44d4-9204-598af3ae91e6).
+
+The exhaustive comparison examines 319 plated THT pads, 737 tracks and 11
+vias; 233002 unrelated pad/item/layer combinations have copper on the same
+layer. There are 505 combinations at or below 0.50 mm (383 B.Cu, 122 F.Cu;
+all tracks), involving 223 distinct pads; 221 combinations are below 0.25 mm.
+These are pair counts, not counts of independent defects. The 0.50 mm review
+threshold is a screening choice, not a fabrication or soldering requirement.
+The saved project's default and power net classes specify 0.20 mm clearance;
+the measured minimum is only ~0.00166 mm above that value. A passing DRC is
+not proof that these locations are comfortable for hand soldering.
+
+Tracks very close to THT annular rings can increase solder-bridge risk if
+mask registration, mask dam width, flux, excess solder or exposed copper are
+unfavorable. Copper spacing is not the solder-mask opening or web width; this
+measurement does not inspect mask, solder wicking, pad-to-pad spacing, actual
+iron access, assembly sequence or manufacturing tolerances. Inspect both
+faces and actual mask/gerbers, discuss mask capability with the fabricator,
+and review/route wider relief around hand-soldered joints as appropriate.
+Do not treat 0.50 mm as an established safe hand-soldering limit.
+
+Method and reproducibility
+--------------------------
+From repository root, using the official KiCad image:
+
+docker run --rm --network none -v "$PWD:/work:ro" \
+  --entrypoint /usr/bin/python3 kicad/kicad:10.0.2 \
+  /work/hardware/pcb-redesign/v5/routing/measure_tht_clearance.py \
+  /work/hardware/pcb-redesign/v5/routing/experiment-silk-7/result.kicad_pcb \
+  > hardware/pcb-redesign/v5/routing/experiment-silk-7/tht-clearance.json
+
+The script loads the actual board, not a center-distance approximation.
+It uses KiCad's layer-specific effective pad and track/via copper shapes
+and SHAPE.GetClearance, with values returned in internal nanometres and
+reported in mm. It includes arcs, tracks and vias, tests each common
+flashed outer copper layer, and excludes only equal nonzero net codes. Net
+code zero is not assumed to be a shared net. Overlap is reported as zero,
+not a signed penetration depth. It requires a two-layer board, and ignores
+zones, other pads, copper graphics and holes. The six NPTH mounting holes
+on this board have drill equal to pad size and no copper flash; they are
+not plated THT pads. This is a geometric measurement, not a replacement
+for native DRC or an electrical, mask, assembly or fabrication assessment.
+The minimum is calculated independently of the reporting threshold. Use
+--threshold-mm 1 to include the closest via in the detailed output.
+
+Run synthetic geometry tests and the board/report regression:
+
+docker run --rm --network none -v "$PWD:/work:ro" \
+  --entrypoint /usr/bin/python3 kicad/kicad:10.0.2 \
+  /work/hardware/pcb-redesign/v5/routing/test_measure_tht_clearance.py
+
+Floorplan and decoupling feasibility, not a completed redesign
+------------------------------------------------------------
+The existing pad-center report shows C7 to U9 at 70.19 mm supply and
+74.01 mm to its nearest grounded pad, and C14 to U11 at 34.87 mm supply and
+35.88 mm ground. The report selects the nearest same-net pad, which is not
+necessarily the IC's actual ground supply pin.
+On this trial C7 is centered at (45, 191), U9 at (20, 259), C14 at
+(55, 226), U11 at (46, 260) mm. C5 is already near U9 and R15/JP2 are
+near U11: those occupancies and the existing traces make a simple move
+without a new placement and reroute unjustified. Earlier closer placement
+attempts did not complete routing (see ../README.txt). A feasible next
+experiment is to reserve space for each capacitor beside its actual supply
+and ground pins, rearrange nearby parts as needed, then reroute and check
+the full supply/return loop, connectivity, sections, DRC and assembly
+envelopes. Center distances alone do not prove loop quality. No new
+placement or rerouting success, mechanical clearance, RF compliance, or
+electrical sign-off is claimed here.

@@ -1,0 +1,120 @@
+DAR-1000ES v5 interim inspection checkpoint — NOT FOR FABRICATION
+
+Current external-whip review candidate (not fabrication/power approval):
+  routing/external-antenna-current/result.kicad_pcb
+Open with its adjacent project, schematic sheets and library tables.
+Its README, reports and preview/ document the fresh 0.30 mm route,
+native refill DRC/parity and read-only recheck, the local C8 supply-path
+improvement and remaining bypass-path regressions,
+conditional body/USB boxes, clearance scope and unresolved IPEX/selector,
+mechanical, RF and electrical blockers. The external whip is intended to
+connect to the dev board's own IPEX, with no motherboard antenna circuit
+or cutout. Neither the connector/selector nor the fitted geometry is
+verified. Previous inspection checkpoints remain available below.
+The current schematic has 22 outstanding ERC findings after bounded triage;
+see Electrical-review-v5.txt for the 59-item classification, the unverified
+EN/power/GND issues and exact connectivity comparison. No PCB was changed.
+
+Installed-board identification update: the user identifies a dual-USB-C
+DevKitC-1 N16R8 board with an XH-S3E module. The Espressif v1.1 carrier
+outline in the geometry-only alternate is a reference assumption, not a
+measurement of this board. Its socket spacing, antenna and pinout are not
+qualified. See ESP-BOARD-QUALIFICATION.txt before using any candidate.
+
+Latest combined review candidate (still incomplete):
+  routing/placement-current/result.kicad_pcb
+Open with its adjacent result.kicad_pro, schematic sheets and both library tables.
+Its README, audit.json and preview/ identify the saved-board reports, exact
+placements and inspection plots. This combines the previously integrated
+placements with the independent loop and clearance edits. C6-to-U8.14
+supply track is 5.472 mm and C6 ground-pad to U8.7 center distance is
+17.185 mm (24.319 mm in placement-integrated; 9.231 mm before C6 moved).
+C8-to-U10.2 supply track is 8.396 mm. Sampled ground fill does not prove a
+compact or continuous return loop. Physical, electrical and RF review
+remain unresolved. This is not a fabrication or power-up approval.
+
+Experimental alternate only (does not replace placement-current):
+  routing/esp-edge-candidate/result.kicad_pcb
+Its README.txt, audit.json and preview/ identify the revised ESP socket
+orientations, native reports, fitted PDFs, rendered PNGs and controller/audio
+closeups. The fitted board's carrier revision, XH-S3E module revision,
+antenna offset and clearance remain unverified, and this alternate has no
+antenna rule areas.
+Its historical assumed antenna projection is not verified RF clearance.
+GND return loops, soldering and physical fit remain unresolved.
+This alternate is not approved for fabrication, assembly or power. Its
+original geometry assumptions are superseded; see its README warning.
+
+Geometry-only alternate (does not replace placement-current):
+  routing/esp-reference-candidate/result.kicad_pcb
+This preserves the edge candidate's placement and routing without a re-route,
+and corrects the native carrier artwork using the supplied v1.1 bounds.
+Its README, reports and plots document the checks and their limitations.
+No verified antenna/RF restriction or clearance has been established or
+implemented. It is not approved for fabrication, assembly or power.
+
+The earlier combined reviews and standalone derivatives are preserved at
+  routing/placement-integrated/result.kicad_pcb
+  routing/placement-loop/result.kicad_pcb
+  routing/placement-clearance/result.kicad_pcb
+  routing/integrated-review/clearance-first-corrected/result.kicad_pcb
+and the separate published C6 milestone at
+  routing/placement-c6/result.kicad_pcb.
+
+The historical inspection checkpoint is routing/experiment-silk-7/result.kicad_pcb,
+not routing/synchronized.kicad_pcb or an experiment's input.kicad_pcb.
+Open it with routing/experiment-silk-7/result.kicad_pro and its adjacent
+fp-lib-table and DAR1000ES.pretty. The matching schematic is
+DAR-1000ES-v5.kicad_sch (with its power and interlock sheets).
+
+Review files, relative to routing/experiment-silk-7/:
+  assembly-experimental.pdf       top assembly
+  routing-experimental.pdf        both copper layers, two pages
+  inspection-assembly.png         assembly PDF page, rendered at 150 dpi
+  inspection-routing-page-1.png   routing page 1 (red), rendered at 150 dpi
+  inspection-routing-page-2.png   routing page 2 (blue), rendered at 150 dpi
+  closeups.txt                   enlarged controller/audio assembly and routing views
+  tht-clearance-notes.txt        measured copper-to-THT-pad clearance and limits
+  schematic-v5.pdf                schematic
+  drc.json                       native KiCad PCB DRC report
+  schematic-parity.json           native KiCad schematic parity report
+  decoupling-distances.txt        pad-center distance measurements
+
+These are fitted inspection plots, not 1:1 fabrication artwork. The PCB
+outline is visible, but references are small and the routing pages do not
+identify layers or nets; revision text crosses the title-block frame.
+Alternate plots with clearer titles and identified copper sides are in
+routing/inspection-readable/; they depict this same checkpoint board.
+
+The separate routing/clearance-trial-c/ contains a small, locally rerouted
+derivative of placement-trial B, not the board shown in these plots. Its
+minimum measured unrelated track-to-PTH-pad gap remains 0.201657 mm;
+see its README for the modest local improvements and limitations.
+The separate routing/decoupling-trial/ adds local C7/C14 ground routing
+and U11 clearance changes to trial B; its README identifies its exact
+board, reports and unresolved bypass loops, and its preview/ directory
+contains labeled views and closeups of that candidate. It is not a finished or
+fabrication-ready replacement for the inspection checkpoint.
+The bounded routing search in routing/bypass-return-trial/ found no
+compact C1–C4 ground returns; it retained no additional routing changes.
+
+The candidate's KiCad 10 reports zero DRC violations, zero missing
+connections and zero schematic-parity issues. Four inherited checks were
+ignored: track centering on vias, tuning-profile geometry, footprint filters,
+and footprint type. See routing/README.txt for the attempt and limitations.
+The historical schematic ERC had 59 findings and inherited ignored checks;
+the current generated schematic has 22 unresolved findings.
+MECHANICAL-REVIEW.txt records nominal checkpoint envelope comparisons,
+source-access limitations and the inboard antenna/substrate concern.
+
+The historical experiment-silk-7 board is not a finished electrical or physical design. C7 is about 70 mm
+from U9's supply pad and 74 mm from its nearest ground pad; C14 is about
+35 mm from U11. The nearest grounded pad need not be the IC ground supply
+pin; these distances do not establish bypass loop lengths. Actual decoupling
+loops, return paths, RF antenna clearance,
+complete module/USB and connector plug/cable envelopes, screwhead/chassis
+fit and solder-mask/iron access remain unverified. The measured minimum
+unrelated track-to-plated-THT-pad gap is 0.201657 mm; see the clearance
+notes for locations, scope and the many pairs below the 0.30 mm target.
+Sony/local supply sequencing, back-powering, inrush and actual mute/relay
+behavior require bench validation. Do not fabricate, assemble, or power it.

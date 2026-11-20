@@ -1,0 +1,3880 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-18T08:55:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.2",
+    "schematic_parity": [],
+    "source": "result.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 5.3883 mm",
+                    "pos": {
+                        "x": 48.8101,
+                        "y": 209.4299
+                    },
+                    "uuid": "759fae01-8182-46e7-ae76-dbcba34cc61b"
+                },
+                {
+                    "description": "Track [GND] on B.Cu, length 9.8995 mm",
+                    "pos": {
+                        "x": 40.24,
+                        "y": 210.0
+                    },
+                    "uuid": "e169a729-b37d-4f63-8ddf-fce7b6b82b09"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 6.0796 mm",
+                    "pos": {
+                        "x": 50.0,
+                        "y": 191.0
+                    },
+                    "uuid": "e3420754-7c94-4e8b-bae9-11412d321b2b"
+                },
+                {
+                    "description": "Track [GND] on B.Cu, length 2.5400 mm",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 200.54
+                    },
+                    "uuid": "263285cc-8420-4107-9aba-6b8eeafc3bbd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 2.5400 mm",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 200.54
+                    },
+                    "uuid": "263285cc-8420-4107-9aba-6b8eeafc3bbd"
+                },
+                {
+                    "description": "PTH pad J3.1 [GND] of U6-AUDIO1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 190.0
+                    },
+                    "uuid": "cf1ab6a4-7454-4295-b6a0-8a046ae00d82"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 0.6200 mm",
+                    "pos": {
+                        "x": 54.62,
+                        "y": 220.62
+                    },
+                    "uuid": "e1e00c98-bb92-48ca-8753-ebe3c2bcd688"
+                },
+                {
+                    "description": "Track [GND] on B.Cu, length 5.3883 mm",
+                    "pos": {
+                        "x": 48.8101,
+                        "y": 209.4299
+                    },
+                    "uuid": "759fae01-8182-46e7-ae76-dbcba34cc61b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 2.5490 mm",
+                    "pos": {
+                        "x": 61.549,
+                        "y": 247.0
+                    },
+                    "uuid": "e85f627f-8414-4715-9175-996c3bdbeb74"
+                },
+                {
+                    "description": "Track [GND] on B.Cu, length 2.0440 mm",
+                    "pos": {
+                        "x": 53.1747,
+                        "y": 245.5547
+                    },
+                    "uuid": "b2b01fb6-4802-4806-9686-0d97af110cfd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad J3.1 [GND] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 30.0
+                    },
+                    "uuid": "b3067bb6-e0b2-405f-b289-dc2484861805"
+                },
+                {
+                    "description": "Track [GND] on B.Cu, length 6.0811 mm",
+                    "pos": {
+                        "x": 57.5,
+                        "y": 14.0
+                    },
+                    "uuid": "f152669a-39a2-42c9-ba96-154270b8a61c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [CTRL_POWER_GOOD] on B.Cu, length 8.4853 mm",
+                    "pos": {
+                        "x": 54.62,
+                        "y": 111.0
+                    },
+                    "uuid": "29cd07d1-796c-4b36-8c25-98a7a98e4948"
+                },
+                {
+                    "description": "Track [CTRL_POWER_GOOD] on B.Cu, length 7.6200 mm",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 55.16
+                    },
+                    "uuid": "918c81ea-bce3-44fc-8992-25bf6784588f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 185.0
+                    },
+                    "uuid": "c565482e-0326-401b-b761-be6af302b597"
+                },
+                {
+                    "description": "PTH pad 4 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 185.0
+                    },
+                    "uuid": "a4036bff-dc90-433d-ad0b-a6d2757a2e4e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 10 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 177.38
+                    },
+                    "uuid": "fa8fb3db-2fee-47e4-94ca-54efd6b38294"
+                },
+                {
+                    "description": "PTH pad 13 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 27.54,
+                        "y": 177.38
+                    },
+                    "uuid": "b5564931-b3bc-47ea-a2de-154a80e4912e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 10 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 177.38
+                    },
+                    "uuid": "fa8fb3db-2fee-47e4-94ca-54efd6b38294"
+                },
+                {
+                    "description": "PTH pad 4 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 185.0
+                    },
+                    "uuid": "a4036bff-dc90-433d-ad0b-a6d2757a2e4e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [U2_OE_N] of R1",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 185.0
+                    },
+                    "uuid": "d9023a99-72cc-4a06-9fc5-6b5aae32ee72"
+                },
+                {
+                    "description": "PTH pad 10 [U2_OE_N] of U2",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 177.38
+                    },
+                    "uuid": "fa8fb3db-2fee-47e4-94ca-54efd6b38294"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 8 [U2_OE_N] of U9",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 213.24
+                    },
+                    "uuid": "120a7965-5707-42c0-957f-c3bb7c94bc8d"
+                },
+                {
+                    "description": "PTH pad 2 [U2_OE_N] of R1",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 185.0
+                    },
+                    "uuid": "d9023a99-72cc-4a06-9fc5-6b5aae32ee72"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/AUDIO_U2_DMUTE] of U2",
+                    "pos": {
+                        "x": 27.54,
+                        "y": 185.0
+                    },
+                    "uuid": "7de5e0a5-bce7-49d2-b0a2-23a4fc750a01"
+                },
+                {
+                    "description": "PTH pad J1.5 [/AUDIO_U2_DMUTE] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 200.16
+                    },
+                    "uuid": "a4607fa0-a875-4ded-b37a-a3934710880f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/AUDIO_U2_SPARE] of U2",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 185.0
+                    },
+                    "uuid": "2fcfdcee-5925-43e3-98e4-1d388e09459b"
+                },
+                {
+                    "description": "PTH pad J1.7 [/AUDIO_U2_SPARE] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 205.24
+                    },
+                    "uuid": "b6f60b72-d72c-4b9d-a4a4-e9e0057e2d70"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/A.MUTE] of J9",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 182.5
+                    },
+                    "uuid": "52cb522a-ae3f-442e-9bcf-811e3e7c2ca5"
+                },
+                {
+                    "description": "PTH pad 8 [/A.MUTE] of U2",
+                    "pos": {
+                        "x": 40.24,
+                        "y": 177.38
+                    },
+                    "uuid": "459d1a62-eb41-48e9-acf3-49f7ac9aa4db"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/AUDIO_U2_AMUTE] of U2",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 177.38
+                    },
+                    "uuid": "51fda1b7-e0dc-47ab-b0f2-ddc713b531da"
+                },
+                {
+                    "description": "PTH pad J1.4 [/AUDIO_U2_AMUTE] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 197.62
+                    },
+                    "uuid": "aacb0b04-db6f-4806-b09d-86c410f484a1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RELAY] of J9",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 187.5
+                    },
+                    "uuid": "2de859f6-ccdc-4aaa-8e02-288f2530dbc8"
+                },
+                {
+                    "description": "PTH pad 11 [/RELAY] of U2",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 177.38
+                    },
+                    "uuid": "b5c87d6a-5cc7-45e5-9b1a-ddafb45cf6f6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/AUDIO_U2_RELAY] of U2",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 177.38
+                    },
+                    "uuid": "88715bc0-7d74-4fad-ab4a-c1a827b6b58a"
+                },
+                {
+                    "description": "PTH pad J1.6 [/AUDIO_U2_RELAY] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 202.7
+                    },
+                    "uuid": "32b3bc95-c26b-47ab-8c87-281a5ddcfc53"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 2.0008 mm",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 39.0
+                    },
+                    "uuid": "bce84020-3f6b-4a38-af9a-12114a125a45"
+                },
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 13.4647 mm",
+                    "pos": {
+                        "x": 8.698,
+                        "y": 49.5427
+                    },
+                    "uuid": "d7c3b8bb-a009-4780-be5a-8365763b909f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 5.3800 mm",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 222.0
+                    },
+                    "uuid": "9b67fc13-4fce-4908-98f3-8f9fc371bb71"
+                },
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 2.0071 mm",
+                    "pos": {
+                        "x": 23.5808,
+                        "y": 243.4192
+                    },
+                    "uuid": "322a097e-90cf-4848-9296-5678434a16bf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 8.4853 mm",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 267.0
+                    },
+                    "uuid": "cc28a3d8-5a23-435c-a240-3b0a68e60b32"
+                },
+                {
+                    "description": "PTH pad 1 [LOCAL_5V] of JP2",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 255.0
+                    },
+                    "uuid": "f42fdb27-8650-429a-a7f5-79af204ebf6c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 8.5468 mm",
+                    "pos": {
+                        "x": 38.9565,
+                        "y": 178.9565
+                    },
+                    "uuid": "45177eea-af02-4313-8fdc-8cc9d2d227a8"
+                },
+                {
+                    "description": "PTH pad 1 [LOCAL_5V] of JP1",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 95.0
+                    },
+                    "uuid": "13efe6cb-65af-426b-a772-17c43e0e97cb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [LOCAL_5V] of JP1",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 95.0
+                    },
+                    "uuid": "13efe6cb-65af-426b-a772-17c43e0e97cb"
+                },
+                {
+                    "description": "Track [LOCAL_5V] on B.Cu, length 5.6569 mm",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 68.0
+                    },
+                    "uuid": "847381f0-f90f-4860-9758-b87641b8a00d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SONY_5V_SENSE] on B.Cu, length 3.0782 mm",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 124.0
+                    },
+                    "uuid": "29c555f0-317d-43a7-a3d9-12425c982179"
+                },
+                {
+                    "description": "Track [SONY_5V_SENSE] on B.Cu, length 9.5177 mm",
+                    "pos": {
+                        "x": 55.0,
+                        "y": 226.0
+                    },
+                    "uuid": "4be2f0c8-32e0-4b40-891f-45e823e60826"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SONY_5V_SENSE] on B.Cu, length 8.3588 mm",
+                    "pos": {
+                        "x": 49.27,
+                        "y": 110.3588
+                    },
+                    "uuid": "d4ab7279-63b4-43e6-ad53-17a28b86eff7"
+                },
+                {
+                    "description": "PTH pad 2 [SONY_5V_SENSE] of J12",
+                    "pos": {
+                        "x": 36.5,
+                        "y": 9.7
+                    },
+                    "uuid": "0c384962-867d-571e-81dd-3dfd479f2f09"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/BCKI] of J11",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 242.5
+                    },
+                    "uuid": "969f5fc8-5f27-4960-a4f6-74947fe87028"
+                },
+                {
+                    "description": "PTH pad 11 [/BCKI] of U7",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 227.38
+                    },
+                    "uuid": "2659042f-a9e7-4a95-908e-62fce19b7488"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/DATA] of J11",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 245.0
+                    },
+                    "uuid": "62fb4ab4-8b39-4668-bfd9-ee3469eb6adf"
+                },
+                {
+                    "description": "PTH pad 3 [/DATA] of U7",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 235.0
+                    },
+                    "uuid": "3f632f0a-66c1-4ec2-b147-c3facf3ada23"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/LRCK] of J11",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 247.5
+                    },
+                    "uuid": "f25db45c-dc18-41e3-a17c-07cc5b30bea5"
+                },
+                {
+                    "description": "PTH pad 6 [/LRCK] of U7",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 235.0
+                    },
+                    "uuid": "f29a0cbe-52eb-4598-b6c6-f461119dcb6f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(U6-AUDIO1-IO9)] of U6",
+                    "pos": {
+                        "x": 27.54,
+                        "y": 210.0
+                    },
+                    "uuid": "d6747c74-c7b7-40b1-acc1-5ae79fa3a915"
+                },
+                {
+                    "description": "PTH pad J1.15 [Net-(U6-AUDIO1-IO9)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 225.56
+                    },
+                    "uuid": "ce2c9aef-1993-4cf5-b7c3-a874b002c5a0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [Net-(U6-AUDIO1-IO11)] of U6",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 202.38
+                    },
+                    "uuid": "73b0de8e-b25d-4291-b215-66983d1cc022"
+                },
+                {
+                    "description": "PTH pad J1.17 [Net-(U6-AUDIO1-IO11)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 230.64
+                    },
+                    "uuid": "b5ea511d-97fa-4940-af43-224e6d025b9e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [Net-(U6-AUDIO1-IO12)] of U6",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 202.38
+                    },
+                    "uuid": "33741ff6-ef17-4933-8bf8-a893007c0412"
+                },
+                {
+                    "description": "PTH pad J1.18 [Net-(U6-AUDIO1-IO12)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 233.18
+                    },
+                    "uuid": "3b87794e-0760-4086-bfaa-fdcfea3b4769"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(U6-AUDIO1-IO1)] of U7",
+                    "pos": {
+                        "x": 27.54,
+                        "y": 235.0
+                    },
+                    "uuid": "eab61120-f9e0-460d-a1b5-d99b83f1911f"
+                },
+                {
+                    "description": "PTH pad J3.4 [Net-(U6-AUDIO1-IO1)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 197.62
+                    },
+                    "uuid": "92157739-b59d-4f80-99b8-cd2dc0fa36d4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [ENABLE_U7] of U9",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 205.62
+                    },
+                    "uuid": "dea0ae24-f010-4c4d-973f-b7c1a376fe2d"
+                },
+                {
+                    "description": "Track [ENABLE_U7] on B.Cu, length 6.8449 mm",
+                    "pos": {
+                        "x": 66.588,
+                        "y": 226.512
+                    },
+                    "uuid": "ab3ff545-0d5b-4719-adb6-1c1e4d900081"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [Net-(U6-AUDIO1-IO40)] of U7",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 227.38
+                    },
+                    "uuid": "96b90c81-3eb2-4076-9d3f-6df077d5118f"
+                },
+                {
+                    "description": "PTH pad J3.8 [Net-(U6-AUDIO1-IO40)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 207.78
+                    },
+                    "uuid": "1a3da940-d504-4ec0-a4fb-6c4cf269a9d6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [Net-(U6-AUDIO1-IO47)] of U6",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 210.0
+                    },
+                    "uuid": "a0c68ca4-b948-4be7-94a4-a60d00cdff71"
+                },
+                {
+                    "description": "PTH pad J3.17 [Net-(U6-AUDIO1-IO47)] of U6-AUDIO1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 230.64
+                    },
+                    "uuid": "f7af17f1-be6c-4e26-a739-41069797858b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [ENABLE_U6] on B.Cu, length 50.2524 mm",
+                    "pos": {
+                        "x": 52.3262,
+                        "y": 268.7138
+                    },
+                    "uuid": "59919054-d887-4685-a955-f441ab9eda0f"
+                },
+                {
+                    "description": "PTH pad 1 [ENABLE_U6] of U9",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 198.0
+                    },
+                    "uuid": "3dadc36e-3ee8-4c8f-8884-17dbd3ab1ad1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [U4_OE_N] on B.Cu, length 1.7330 mm",
+                    "pos": {
+                        "x": 40.1883,
+                        "y": 50.6599
+                    },
+                    "uuid": "a84543df-9830-4d03-a9f0-019e6bbed3c3"
+                },
+                {
+                    "description": "PTH pad 2 [U4_OE_N] of R3",
+                    "pos": {
+                        "x": 52.62,
+                        "y": 38.0
+                    },
+                    "uuid": "b89c758a-60a6-4242-b05e-093e7a596121"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [U3_OE_N] on B.Cu, length 5.3882 mm",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 35.0
+                    },
+                    "uuid": "fcd214b1-adbf-4cd6-9d3b-596f7ffbb646"
+                },
+                {
+                    "description": "Track [U3_OE_N] on B.Cu, length 1.6693 mm",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 27.38
+                    },
+                    "uuid": "571dcd09-4ddc-474d-a060-4427d7dca8d7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 6 [U3_OE_N] of U8",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 57.7
+                    },
+                    "uuid": "e532b6c8-3055-452a-9f87-3d48a0a7d1f6"
+                },
+                {
+                    "description": "Track [U3_OE_N] on B.Cu, length 1.5392 mm",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 30.4608
+                    },
+                    "uuid": "67b0c19a-52c2-425e-9573-838dd1dac6b7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/FLCLEAR] of U3",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 35.0
+                    },
+                    "uuid": "402fa286-9036-431d-a554-a8f9295a30c3"
+                },
+                {
+                    "description": "PTH pad 4 [/FLCLEAR] of J3",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 39.5
+                    },
+                    "uuid": "b6da9e0c-1ebc-40e4-8306-056ed0362dcb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/FLCLEAR] of R4",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 85.0
+                    },
+                    "uuid": "340a3c08-d0a7-42d2-8c0b-8f0a281b3c97"
+                },
+                {
+                    "description": "PTH pad 3 [/FLCLEAR] of U3",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 35.0
+                    },
+                    "uuid": "402fa286-9036-431d-a554-a8f9295a30c3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUDIO_POWER_GOOD] on B.Cu, length 13.0249 mm",
+                    "pos": {
+                        "x": 61.83,
+                        "y": 198.95
+                    },
+                    "uuid": "9d69aa79-6180-4e00-bf91-e533535bb067"
+                },
+                {
+                    "description": "Track [AUDIO_POWER_GOOD] on B.Cu, length 1.7442 mm",
+                    "pos": {
+                        "x": 46.2123,
+                        "y": 206.9477
+                    },
+                    "uuid": "4858ac1e-0d2d-43b8-af0a-6c0ae93b69a4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [U6_OE_N] on B.Cu, length 1.1679 mm",
+                    "pos": {
+                        "x": 10.3842,
+                        "y": 243.75
+                    },
+                    "uuid": "a1e34ba0-2654-46d2-841f-67112a74d154"
+                },
+                {
+                    "description": "PTH pad 2 [U6_OE_N] of R5",
+                    "pos": {
+                        "x": 32.62,
+                        "y": 261.0
+                    },
+                    "uuid": "782c6035-71a7-4171-9e72-fbf7314bb23d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/SHIFT] of J10",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 223.0
+                    },
+                    "uuid": "cb2fbaa3-a87f-46b2-bcfd-b03ad8c61bd6"
+                },
+                {
+                    "description": "PTH pad 8 [/SHIFT] of U6",
+                    "pos": {
+                        "x": 40.24,
+                        "y": 202.38
+                    },
+                    "uuid": "5f48bc40-11be-4160-b30d-8cc49928620d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(U1-CONTROLLER1-IO42)] of U3",
+                    "pos": {
+                        "x": 27.54,
+                        "y": 35.0
+                    },
+                    "uuid": "6dd96c11-8dd7-41c2-963e-80aae0f21392"
+                },
+                {
+                    "description": "PTH pad J3.6 [Net-(U1-CONTROLLER1-IO42)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 42.7
+                    },
+                    "uuid": "8c479c09-5438-4522-83cf-0210d9916464"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [Net-(U1-CONTROLLER1-IO4)] of U3",
+                    "pos": {
+                        "x": 35.16,
+                        "y": 35.0
+                    },
+                    "uuid": "2d315d60-058f-43fe-8f1c-9fadaee4bb98"
+                },
+                {
+                    "description": "PTH pad J1.4 [Net-(U1-CONTROLLER1-IO4)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 37.62
+                    },
+                    "uuid": "682fae65-34dc-4dc0-a404-d83568b91224"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [Net-(U1-CONTROLLER1-IO1)] of U3",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 27.38
+                    },
+                    "uuid": "0deb6001-68f7-4f8e-80b3-2a867df9f85e"
+                },
+                {
+                    "description": "PTH pad J3.4 [Net-(U1-CONTROLLER1-IO1)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 37.62
+                    },
+                    "uuid": "2fc57059-c2b8-4e7a-8467-25ac8e341114"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.4 [Net-(U1-CONTROLLER1-IO39)] of U5",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 127.38
+                    },
+                    "uuid": "3d2908c5-20ad-4d36-b831-2b479abe7e02"
+                },
+                {
+                    "description": "PTH pad J3.9 [Net-(U1-CONTROLLER1-IO39)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 50.32
+                    },
+                    "uuid": "5e4c2288-8509-4f4b-96ad-2f1ca38cb8da"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.5 [Net-(U1-CONTROLLER1-IO14)] of U5",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 124.84
+                    },
+                    "uuid": "f70036a9-a2e4-4173-accb-71858d3deca9"
+                },
+                {
+                    "description": "PTH pad J1.20 [Net-(U1-CONTROLLER1-IO14)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 78.26
+                    },
+                    "uuid": "766b2ec9-a836-4c39-bcfd-3be36f4bc0c1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.6 [Net-(U1-CONTROLLER1-IO13)] of U5",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 122.3
+                    },
+                    "uuid": "bf88b263-4dab-40b2-8a96-e97d27509fbf"
+                },
+                {
+                    "description": "PTH pad J1.19 [Net-(U1-CONTROLLER1-IO13)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 75.72
+                    },
+                    "uuid": "ce49cfa8-626a-4615-9250-6da63cdfbe15"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad JP4.7 [Net-(U1-CONTROLLER1-IO40)] of U5",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 119.76
+                    },
+                    "uuid": "a2e616ac-c648-4ca6-9bbb-cac9b755904e"
+                },
+                {
+                    "description": "PTH pad J3.8 [Net-(U1-CONTROLLER1-IO40)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 87.86,
+                        "y": 47.78
+                    },
+                    "uuid": "548d9e24-2753-4abe-b313-e031a47cf133"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [Net-(U1-CONTROLLER1-IO7)] of U4",
+                    "pos": {
+                        "x": 37.7,
+                        "y": 52.38
+                    },
+                    "uuid": "be8b6396-ad8e-4675-aab1-f6c932a9f086"
+                },
+                {
+                    "description": "PTH pad J1.7 [Net-(U1-CONTROLLER1-IO7)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 45.24
+                    },
+                    "uuid": "20c24e7b-c60d-4059-a216-c490ae123d85"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [Net-(U1-CONTROLLER1-IO5)] of U4",
+                    "pos": {
+                        "x": 30.08,
+                        "y": 52.38
+                    },
+                    "uuid": "3de86ecc-885a-46f9-8093-62443133627d"
+                },
+                {
+                    "description": "PTH pad J1.5 [Net-(U1-CONTROLLER1-IO5)] of U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 40.16
+                    },
+                    "uuid": "6ea8f7ec-0790-4ba8-bf40-ad7ffce132f0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint C12",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 247.0
+                    },
+                    "uuid": "0181345c-8112-47fa-a447-81910b7eee27"
+                },
+                {
+                    "description": "Footprint R15",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 247.0
+                    },
+                    "uuid": "3d824919-42dd-48dc-86af-678725367deb"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint R14",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 241.0
+                    },
+                    "uuid": "3ed1022e-170b-4a1d-acc4-66bae554c092"
+                },
+                {
+                    "description": "Footprint C13",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 240.0
+                    },
+                    "uuid": "5c89a449-37c8-42f9-81e4-5e4243e72b4a"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C12",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 247.0
+                    },
+                    "uuid": "0181345c-8112-47fa-a447-81910b7eee27"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R13",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 117.0
+                    },
+                    "uuid": "0640fd3e-1025-5170-ad39-7509256d4741"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 185.0
+                    },
+                    "uuid": "06dfb21f-84a3-4d0b-ad38-3b710cd6d740"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 15.0,
+                        "y": 9.7
+                    },
+                    "uuid": "0a1d00da-3a26-4604-a784-5c95c4985e66"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 69.0
+                    },
+                    "uuid": "0dbd92e5-e009-4993-b70f-0ac66864c61d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U11",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 234.0
+                    },
+                    "uuid": "0de1964b-f3fe-4e1e-a5ce-c48edf455acb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J11",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 240.0
+                    },
+                    "uuid": "10e4d734-a6a5-48ec-bca9-fb5c8ecb71cd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U6-AUDIO1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 190.0
+                    },
+                    "uuid": "1324accb-b59f-4f94-af30-2ecf3a569ad1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J7",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 121.0
+                    },
+                    "uuid": "14e3f63a-6a66-4422-b85f-91ef79f0608c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 38.0
+                    },
+                    "uuid": "1721c69d-b6eb-4aaf-8a3e-660e5078a284"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U10",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 102.0
+                    },
+                    "uuid": "1b7a22f1-57fa-55a3-9c57-80981d5275bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R7",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 220.0
+                    },
+                    "uuid": "236c2dd3-87df-5139-9604-ececed6d6bcd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C11",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 80.0
+                    },
+                    "uuid": "28d5832a-52a8-4b6e-be19-2a7324fdc2d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint JP1",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 95.0
+                    },
+                    "uuid": "2e269fb3-e24d-49e8-879d-b587f9546cb6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 32.0
+                    },
+                    "uuid": "2f600409-1e02-4138-88fb-02980a059771"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R10",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 261.0
+                    },
+                    "uuid": "311f06ce-37f3-50c8-8c46-1a42790dc1b0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J3",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 32.0
+                    },
+                    "uuid": "32d36e10-5ec6-4f03-9b45-004f0987af67"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U8",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 45.0
+                    },
+                    "uuid": "35f9e450-7757-538d-b579-22cb5f832365"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 85.0
+                    },
+                    "uuid": "36d4d240-5c13-4a53-a920-3f7e75bfa263"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 197.0
+                    },
+                    "uuid": "3c23222b-854c-4737-8bdc-e834166052cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R15",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 247.0
+                    },
+                    "uuid": "3d824919-42dd-48dc-86af-678725367deb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R14",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 241.0
+                    },
+                    "uuid": "3ed1022e-170b-4a1d-acc4-66bae554c092"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U6",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 210.0
+                    },
+                    "uuid": "48300daa-29ec-4a89-9684-806b1fb2f222"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 222.0
+                    },
+                    "uuid": "4f9b88f5-ab7c-411e-bce4-a57fd1be63d7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R11",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 267.0
+                    },
+                    "uuid": "520cfe4a-75fa-52ef-ab32-d3aebcb063f8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U9",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 198.0
+                    },
+                    "uuid": "5a758e03-96b8-5500-b40e-b83288013679"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C13",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 240.0
+                    },
+                    "uuid": "5c89a449-37c8-42f9-81e4-5e4243e72b4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint JP2",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 255.0
+                    },
+                    "uuid": "60d60af1-29b9-47c2-ae02-3d824f339c65"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J8",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 140.0
+                    },
+                    "uuid": "66758a77-91c4-45fa-aa17-19317e2cc342"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C14",
+                    "pos": {
+                        "x": 55.0,
+                        "y": 226.0
+                    },
+                    "uuid": "69ab55cf-7f7c-465a-8a97-7ab8dceedf1e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C7",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 191.0
+                    },
+                    "uuid": "75cd01b7-97cc-55de-a8a9-6926380efbc5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C6",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 68.0
+                    },
+                    "uuid": "8142bc46-d832-50cf-a8c2-13f5459835d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J12",
+                    "pos": {
+                        "x": 39.0,
+                        "y": 9.7
+                    },
+                    "uuid": "92940bf1-ac2c-5dd9-8747-a83a186d0d41"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R12",
+                    "pos": {
+                        "x": 47.0,
+                        "y": 111.0
+                    },
+                    "uuid": "963999e9-5cd5-5920-b3d3-c8cb9c103bb1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R6",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 267.0
+                    },
+                    "uuid": "a14cbc50-d71c-4b15-8eee-d3985b3809cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J5",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 70.0
+                    },
+                    "uuid": "a3dd80d6-eff6-4f36-9af3-f628a5f66597"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 35.0
+                    },
+                    "uuid": "ae99dad2-d062-4e5d-97c6-f7d3529b7d35"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U5",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 135.0
+                    },
+                    "uuid": "b826fef9-35fe-43f1-bfc0-12e9120a35c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 54.0,
+                        "y": 14.0
+                    },
+                    "uuid": "b991ca7a-cba2-42a7-9b78-70614964132a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J9",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 180.0
+                    },
+                    "uuid": "bbaf91df-394c-428b-adea-6c8d51eb563a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J10",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 218.0
+                    },
+                    "uuid": "bc30dce8-8b8a-4a63-8086-f955dcc8daed"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R8",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 73.0
+                    },
+                    "uuid": "c1e9f42a-c050-5742-a0e2-d17212bc2237"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U4",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 60.0
+                    },
+                    "uuid": "c53328ca-589d-4486-a63b-58d82073686f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U1-CONTROLLER1",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 30.0
+                    },
+                    "uuid": "d114f790-d524-44f7-8391-84eaad2aea7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 185.0
+                    },
+                    "uuid": "d41b0df2-1bd9-495a-bddb-2334cb0ef3a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R9",
+                    "pos": {
+                        "x": 45.0,
+                        "y": 79.0
+                    },
+                    "uuid": "d7d74452-f5ab-5201-b6ea-dcecfca37899"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 87.0
+                    },
+                    "uuid": "dd20949f-cfcf-45d5-a899-91cc9c1ba38e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint U7",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 235.0
+                    },
+                    "uuid": "e0ffc55d-6905-47c4-b243-771ed0a6135c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C5",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 247.0
+                    },
+                    "uuid": "e1a078dc-8321-4d9d-bde9-12dd11c07d39"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J4",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 51.0
+                    },
+                    "uuid": "e74234ea-0d42-4bb8-b0f6-af0e1ec636e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C8",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 124.0
+                    },
+                    "uuid": "ec840b5d-85d4-53e2-be6e-edef4ff825e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 261.0
+                    },
+                    "uuid": "f298b46e-18ce-4024-9232-7e2f3278f00d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint J6",
+                    "pos": {
+                        "x": 9.8,
+                        "y": 89.0
+                    },
+                    "uuid": "f835038a-321a-4b1b-a28f-6240dabf52cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'DAR1000ES'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 25.0,
+                        "y": 44.0
+                    },
+                    "uuid": "fc8f7100-72ab-4c13-95b5-b419a04a0bc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.04,
+                        "y": 245.396
+                    },
+                    "uuid": "af6e28e8-3c44-4e73-9f64-490912a5f129"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.08,
+                        "y": 245.447
+                    },
+                    "uuid": "fee05121-7a45-42fb-a617-78fd15ce3a22"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.52,
+                        "y": 246.323
+                    },
+                    "uuid": "2c76d2e5-514b-4e4f-8843-d5ce922a4e28"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.56,
+                        "y": 246.483
+                    },
+                    "uuid": "4eadcaa3-bbcd-4e24-8bcd-22f8e5fb9b6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.6,
+                        "y": 246.717
+                    },
+                    "uuid": "2fa37205-793b-47eb-bd36-41bd90042840"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 247.0
+                    },
+                    "uuid": "c55308f7-57fa-47e9-9e3d-8d2111e66cd3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.32,
+                        "y": 245.823
+                    },
+                    "uuid": "f15d794b-606e-4f7b-bc8e-613a3b8aab4e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.36,
+                        "y": 245.902
+                    },
+                    "uuid": "311a125e-817d-4960-b604-cabb8fd1b216"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.4,
+                        "y": 245.989
+                    },
+                    "uuid": "14733fe4-63a4-400c-a4b3-7b7f3e61cc9b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.44,
+                        "y": 246.086
+                    },
+                    "uuid": "76cc362b-e054-4552-8d96-ecaef9550ad4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.48,
+                        "y": 246.195
+                    },
+                    "uuid": "deb63e96-d9ab-4b7d-8e1b-5524bc12129f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.52,
+                        "y": 246.323
+                    },
+                    "uuid": "2c76d2e5-514b-4e4f-8843-d5ce922a4e28"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.56,
+                        "y": 246.483
+                    },
+                    "uuid": "4eadcaa3-bbcd-4e24-8bcd-22f8e5fb9b6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.6,
+                        "y": 246.717
+                    },
+                    "uuid": "2fa37205-793b-47eb-bd36-41bd90042840"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 247.0
+                    },
+                    "uuid": "c55308f7-57fa-47e9-9e3d-8d2111e66cd3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.32,
+                        "y": 245.823
+                    },
+                    "uuid": "f15d794b-606e-4f7b-bc8e-613a3b8aab4e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.36,
+                        "y": 245.902
+                    },
+                    "uuid": "311a125e-817d-4960-b604-cabb8fd1b216"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.4,
+                        "y": 245.989
+                    },
+                    "uuid": "14733fe4-63a4-400c-a4b3-7b7f3e61cc9b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.44,
+                        "y": 246.086
+                    },
+                    "uuid": "76cc362b-e054-4552-8d96-ecaef9550ad4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.48,
+                        "y": 246.195
+                    },
+                    "uuid": "deb63e96-d9ab-4b7d-8e1b-5524bc12129f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.07,
+                        "y": 9.932
+                    },
+                    "uuid": "f5ed1ced-18f3-454c-baed-30b33569d947"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.11,
+                        "y": 9.936
+                    },
+                    "uuid": "0ba36eb3-8a25-414b-a127-745e5c80918b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.15,
+                        "y": 9.939
+                    },
+                    "uuid": "90f16dbe-f77d-40b5-a93d-610636e8ac71"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.19,
+                        "y": 9.944
+                    },
+                    "uuid": "7d6832e6-d9a0-4429-bbcd-bf072eb6fe92"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.23,
+                        "y": 9.948
+                    },
+                    "uuid": "182b5d82-951f-4047-9778-81a7f3a1b5e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.23,
+                        "y": 9.948
+                    },
+                    "uuid": "182b5d82-951f-4047-9778-81a7f3a1b5e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.27,
+                        "y": 9.953
+                    },
+                    "uuid": "ad2d6790-60e6-4bc1-83a4-7c011ad18085"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.27,
+                        "y": 9.953
+                    },
+                    "uuid": "ad2d6790-60e6-4bc1-83a4-7c011ad18085"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.31,
+                        "y": 9.958
+                    },
+                    "uuid": "0ab46b62-23be-45ef-b90e-92d0506fd01b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.31,
+                        "y": 9.958
+                    },
+                    "uuid": "0ab46b62-23be-45ef-b90e-92d0506fd01b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.35,
+                        "y": 9.964
+                    },
+                    "uuid": "47ac5008-e4f7-4288-8628-d78df5c16a09"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.35,
+                        "y": 9.964
+                    },
+                    "uuid": "47ac5008-e4f7-4288-8628-d78df5c16a09"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.39,
+                        "y": 9.97
+                    },
+                    "uuid": "39560f72-03a1-455f-92f1-5c2166a11d37"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.39,
+                        "y": 9.97
+                    },
+                    "uuid": "39560f72-03a1-455f-92f1-5c2166a11d37"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.43,
+                        "y": 9.977
+                    },
+                    "uuid": "ab988feb-1096-4edb-993a-d2da1a79731a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 56.43,
+                        "y": 9.977
+                    },
+                    "uuid": "ab988feb-1096-4edb-993a-d2da1a79731a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.55,
+                        "y": 11.018
+                    },
+                    "uuid": "e0b52b33-20ac-4964-8712-745c5350483e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.55,
+                        "y": 11.018
+                    },
+                    "uuid": "e0b52b33-20ac-4964-8712-745c5350483e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.59,
+                        "y": 11.055
+                    },
+                    "uuid": "5e1822c4-6db3-4f2e-83b2-2418d5b24317"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.59,
+                        "y": 11.055
+                    },
+                    "uuid": "5e1822c4-6db3-4f2e-83b2-2418d5b24317"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.63,
+                        "y": 11.094
+                    },
+                    "uuid": "a7960230-d89b-4bda-a480-4120e0652f5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.63,
+                        "y": 11.094
+                    },
+                    "uuid": "a7960230-d89b-4bda-a480-4120e0652f5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.75,
+                        "y": 14.0
+                    },
+                    "uuid": "324fe07c-fe83-4246-a94c-28e9582bfe5e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.67,
+                        "y": 11.133
+                    },
+                    "uuid": "ba5441d2-9b7a-4f7a-96e9-5d3c454af080"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.67,
+                        "y": 11.133
+                    },
+                    "uuid": "ba5441d2-9b7a-4f7a-96e9-5d3c454af080"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.71,
+                        "y": 11.174
+                    },
+                    "uuid": "9a43eff0-c3c5-4367-a75a-648e80ff80c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.71,
+                        "y": 11.174
+                    },
+                    "uuid": "9a43eff0-c3c5-4367-a75a-648e80ff80c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.75,
+                        "y": 11.216
+                    },
+                    "uuid": "597357e3-a4ec-4f9a-87ed-7489bac625c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.75,
+                        "y": 11.216
+                    },
+                    "uuid": "597357e3-a4ec-4f9a-87ed-7489bac625c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.79,
+                        "y": 11.259
+                    },
+                    "uuid": "b4c15695-0909-4d98-a885-d34cc0c17229"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.83,
+                        "y": 11.304
+                    },
+                    "uuid": "568946e7-643f-4863-a639-9e7e119fc4fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.87,
+                        "y": 11.349
+                    },
+                    "uuid": "c6f55211-af9a-4b56-a632-3ccb66b277a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.91,
+                        "y": 11.396
+                    },
+                    "uuid": "366828c6-7195-44f5-a351-8fbc17e911c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.75,
+                        "y": 9.92
+                    },
+                    "uuid": "bdd9ce90-13ff-4ecb-98f2-044413826f25"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.79,
+                        "y": 9.92
+                    },
+                    "uuid": "49d23cbd-33a1-405a-8ddd-51c27d442ede"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.83,
+                        "y": 9.921
+                    },
+                    "uuid": "2ae46c64-1357-4100-a4be-3ac405548a9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.87,
+                        "y": 9.922
+                    },
+                    "uuid": "d732c274-5648-4cff-83e4-ca66d78b523a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.91,
+                        "y": 9.923
+                    },
+                    "uuid": "45309d70-3940-42e7-a0a4-62b85a198edf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.75,
+                        "y": 9.92
+                    },
+                    "uuid": "bdd9ce90-13ff-4ecb-98f2-044413826f25"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 55.79,
+                        "y": 9.92
+                    },
+                    "uuid": "49d23cbd-33a1-405a-8ddd-51c27d442ede"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.15,
+                        "y": 11.713
+                    },
+                    "uuid": "2b4ce40a-b728-41ad-b7ea-0bd901dfe9f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.19,
+                        "y": 11.773
+                    },
+                    "uuid": "c60cdb7f-db53-4c8c-8ca8-e9805c5833e6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.23,
+                        "y": 11.835
+                    },
+                    "uuid": "00c1c06c-60ce-411a-9811-eeeba0052bc5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.27,
+                        "y": 11.899
+                    },
+                    "uuid": "44210926-dde8-4d94-a20f-0218bd9b3d70"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.95,
+                        "y": 11.445
+                    },
+                    "uuid": "f2d71495-df47-4318-9b18-b81be676206b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.99,
+                        "y": 11.495
+                    },
+                    "uuid": "c302fa27-7283-4071-b2fc-53659efdd41f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.03,
+                        "y": 11.547
+                    },
+                    "uuid": "1ef756d1-0d3e-428f-8d7c-f25d2c6261e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.07,
+                        "y": 11.6
+                    },
+                    "uuid": "9770e856-4296-491b-a9a8-66fea0638301"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.11,
+                        "y": 11.656
+                    },
+                    "uuid": "81edac39-25e8-4268-9c65-df3193362089"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.31,
+                        "y": 11.966
+                    },
+                    "uuid": "c0c7a510-e08e-4167-a0b7-3d1d4d9e4335"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.35,
+                        "y": 12.036
+                    },
+                    "uuid": "69aba4c8-30e4-4fae-9a36-364915099da6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.39,
+                        "y": 12.11
+                    },
+                    "uuid": "ae215553-407e-4f30-add5-efb3a4a8dd71"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.43,
+                        "y": 12.187
+                    },
+                    "uuid": "72983b1c-e0c1-4b79-8a47-63266314ede3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.47,
+                        "y": 12.269
+                    },
+                    "uuid": "57af064b-7698-43e1-bef4-c1ba627cfbce"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.51,
+                        "y": 12.356
+                    },
+                    "uuid": "42d24814-2ace-47ad-b77f-f1094029e663"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.55,
+                        "y": 12.448
+                    },
+                    "uuid": "b0c3dbd9-9a5c-4db8-b871-146e3184a36e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.75,
+                        "y": 13.053
+                    },
+                    "uuid": "d6bdecc2-c0af-4ec2-95e1-d4048e547c88"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.79,
+                        "y": 13.232
+                    },
+                    "uuid": "e5a7a9c0-76b1-4950-a55e-3b78ddcc1c21"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 59.83,
+                        "y": 13.467
+                    },
+                    "uuid": "a538864c-9ae8-440f-b639-f7feb9bd99d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R4 on F.Silkscreen",
+                    "pos": {
+                        "x": 45.54,
+                        "y": 86.37
+                    },
+                    "uuid": "222d305d-a24c-4397-93ac-9acd950cb2be"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R4 on F.Silkscreen",
+                    "pos": {
+                        "x": 52.08,
+                        "y": 86.37
+                    },
+                    "uuid": "744eea20-4793-4297-ae6c-a588f687506b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 87.0
+                    },
+                    "uuid": "4f417adf-d04d-48bc-9b9f-6e7f2fd48f43"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.04,
+                        "y": 85.396
+                    },
+                    "uuid": "a16bd8fd-445e-4ec5-b785-69cf177a8cf3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.08,
+                        "y": 85.447
+                    },
+                    "uuid": "cb51e07f-740c-4344-9b68-edf6eab8db5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.52,
+                        "y": 86.323
+                    },
+                    "uuid": "66aa4b63-246e-4ba2-9237-13c952825a42"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.56,
+                        "y": 86.483
+                    },
+                    "uuid": "871bb8f3-c708-4e8b-8c4d-3f96b7b9c1a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 87.0
+                    },
+                    "uuid": "4f417adf-d04d-48bc-9b9f-6e7f2fd48f43"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.32,
+                        "y": 85.823
+                    },
+                    "uuid": "29805d61-c742-440b-b0c0-f4d051d0dead"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.36,
+                        "y": 85.902
+                    },
+                    "uuid": "71af0251-a024-491d-ab50-cc53db00d02f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.4,
+                        "y": 85.989
+                    },
+                    "uuid": "e14cff83-2111-40eb-8185-0261cdfb6cd1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.44,
+                        "y": 86.086
+                    },
+                    "uuid": "52574e1d-e808-4aed-9d07-18bca795d01f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.48,
+                        "y": 86.195
+                    },
+                    "uuid": "65f5664f-d19c-49b2-bc67-877fe8b8d87b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.6,
+                        "y": 86.717
+                    },
+                    "uuid": "8b9b2566-cf26-42a6-bb98-58997d16065e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.52,
+                        "y": 86.323
+                    },
+                    "uuid": "66aa4b63-246e-4ba2-9237-13c952825a42"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.56,
+                        "y": 86.483
+                    },
+                    "uuid": "871bb8f3-c708-4e8b-8c4d-3f96b7b9c1a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.6,
+                        "y": 86.717
+                    },
+                    "uuid": "8b9b2566-cf26-42a6-bb98-58997d16065e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.36,
+                        "y": 85.902
+                    },
+                    "uuid": "71af0251-a024-491d-ab50-cc53db00d02f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.4,
+                        "y": 85.989
+                    },
+                    "uuid": "e14cff83-2111-40eb-8185-0261cdfb6cd1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.44,
+                        "y": 86.086
+                    },
+                    "uuid": "52574e1d-e808-4aed-9d07-18bca795d01f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.48,
+                        "y": 86.195
+                    },
+                    "uuid": "65f5664f-d19c-49b2-bc67-877fe8b8d87b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C10 on F.Silkscreen",
+                    "pos": {
+                        "x": 60.32,
+                        "y": 85.823
+                    },
+                    "uuid": "29805d61-c742-440b-b0c0-f4d051d0dead"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C12",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 247.0
+                    },
+                    "uuid": "0c8716c0-6232-4359-bf69-0ddec0c5c809"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C12",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 247.0
+                    },
+                    "uuid": "0c8716c0-6232-4359-bf69-0ddec0c5c809"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [ESP_AUDIO_5V] of C12",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 247.0
+                    },
+                    "uuid": "2a26d1c2-fc1c-4d54-acf1-892e16ab6206"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [ESP_AUDIO_5V] of C12",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 247.0
+                    },
+                    "uuid": "2a26d1c2-fc1c-4d54-acf1-892e16ab6206"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of R15",
+                    "pos": {
+                        "x": 54.62,
+                        "y": 247.0
+                    },
+                    "uuid": "58d184cf-3386-4575-9374-efac1597dd8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of R15",
+                    "pos": {
+                        "x": 54.62,
+                        "y": 247.0
+                    },
+                    "uuid": "58d184cf-3386-4575-9374-efac1597dd8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of C12 on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 247.0
+                    },
+                    "uuid": "c55308f7-57fa-47e9-9e3d-8d2111e66cd3"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of R15",
+                    "pos": {
+                        "x": 54.62,
+                        "y": 247.0
+                    },
+                    "uuid": "58d184cf-3386-4575-9374-efac1597dd8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [LOCAL_5V] of C9",
+                    "pos": {
+                        "x": 54.0,
+                        "y": 14.0
+                    },
+                    "uuid": "a4babeff-2b3b-467c-bbe7-b8a3d5c4d997"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [LOCAL_5V] of C9",
+                    "pos": {
+                        "x": 54.0,
+                        "y": 14.0
+                    },
+                    "uuid": "a4babeff-2b3b-467c-bbe7-b8a3d5c4d997"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C9",
+                    "pos": {
+                        "x": 57.5,
+                        "y": 14.0
+                    },
+                    "uuid": "309d11fa-e738-4669-a65f-3d54f7573022"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C9",
+                    "pos": {
+                        "x": 57.5,
+                        "y": 14.0
+                    },
+                    "uuid": "309d11fa-e738-4669-a65f-3d54f7573022"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C10",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 87.0
+                    },
+                    "uuid": "f99ca9fe-30f5-4ac8-ba8f-52a0f1fdb8bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [ESP_CTRL_5V] of C10",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 87.0
+                    },
+                    "uuid": "c537e230-f979-4f0a-adf1-93054029b9d7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of C10",
+                    "pos": {
+                        "x": 59.0,
+                        "y": 87.0
+                    },
+                    "uuid": "f99ca9fe-30f5-4ac8-ba8f-52a0f1fdb8bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PTH pad 1 [ESP_CTRL_5V] of C10",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 87.0
+                    },
+                    "uuid": "c537e230-f979-4f0a-adf1-93054029b9d7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

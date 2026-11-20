@@ -1,0 +1,27 @@
+[
+  {
+    "net": "GND",
+    "layer": "B.Cu",
+    "x_mm": 22.3
+  },
+  {
+    "net": "LOCAL_5V",
+    "layer": "F.Cu",
+    "x_mm": 56.1791
+  },
+  {
+    "net": "Net-(U1-CONTROLLER1-IO21)",
+    "layer": "F.Cu",
+    "x_mm": 57.5656
+  },
+  {
+    "net": "Net-(U1-CONTROLLER1-IO47)",
+    "layer": "F.Cu",
+    "x_mm": 57.0639
+  },
+  {
+    "net": "SONY_5V_SENSE",
+    "layer": "F.Cu",
+    "x_mm": 48.0
+  }
+]

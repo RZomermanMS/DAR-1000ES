@@ -1,0 +1,319 @@
+{
+  "footprints": [
+    {
+      "ref": "C1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C10",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C11",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": [
+        ""
+      ]
+    },
+    {
+      "ref": "C12",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C13",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": [
+        ""
+      ]
+    },
+    {
+      "ref": "C14",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C3",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C4",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C5",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C6",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C7",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C8",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "C9",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H3",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H4",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H5",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "H6",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J10",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J11",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J12",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J3",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J4",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J5",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J6",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J7",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J8",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "J9",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "JP1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "JP2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R10",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R11",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R12",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R13",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R14",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R15",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R3",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R4",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R5",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R6",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R7",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R8",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "R9",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U1-CONTROLLER1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": [
+        "J1.1",
+        "J3.1"
+      ]
+    },
+    {
+      "ref": "U10",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U11",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U2",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U3",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U4",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U5",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": [
+        "JP1.1",
+        "JP4.1",
+        "TCA8418 #4918"
+      ]
+    },
+    {
+      "ref": "U6",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U6-AUDIO1",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": [
+        "J1.1",
+        "J3.1"
+      ]
+    },
+    {
+      "ref": "U7",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U8",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    },
+    {
+      "ref": "U9",
+      "reference_visible_on_silk": true,
+      "other_visible_silk_text": []
+    }
+  ],
+  "board_silk_text": []
+}

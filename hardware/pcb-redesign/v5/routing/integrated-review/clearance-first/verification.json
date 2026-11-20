@@ -1,0 +1,17 @@
+{
+  "board": "result.kicad_pcb",
+  "sha256_before_drc": "74674474efe62d6e1b0cb38e13fb2255c36fdc5ee8df994890e329cd232bbae5",
+  "sha256_after_drc": "74674474efe62d6e1b0cb38e13fb2255c36fdc5ee8df994890e329cd232bbae5",
+  "drc_exit_code": 5,
+  "drc_report_sha256": "c5d71f3eabcf54d6be2642f5033668e8eb3505c6b062ca1040824828b620925f",
+  "kicad_version": "10.0.2",
+  "violations": 2,
+  "unconnected_items": 0,
+  "ignored_checks": [
+    "track_not_centered_on_via",
+    "tuning_profile_track_geometries",
+    "footprint_filters_mismatch",
+    "footprint_type_mismatch"
+  ],
+  "mode": "native DRC without refill or save; repository mounted read-only"
+}

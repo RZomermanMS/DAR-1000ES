@@ -1,0 +1,4 @@
+Section audit passed at y=150 mm.
+All classified component footprint envelopes remain in their sections.
+Footprint/pad placement unchanged from B; v5 netlist and UART nodes match.
+{"segments": 720, "vias": 7, "minimum_track_width_mm": 0.3}

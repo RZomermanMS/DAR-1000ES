@@ -1,0 +1,127 @@
+ESP BOARD QUALIFICATION — BLOCKED, NOT FOR FABRICATION OR POWER
+=============================================================
+
+Current external-whip decision
+------------------------------
+The current review candidate is routing/external-antenna-current/. It
+assumes a whip connected to each dev board's own IPEX connector; the host
+board adds no antenna circuitry or cutout. Its fresh routing and placement
+choice are documented there. The paragraph below saying no placement or
+routing was changed describes the earlier qualification checkpoint, not
+this current candidate.
+
+The fitted board's actual RF selector setting, connector compatibility
+and selected path remain unknown. Carrier and socket dimensions, both USB-C
+plug/cable envelopes, IPEX/pigtail access and bend, chassis and nearby
+metal, pinout and physical fit still require verification. The external
+choice does not itself establish RF or assembly clearance.
+
+Target and evidence
+-------------------
+The user identifies the fitted board as an ESP32-S3 DevKitC-1 N16R8
+development board with two USB-C sockets and confirms the pictured product:
+https://m.media-amazon.com/images/I/71+wasb7K7L._AC_SX679_.jpg
+The user reports the shield reads SparkleIoT, XH-S3E, WiFi+BT N16R8; the
+photo shows two 22-pin rows, a projecting PCB antenna and an IPEX/U.FL-style
+connector and pigtail. This identifies the module markings, not the carrier
+manufacturer, SKU, revision, exact dimensions, or selected RF path. The
+photo is perspective imagery, not a mechanical drawing. Do not infer the
+row spacing, carrier length or antenna coordinates from it.
+
+The official Espressif v1.1 reference is a different carrier, with Micro-USB
+ports. Its user-supplied 25.40 x 62.74 mm outline and pin-1-end offset of
+1.40 mm are reference-model inputs only; they do not qualify the actual
+dual-USB-C carrier. Likewise the 2.54 mm header pitch and 22.86 mm row spacing
+in the existing CAD are design assumptions until checked on the actual item.
+The modeled 3.60 mm carrier-edge inset and all derived collision/antenna
+results are conditional, not installed-board measurements.
+Reference drawing:
+https://dl.espressif.com/dl/schematics/esp_idf/DXF_ESP32-S3-DevKitC-1_V1.1_20220429.pdf
+Reference guide:
+https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
+
+Source search, limits and RF
+----------------------------
+An FCC filing indexed under XH-S3E names ShenZhen Sparkleiot Technology:
+https://fccid.io/2BCLR-XH-S3E
+Its indexed module manual:
+https://fccid.io/2BCLR-XH-S3E/User-Manual/User-Manual-6776438.pdf
+The primary PDF was not retrievable here. Search snippets from it contain
+conflicting 16 x 24 and 18 x 25.5 mm module dimensions and inconsistent chip
+descriptions, so neither the dimensions nor an indexed 5 mm antenna-layout
+statement is adopted as a rule for this N16R8 assembly. Even a verified
+module outline alone would not locate it relative to the carrier headers.
+The FCC ID/model listing has not been confirmed on the installed item.
+
+A seller-associated listing with matching module shield markings and model
+is indexed at https://manuals.plus/ae/1005005921275702 ; it describes a
+module, not a dimensioned, matched dual-USB-C carrier. Generic dual-USB-C
+listings and Espressif reference drawings do not establish this carrier's
+dimensions or electrical wiring. No sufficiently matched dimensioned
+carrier drawing, schematic or RF switch detail was found in this search.
+Presence of both antenna features does not establish simultaneous operation,
+the selected path, matching network or approved external antenna.
+
+At that historical checkpoint, no placement, copper, zones or antenna
+keepouts were changed on the basis of these incomplete sources. The edge
+candidate lacks antenna rule areas;
+the inboard provisional areas on placement-current are not validated.
+Neither establishes substrate, copper, metal, chassis or RF compliance.
+Keep both candidates as experimental checkpoints, not manufacturing inputs.
+
+Pin reservation review — conditional, no remap
+-----------------------------------------------
+The exact board schematic, header assignments and USB-UART bridge wiring
+remain unverified. For an Espressif DevKitC-1 reference with octal PSRAM,
+GPIO35/36/37 are reserved for flash/PSRAM, GPIO19/20 for native USB, GPIO0,
+3, 45 and 46 are strapping pins, and GPIO43/44 are normally UART0. The v1.1
+reference uses GPIO38 for RGB; other revisions may use GPIO48. These are
+reference cautions, not proof of this carrier's wiring or module internals.
+Reference documentation:
+https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/gpio.html
+
+The saved v5 netlist uses controller GPIO1,2,4,5,7,8,13,14,15,16,18,
+21,39,40,42,47 and audio GPIO1,2,4,5,6,7,8,9,11,12,13,14,21,40,41,
+42,47. None is in the above reference reservation list; this is not a
+variant-specific confirmation. Spare buffered inputs are included. The
+controller GPIO21/47 and audio GPIO13/14 are inter-ESP UART; audio GPIO8
+is the local U2 enable. See Electrical-review-v5.txt for the existing map.
+No firmware or GPIO mapping was changed. Verify actual header labels and
+schematic, LED, BOOT/RESET, USB-UART TX/RX and N16R8 PSRAM wiring before
+relying on these assignments. In particular do not infer an LED or UART
+pin solely from the family name. Confirm J1.1/J1.2 3V3, J1.21 5V and
+J1.22/J3.1 GND on the actual board as well; do not tie the ESP 3V3 rails.
+
+Minimum information needed to unblock an actual CAD revision
+------------------------------------------------------------
+Prefer an exact carrier seller link/SKU and revision-specific dimensioned
+drawing, schematic/pinout and module RF integration guide. Otherwise measure
+both actual boards with calipers, power disconnected, using J1.1 pin center
+as origin, +y along the J1 row toward USB and +x toward J3:
+
+1. Pin count, center-to-center pitch along each row and J1-to-J3 row-center
+   spacing; first/last pin offsets to each carrier edge, length, width and
+   thickness, including tolerances and any nonrectangular protrusions.
+2. Bounds of the complete module, PCB antenna and antenna connector relative
+   to J1.1, including projection beyond the carrier; heights above/below the
+   carrier, header/socket height and underside components. Identify the
+   antenna's radiator and its vendor-required 3D substrate/copper/metal
+   clearance, not merely the module outline.
+3. Both USB-C receptacle positions and extents, their insertion directions,
+   plug/cable widths, depth and bend clearance. Include the pigtail connector,
+   bend and whip routing/envelope, and whether PCB or external RF path is
+   selected. Obtain the manufacturer's selector/matching instructions.
+4. Chassis walls, hardware and connector/cable envelopes at both ESP
+   locations, with assembly tolerances, so overhang and access can be checked.
+5. A readable, straight-on photo of both header labels and both sides or an
+   exact schematic, plus the manufacturer/revision and LED, BOOT, UART,
+   PSRAM and 5V/3V3 power wiring. Continuity checks unpowered can supplement,
+   but do not by themselves prove RF selection or dynamic power behavior.
+
+With these inputs, check both rigid socket rows, substrate and all copper
+layers, enclosure/USB access and real antenna keepout before deciding
+placement and rerouting. Refill/save, DRC, parity, net/domain and solder
+clearance audits and previews must then be rerun on the same saved board.
+Bench power sequencing, return-current and RF behavior remain separate
+validation steps; zero opens is not sign-off.

@@ -1,0 +1,111 @@
+{
+  "max_seconds_per_pair": 20,
+  "max_bridges_per_pair": 600,
+  "results": [
+    {
+      "capacitor": "C1",
+      "capacitor_pad": "1",
+      "ic": "U3",
+      "target_pad": "7",
+      "old_path_mm": 123.004,
+      "possible_bridges": 34,
+      "attempted_paths": 101,
+      "geometry_rejections": 100,
+      "no_improvement": 0,
+      "native_drc_tests": 1,
+      "elapsed_seconds": 1.35,
+      "accepted": {
+        "from": "U8.1",
+        "to": "C6.2",
+        "layer": "F.Cu",
+        "new_path_mm": 119.298,
+        "points_mm": [
+          [
+            45.0,
+            45.0
+          ],
+          [
+            50.0,
+            45.0
+          ],
+          [
+            50.0,
+            68.0
+          ]
+        ]
+      }
+    },
+    {
+      "capacitor": "C2",
+      "capacitor_pad": "1",
+      "ic": "U4",
+      "target_pad": "7",
+      "old_path_mm": 118.485,
+      "possible_bridges": 35,
+      "attempted_paths": 210,
+      "geometry_rejections": 208,
+      "no_improvement": 2,
+      "native_drc_tests": 0,
+      "elapsed_seconds": 0.1,
+      "accepted": null
+    },
+    {
+      "capacitor": "C3",
+      "capacitor_pad": "2",
+      "ic": "U2",
+      "target_pad": "7",
+      "old_path_mm": 181.309,
+      "possible_bridges": 8,
+      "attempted_paths": 19,
+      "geometry_rejections": 18,
+      "no_improvement": 0,
+      "native_drc_tests": 1,
+      "elapsed_seconds": 1.35,
+      "accepted": {
+        "from": "J11.1",
+        "to": "C5.1",
+        "layer": "F.Cu",
+        "new_path_mm": 171.32,
+        "points_mm": [
+          [
+            9.8,
+            240.0
+          ],
+          [
+            25.0,
+            247.0
+          ]
+        ]
+      }
+    },
+    {
+      "capacitor": "C4",
+      "capacitor_pad": "2",
+      "ic": "U6",
+      "target_pad": "7",
+      "old_path_mm": 110.801,
+      "possible_bridges": 6,
+      "attempted_paths": 25,
+      "geometry_rejections": 24,
+      "no_improvement": 0,
+      "native_drc_tests": 1,
+      "elapsed_seconds": 1.33,
+      "accepted": {
+        "from": "R7.2",
+        "to": "U7.7",
+        "layer": "F.Cu",
+        "new_path_mm": 103.682,
+        "points_mm": [
+          [
+            54.62,
+            220.0
+          ],
+          [
+            50.24,
+            235.0
+          ]
+        ]
+      }
+    }
+  ]
+}

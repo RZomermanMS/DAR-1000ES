@@ -1,0 +1,32 @@
+{
+  "threshold_mm": 0.5,
+  "before_hash": "c63fa89924e244bbf6bfd92f2c72e6c9d34117106b4bd87cf46f7971078920c5",
+  "after_hash": "1240e33f02655776918eeb6e967bab29241e4b5989a53370e44e0d4fd4a142b1",
+  "pairs_examined": [
+    238583,
+    240063
+  ],
+  "minimum_mm": [
+    0.2017,
+    0.2017
+  ],
+  "pairs_below_0_3_mm": [
+    144,
+    144
+  ],
+  "pairs_below_0_25_mm": [
+    45,
+    45
+  ],
+  "within_threshold": [
+    394,
+    395
+  ],
+  "common_improved": 0,
+  "common_worsened": 0,
+  "entered_threshold": 1,
+  "left_threshold": 0,
+  "worsened_under_0_3": 0,
+  "entered_under_0_3": 0,
+  "improved_pad_refs": {}
+}

@@ -1,0 +1,63 @@
+{
+  "threshold_mm": 0.5,
+  "before_hash": "53428c44aaf48bd0ea867c7b11f82e9277dcee58e0993fbcc820f4a65fc4612f",
+  "after_hash": "c63fa89924e244bbf6bfd92f2c72e6c9d34117106b4bd87cf46f7971078920c5",
+  "pairs_examined": [
+    224994,
+    238583
+  ],
+  "minimum_mm": [
+    0.201657,
+    0.2017
+  ],
+  "pairs_below_0_3_mm": [
+    332,
+    144
+  ],
+  "pairs_below_0_25_mm": [
+    217,
+    45
+  ],
+  "within_threshold": [
+    468,
+    394
+  ],
+  "common_improved": 162,
+  "common_worsened": 21,
+  "entered_threshold": 13,
+  "left_threshold": 87,
+  "worsened_under_0_3": 0,
+  "entered_under_0_3": 2,
+  "improved_pad_refs": {
+    "C10": 3,
+    "C12": 3,
+    "C8": 1,
+    "J11": 1,
+    "J3": 1,
+    "J4": 1,
+    "J5": 3,
+    "J6": 4,
+    "J7": 1,
+    "J8": 2,
+    "J9": 1,
+    "JP1": 1,
+    "JP2": 2,
+    "R13": 1,
+    "R14": 4,
+    "R5": 2,
+    "R6": 1,
+    "R7": 1,
+    "R8": 2,
+    "R9": 2,
+    "U1-CONTROLLER1": 23,
+    "U2": 10,
+    "U3": 10,
+    "U4": 17,
+    "U5": 9,
+    "U6": 10,
+    "U6-AUDIO1": 16,
+    "U7": 16,
+    "U8": 4,
+    "U9": 10
+  }
+}

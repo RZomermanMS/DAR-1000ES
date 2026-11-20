@@ -1,0 +1,8 @@
+{
+  "board_sha256": "16a88150a9eef163fbc119e894eaf3c47233ebe6db1f0cc457ae5fe6c4389764",
+  "power_sha256": "e19e9908fe62e82e88d0f32ed86c2eb219e02af9a60c4565729e243f000d3387",
+  "silk_sha256": "a46a6668287fbf6cfe683f042e2ea08dc502d9e10ea7c8cfbd2c2bb61b709780",
+  "overlay_items": 61,
+  "overlay_matches_saved_silk_geometry": true,
+  "non_overlay_matches_power_ignoring_fill_caches": true
+}

@@ -1,0 +1,35 @@
+{
+  "threshold_mm": 0.5,
+  "before_hash": "06f73f9b662897d0822611513cf09feb3f9ccb1c8e08e6cac4ecad31c147810c",
+  "after_hash": "943231dff205f6002cc8ae35e5011da886671f8ab1f16bf03c6b5b88d6374de3",
+  "pairs_examined": [
+    241472,
+    241472
+  ],
+  "minimum_mm": [
+    0.2017,
+    0.2017
+  ],
+  "pairs_below_0_3_mm": [
+    144,
+    137
+  ],
+  "pairs_below_0_25_mm": [
+    45,
+    42
+  ],
+  "within_threshold": [
+    394,
+    394
+  ],
+  "common_improved": 14,
+  "common_worsened": 0,
+  "entered_threshold": 0,
+  "left_threshold": 0,
+  "worsened_under_0_3": 0,
+  "entered_under_0_3": 0,
+  "improved_pad_refs": {
+    "U1-CONTROLLER1": 12,
+    "U8": 2
+  }
+}
